@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="34.871" height="35.5" viewBox="0 0 34.871 35.5">
+  <g id="Group_483" data-name="Group 483" transform="translate(-159.25 -792)">
+    <g id="Rectangle_1193" data-name="Rectangle 1193" transform="translate(162.832 792)" fill="#fff" stroke="#535353" stroke-width="1">
+      <rect width="28.912" height="25.034" rx="2" stroke="none"/>
+      <rect x="0.5" y="0.5" width="27.912" height="24.034" rx="1.5" fill="none"/>
+    </g>
+    <g id="Rectangle_1192" data-name="Rectangle 1192" transform="translate(162.88 797.007)" fill="#fff" stroke="#535353" stroke-width="1">
+      <rect width="26.409" height="25.034" rx="2" stroke="none"/>
+      <rect x="0.5" y="0.5" width="25.409" height="24.034" rx="1.5" fill="none"/>
+    </g>
+    <path id="Icon_feather-folder" data-name="Icon feather-folder" d="M3,23.919c0,1.341,1.516,2.427,3.387,2.427h27.1c1.871,0,3.387-1.087,3.387-2.427V6.927c0-1.341-1.516-2.427-3.387-2.427H25.016L21.629,8.141H6.387C4.516,8.141,3,9.228,3,10.568Z" transform="translate(156.75 800.654)" fill="#535353" stroke="#535353" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <line id="Line_23" data-name="Line 23" x2="12.517" transform="translate(176.724 816.839)" fill="none" stroke="#fff" stroke-width="1"/>
+    <line id="Line_25" data-name="Line 25" x2="12.517" transform="translate(168.826 803.29)" fill="none" stroke="#707070" stroke-width="1"/>
+  </g>
+</svg>

@@ -1,0 +1,48 @@
+/***Application Theme***/
+@import "./app-theme.scss";
+
+
+$page-background:#fff;
+$header-bg: #fff;
+$footer-bg:#F8F8FA;
+
+/*Primary Colors*/
+
+$dark: #000;
+$dark-medium:#535353;
+$section-bg:#F8F8FA;
+$favorite:#f6be20;
+
+/*Alert Colors*/
+$dark-red:#d70404;
+$dark-green:#0BC736;
+$dark-yellow:#F89406;
+$dark-info: #00338D;
+
+/*Links Colors*/
+$link-text: #1A73E8;
+$link-text-hover: #1364CE;
+
+/*Buttons*/
+$button-primary:$primary;
+$button-secondary: $secondary; 
+
+/*Others Variables*/
+$active-state: $primary;
+$menu-active-bg: $primary;
+$menu-hover-bg: #F8F8FA;
+$negative: $dark-red;
+
+$input-border-color:#c2c6d2;
+$light-devider-color: #E0E0E0;
+$input-text-color:$dark;
+$card-accordion-bg: #f2f2f6;
+
+
+$shadow: 3px 1px 12px 2px rgba(0, 0, 0, 0.24);
+
+// Colors
+$color-1: #0071C5;
+$color-2: #07B54E;
+$color-3: #EF6C00;
+$color-4: #CC0000;
