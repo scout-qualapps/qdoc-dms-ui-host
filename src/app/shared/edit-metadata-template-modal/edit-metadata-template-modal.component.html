@@ -1,0 +1,119 @@
+
+<h2 mat-dialog-title class="has-close-icon">Edit Metadata Template 
+  <button mat-button class="icon-button" matTooltip="Close" mat-dialog-close>
+    <mat-icon>close</mat-icon>
+  </button>
+</h2>
+<mat-dialog-content class="mat-typography min-w-500">
+  <div class="sub-breadcrumb rounded mb-2 ">Properties of <span class="fw-bold">"Department Data"</span></div>
+
+  <div class="row mb-3 align-items-center mt-2">
+    <div class="col-auto mt-0">
+      <label for="inputPassword6" class="col-form-label">ID:</label>
+      <span class=" fw-bold">
+        123456
+      </span>
+    </div>
+    <div class="col-auto mt-0">
+      <label for="inputPassword6" class="col-form-label">Date Created:</label>
+      <span class=" fw-bold">
+        03/15/2021 09:00 AM
+      </span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 ">
+      <div class="app-input-group row">
+        <label class="col-12 col-sm-4 col-md-3 col-lg-2 field-col-label">Template Name<span class="text-danger"> * </span></label>
+       <div class="col">
+
+         <mat-form-field class="app-input-element" appearance="fill" floatLabel="never">
+           <input matInput placeholder="Name" value="Department Data">
+         </mat-form-field>
+       </div>
+      </div>
+      <div class="app-input-group row mb-4 pb-2">
+        <label class="col-12 col-sm-4 col-md-3 col-lg-2 field-col-label">Description</label>
+       <div class="col">
+
+         <mat-form-field class="app-input-element" appearance="fill" floatLabel="never">
+           <textarea matInput
+             placeholder="Enter description">Description text appears here in multiple lines related to the file in context which can be viewed.</textarea>
+           <mat-hint align="end">1 / 100 characters</mat-hint>
+         </mat-form-field>
+       </div>
+      </div>
+      <div class="app-input-group row">
+        <label class="col-12 col-sm-4 col-md-3 col-lg-2 field-col-label"> Type <span class="text-danger"> * </span></label>
+        <div class="col">
+           <mat-radio-group aria-label="Select Type">
+              <mat-radio-button value="1" checked>Content</mat-radio-button>
+              <mat-radio-button value="2" class="ms-4">Repository</mat-radio-button>
+            </mat-radio-group>
+        </div>
+     </div>
+
+   
+
+     <div class="app-input-group row mt-4">
+      <label class="col-12 col-sm-4 col-md-3 col-lg-2 field-col-label"> Category <span class="text-danger"> * </span></label>
+      <div class="col">
+      <mat-radio-group aria-label="Select Category">
+            <mat-radio-button value="3" >
+               <mat-icon aria-hidden="false" matTooltip="Private" class="align-middle visibility-off">visibility_off</mat-icon>
+               Private </mat-radio-button>
+            <mat-radio-button checked class="ms-4" value="4">  <mat-icon aria-hidden="false" matTooltip="Private" class="align-middle ">visibility</mat-icon> Public </mat-radio-button>
+          </mat-radio-group>
+        </div>  
+   </div>
+   
+     
+      <div class="app-input-group row">
+        <label class="col-12 col-sm-4 col-md-3 col-lg-2 field-col-label"> Author <span class="text-danger"> * </span></label>
+        <div class="col">
+
+           <mat-form-field class="app-input-element"   appearance="fill" floatLabel="never">
+              <input matInput placeholder=" Author" disabled [matAutocomplete]="auto" value="Srikanta, Prakash">
+              <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                 <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                   {{option}}
+                 </mat-option>
+               </mat-autocomplete>
+           </mat-form-field>
+        </div>
+     </div>
+     <div class="app-input-group row mt-4">
+      <label class="col-12 col-sm-4 col-md-3 col-lg-2 field-col-label">Active</label>
+      <div class="col">
+         <section class="">
+            <mat-checkbox [checked]="isActive"></mat-checkbox>
+         </section>
+      </div>
+   </div>
+      <div class="app-input-group row mt-4">
+        <label class="col-12 col-sm-4 col-md-3 col-lg-2 field-col-label">Set as Default</label>
+        <div class="col">
+          <section class="">
+            <mat-checkbox [ngModel]="setAsDefault" ></mat-checkbox>
+          </section>
+        </div>
+      </div>
+ 
+    </div>
+  </div>
+
+ 
+ 
+  
+
+ 
+
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <div class="me-auto  indicates">
+    <span class="text-danger"> * </span> indicates required field
+ </div>
+  <button mat-button class="secondary-button me-2" mat-dialog-close>Cancel</button>
+  <button mat-button class=" primary-button" [mat-dialog-close]="true" cdkFocusInitial>Save </button>
+</mat-dialog-actions>

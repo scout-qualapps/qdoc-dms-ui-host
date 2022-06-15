@@ -1,0 +1,181 @@
+<nav style="--bs-breadcrumb-divider: '';" aria-label="breadcrumb">
+   <ol class="breadcrumb">
+      <li class="breadcrumb-item d-block d-sm-none">
+         <a mat-button class="icon-button back-btn" matTooltip="Back" [routerLink]="['../repository']">
+            <mat-icon aria-hidden="false">arrow_back</mat-icon>
+         </a>
+      </li>
+      <li class="breadcrumb-item flex-hide-sm">
+         <a href="#" [routerLink]="['../repository']">Repository 1</a>
+         <mat-icon>navigate_next</mat-icon>
+      </li>
+      <li class="breadcrumb-item flex-hide-sm active" aria-current="page">Folder 1</li>
+   </ol>
+</nav>
+
+<div class="title-block">
+
+   <div class="main-icon">
+      <mat-icon class="folder-icon" style="color: gold;">folder</mat-icon>
+   </div>
+
+   <div class="flex-grow-1">
+      <div class="title ">
+         Folder 1
+
+      </div>
+      <div class="title-info">
+         <div class="me-2 d-none d-sm-block">
+            Created by <span class="bold">Srikanta, Prakash</span> on <span class="bold">12/03/2021 11:50 AM</span>
+         </div>
+         <div class="d-flex mt-2 mt-sm-0">
+            <span class="align-middle d-block d-sm-none me-1">
+               <mat-icon matTooltip="Modified by Srikanta, Prakash on 12-03-2021 11:50 AM">info </mat-icon>
+            </span>
+            <span class="me-2">|<a href="#" [routerLink]="['../folder-details']" class="mx-2 align-bottom">View
+                  Details</a>|</span>
+            <span class="favorite ">
+               <span (click)="favorite()"  [matTooltip]="isFavorite?'Remove Favorite':'Mark as Favorite'">
+                  <span class="favorite-btn" >
+                     <mat-icon class="align-middle" *ngIf="isFavorite">grade</mat-icon>
+                     <mat-icon *ngIf="!isFavorite"  class="align-middle mark-favorite">star_outline</mat-icon>
+                  </span>
+                
+                  <span class="flex-hide-sm flex-hide-md">Favorite</span>
+               </span>
+            </span>
+         </div>
+      </div>
+   </div>
+   <div class="title-nav-block">
+      <ul class="nav justify-content-end">
+         <li class="nav-item d-none d-sm-block">
+            <button mat-button class="icon-button" [routerLink]="['../upload-file']" matTooltip="Upload">
+               <mat-icon aria-hidden="false">upload_rounded</mat-icon>
+            </button>
+         </li>
+         <li class="nav-item d-none d-sm-block">
+            <button mat-button class="icon-button" matTooltip="Create New Folder" [routerLink]="['../new-folder']">
+               <mat-icon aria-hidden="false">create_new_folder
+               </mat-icon>
+            </button>
+         </li>
+         <li class="nav-item d-none d-sm-block">
+            <div class="icon no-hover divider">
+               <span class=" d-none d-sm-block">
+                  |
+               </span>
+            </div>
+         </li>
+        
+         <li class="nav-item d-none d-sm-block">
+            <button mat-button (click)="openShareDialog()" class="icon-button" matTooltip="Share">
+               <mat-icon aria-hidden="false">share</mat-icon>
+            </button>
+         </li>
+         <li class="nav-item d-none d-sm-block">
+            <button mat-button class="icon-button" matTooltip="Download">
+               <mat-icon>download</mat-icon>
+            </button>
+         </li>
+         <li class="nav-item d-none d-sm-block">
+            <button mat-button class="icon-button" matTooltip="Delete">
+               <mat-icon aria-hidden="false">delete</mat-icon>
+            </button>
+         </li>
+         <li class="nav-item">
+            <button mat-button class="icon-button" matTooltip="More" [matMenuTriggerFor]="menu">
+               <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu" class="menu-dropdown general-dropdown" xPosition="before">
+               <ul class="menu-lists title-nav-list">
+                  <li mat-menu-item class=" d-block d-sm-none">
+                     <mat-icon>upload_rounded</mat-icon>
+                     Upload
+                  </li>
+                  <li mat-menu-item class=" d-block d-sm-none divider" [routerLink]="['./new-folder']">
+                     <mat-icon>create_new_folder </mat-icon>
+                     Create New Folder
+                  </li>
+                  <li mat-menu-item class=" d-block d-sm-none">
+                     <mat-icon>star_outline</mat-icon>
+                     Favorite
+                  </li>
+                  <li mat-menu-item (click)="openShareDialog()" class=" d-block d-sm-none">
+                     <mat-icon>share</mat-icon>
+                     Share To
+                  </li>
+                  <li mat-menu-item class=" d-block d-sm-none">
+                     <mat-icon>download</mat-icon>
+                     Download
+                  </li>
+                  <li mat-menu-item class=" d-block d-sm-none divider">
+                     <mat-icon>delete</mat-icon>
+                     Delete
+                  </li>
+                  <li mat-menu-item mat-menu-item (click)="openMoveCopyDialog()">
+                     <mat-icon>airline_stops</mat-icon>
+                     Move To
+                  </li>
+                  <li mat-menu-item (click)="openMoveCopyDialog()">
+                     <mat-icon>file_copy</mat-icon>
+                     Copy To
+                  </li>
+               </ul>
+            </mat-menu>
+         </li>
+      </ul>
+   </div>
+</div>
+<div class="content-wrapper">
+
+
+   <div class="row">
+      <div class="col-12">
+         <div class="filter_controls justify-content-end mb-2">
+            <ul class="nav">
+               <!--This will be removed after the clint approval -->
+               <li class="b-select-dropdown" *ngIf="!isListView">
+                  <span class="label d-none d-sm-block pe-2">Sort By</span>
+                  <mat-form-field class="app-input-element b-select w-120 pe-2 " appearance="fill" floatLabel="never">
+                     <mat-select>
+                        <mat-option *ngFor="let value of sortvalue" [value]="value.value">
+                           {{value.viewValue}}
+                        </mat-option>
+                     </mat-select>
+                  </mat-form-field>
+               </li>
+               <li class="nav-item  no-hover" *ngIf="!isListView">
+                  <button mat-button class="icon-button  no-hover" matTooltip="">
+                     <mat-icon>arrow_downward </mat-icon>
+                  </button>
+               </li>
+               <li class="nav-item no-hover">
+                  <button mat-button class="icon-button  no-hover"  (click)="openConfigureColumnsDialog()" matTooltip="Column Settings">
+                     <mat-icon>settings_suggest</mat-icon>
+                  </button>
+               </li>
+               <li class="nav-item  no-hover">
+                  <div class="nav-link icon divider no-hover">
+                     <span>
+                        |
+                     </span>
+                  </div>
+               </li>
+               <li class="nav-item" [ngClass]="isListView? 'active':''">
+                  <button mat-button class="icon-button" matTooltip="List View" (click)="isListView=!isListView">
+                     <mat-icon>menu</mat-icon>
+                  </button>
+               </li>
+               <li class="nav-item" [ngClass]="!isListView? 'active':''">
+                  <button mat-button class="icon-button " matTooltip="Grid View" (click)="isListView=!isListView">
+                     <mat-icon aria-hidden="false">grid_view</mat-icon>
+                  </button>
+               </li>
+            </ul>
+         </div>
+         <app-folder-list-view *ngIf="isListView"></app-folder-list-view>
+         <app-folder-card-view *ngIf="!isListView"></app-folder-card-view>
+      </div>
+   </div>
+</div>

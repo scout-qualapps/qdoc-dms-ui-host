@@ -1,0 +1,62 @@
+<div class="card">
+  <div class="card-header">
+    <div class="control-panel">
+      <a class="" href="#">
+        <mat-icon>arrow_circle_left </mat-icon>
+        Previous
+      </a>
+      <a class="" href="#">
+        <mat-icon>arrow_circle_right </mat-icon>
+        Next
+      </a>
+      <input class="form-control form-control-sm" type="text">
+      <span> /15 </span>
+      <span class="bar">| </span>
+      <a class="" href="#">
+        <mat-icon>remove </mat-icon>
+      </a>
+      <a class="" href="#">
+        <mat-icon>add </mat-icon>
+      </a>
+      <span class="d-none d-sm-block"> 70% </span> <span class="bar d-none d-sm-block">| </span>
+      <a class=" d-none d-sm-block" href="#">
+        Maximize
+      </a>
+      <a class=" d-none d-sm-block" href="#">
+        <mat-icon>download </mat-icon>
+      </a>
+      <a class=" pe-1 d-none d-sm-block" href="#">
+        <mat-icon>link </mat-icon>
+      </a> <span class="bar bar-icon d-none d-sm-block">| </span>
+      <a class=" ps-1 d-none d-sm-block" href="#">
+        <mat-icon>search </mat-icon>
+      </a>
+     
+        <button mat-button class="icon-button ps-1 d-block d-sm-none" matTooltip="More" [matMenuTriggerFor]="menu">
+          <mat-icon>more_vert</mat-icon>
+       </button>
+       <mat-menu #menu="matMenu" class="menu-dropdown general-dropdown" xPosition="before">
+          <ul class="menu-lists title-nav-list">
+             <li mat-menu-item class=" d-block d-sm-none">
+                <mat-icon>download</mat-icon>
+                Download
+             </li>
+             <li mat-menu-item class=" d-block d-sm-none ">
+                <mat-icon>link </mat-icon>
+                Link 
+             </li>
+             
+          </ul>
+       </mat-menu>
+      
+    </div>
+  </div>
+  <div class="card-body">
+    <img class="file" src="assets/images/file-preview.jpg">
+    <div class=" d-flex justify-content-end">
+      <div class="zoom ms-auto">
+        <img src="assets/images/icon-fullscreen.svg" />
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,119 @@
+<nav style="--bs-breadcrumb-divider: '';" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+       <li class="breadcrumb-item active" aria-current="page">Page title with action</li>
+    </ol>
+  </nav>
+  <div class="title-block">
+    <div class="main-icon"> <mat-icon class="main-icon-font">fact_check</mat-icon></div>
+    <div class="flex-grow-1">
+       <div class="title ">
+        Page title with action
+          <span class="ps-2">
+             <mat-icon class="off" aria-hidden="false" matTooltip="Private" class="align-middle off">visibility_off</mat-icon>
+          </span>
+       </div>
+       <div class="title-info">
+        <div class="me-2 d-none d-sm-block">
+           Modified by <span class="bold">Srikanta, Prakash</span> on <span class="bold">12/03/2021 11:50 AM</span>
+        </div>
+        <div class="d-flex mt-2 mt-sm-0">
+           <span class="align-middle d-block d-sm-none me-1">
+              <mat-icon matTooltip="Modified by Srikanta, Prakash on 12-03-2021 11:50 AM">info </mat-icon> 
+           </span>
+           <span class="me-2">|<a href="#" class="mx-2 align-bottom">View Details</a>|</span>
+            <span class="favorite ">
+               <span (click)="favorite()"  [matTooltip]="isFavorite?'Remove Favorite':'Mark as Favorite'">
+                  <span class="favorite-btn">
+                     <mat-icon class="align-middle" *ngIf="isFavorite">grade</mat-icon>
+                     <mat-icon *ngIf="!isFavorite"  class="align-middle mark-favorite">star_outline</mat-icon>
+                  </span>
+                  <span class="flex-hide-sm flex-hide-md">Favorite</span>
+               </span>
+          </span>
+        </div> 
+       </div>
+    </div>
+    <div class="title-nav-block">
+       <ul class="nav justify-content-end">
+          <li class="nav-item d-none d-sm-block">
+             <button mat-button class="icon-button" matTooltip="Upload">
+                <mat-icon aria-hidden="false">upload_rounded</mat-icon>
+             </button>
+          </li>
+          <li class="nav-item d-none d-sm-block" >
+             <button mat-button class="icon-button" matTooltip="Create New Folder">
+                <mat-icon aria-hidden="false">create_new_folder
+                </mat-icon>
+             </button>
+          </li>
+          <li class="nav-item d-none d-sm-block">
+             <div class="icon no-hover divider">
+                <span class=" d-none d-sm-block">
+                |
+                </span>
+             </div>
+          </li>
+          <li class="nav-item d-none d-sm-block">
+             <button mat-button class="icon-button" matTooltip="Mark as Favorite">
+                <mat-icon aria-hidden="false">star_outline</mat-icon>
+             </button>
+          </li>
+          <li class="nav-item d-none d-sm-block">
+             <button mat-button class="icon-button" matTooltip="Share">
+                <mat-icon aria-hidden="false">share</mat-icon>
+             </button>
+          </li>
+          <li class="nav-item d-none d-sm-block">
+             <button mat-button class="icon-button" matTooltip="Download">
+                <mat-icon>download</mat-icon>
+             </button>
+          </li>
+          <li class="nav-item d-none d-sm-block">
+             <button mat-button class="icon-button" matTooltip="Delete">
+                <mat-icon aria-hidden="false">delete</mat-icon>
+             </button>
+          </li>
+          <li class="nav-item">
+             <button mat-button class="icon-button" matTooltip="More" [matMenuTriggerFor]="menu">
+                <mat-icon>more_vert</mat-icon>
+             </button>
+             <mat-menu #menu="matMenu" class="menu-dropdown general-dropdown" xPosition="before">
+                <ul class="menu-lists title-nav-list">
+                   <li mat-menu-item class=" d-block d-sm-none">
+                      <mat-icon>upload_rounded</mat-icon>
+                      Upload 
+                   </li>
+                   <li mat-menu-item class=" d-block d-sm-none divider">
+                      <mat-icon>create_new_folder </mat-icon>
+                      Create New Folder
+                   </li>
+                   <li mat-menu-item class=" d-block d-sm-none">
+                      <mat-icon>star_outline</mat-icon>
+                      Favorite
+                   </li>
+                   <li mat-menu-item class=" d-block d-sm-none">
+                      <mat-icon>share</mat-icon>
+                      Share To
+                   </li>
+                   <li mat-menu-item class=" d-block d-sm-none">
+                      <mat-icon>download</mat-icon>
+                      Download
+                   </li>
+                   <li mat-menu-item class=" d-block d-sm-none divider">
+                      <mat-icon>delete</mat-icon>
+                      Delete 
+                   </li>
+                   <li mat-menu-item (click)="openMoveCopyDialog()" class="">
+                      <mat-icon>airline_stops</mat-icon>
+                      Move To
+                   </li>
+                   <li mat-menu-item (click)="openMoveCopyDialog()">
+                      <mat-icon>file_copy</mat-icon>
+                      Copy To
+                   </li>
+                </ul>
+             </mat-menu>
+          </li>
+       </ul>
+    </div>
+  </div>

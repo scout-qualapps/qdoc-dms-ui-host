@@ -1,0 +1,165 @@
+<div class="card">
+  <div class="card-header bg-transparent">
+     <div class="fw-bold p-2 ps-3">
+        Metadata Templates
+     </div>
+  </div>
+  <div class="card-body">
+     <div class="row g-0 card-accordion-title has-actions">
+        <div class="col-12"><span class="meta-title">Template Name</span></div>
+     </div>
+     <div class="card-accordion">
+        <mat-accordion class="accordion" [togglePosition]="'before'">
+           <mat-expansion-panel class="position-relative" expanded>
+              <mat-expansion-panel-header class="has-actions">
+                 <mat-panel-title>
+                    <div class="row w-100">
+                       <div class="col text-truncate has-badge">
+                          <span class="action-padding text-truncate text-link"
+                             [routerLink]="['../metadata-template-details']">Department Data</span>
+                         
+                             <div class="d-none d-md-inline-block">
+                                    <span class="ms-4 me-3">
+                             <mat-icon aria-hidden="false" matTooltip="Public" class="align-middle">visibility_on</mat-icon>
+                          </span>
+                          
+                           <span class="dafault-badge me-3">Default</span>
+                           <span class="secondary-badge me-3">In Use</span>
+                           <span class="secondary-badge me-3">Repository</span>
+                        </div>
+                       </div>
+                    </div>
+                    <div>
+                    </div>
+                 </mat-panel-title>
+              </mat-expansion-panel-header>
+              <div class="expansion-body">
+                 <ul class="nav">
+                    <li class="nav-item">
+                       <button mat-button class="icon-button " matTooltip="Remove">
+                          <mat-icon aria-hidden="false">do_not_disturb_on</mat-icon>
+                       </button>
+                    </li>
+                 </ul>
+                 <div class="pb-2 mb-3 d-block d-md-none">
+                  <span class="me-3">
+                     <mat-icon aria-hidden="false" matTooltip="Public" class="align-middle">visibility_on</mat-icon>
+                  </span>
+                  <span class="dafault-badge me-3">Default</span>
+                  <span class="secondary-badge me-3">In Use</span>
+                  <span class="secondary-badge me-3">Repository</span>
+                 </div>
+                 <div class="border-bottom pb-2 mb-2">
+                    Captures departmental data
+                 </div>
+
+<div class="row">
+  <div class="col-12 col-sm order-2 order-sm-1">
+    <ul class="list">
+      <li>
+         Source: <span class="text-danger"> * </span> <span class=" text-light fw-bold fst-italic"> &#10100; Main
+         source of the data &#10101; </span>
+      </li>
+      <li>
+         Expiry Date: <span class="text-light  fst-italic fw-bold"> &#10100; Determines the validity
+         period &#10101;</span>
+      </li>
+      <li>
+         Department:<span class="fst-italic text-light fw-bold"> &#10100; Inform department name &#10101; </span>
+      </li>
+      <li>
+         Notes: <span class=" fst-italic text-light fw-bold "> &#10100; Additional notes describing
+         data &#10101;</span>
+      </li>
+   </ul>
+  </div>
+  <div class="col-12 col-sm-auto d-flex align-items-center justify-content-end order-1  order-sm-2">
+    <button mat-button class="icon-button " matTooltip="Add/Update Data"  (click)="editMetadataRepositoryDialog()">
+      <mat-icon aria-hidden="false">note_add</mat-icon>
+   </button>
+  </div>
+</div>
+
+                
+               
+              </div>
+           </mat-expansion-panel>
+           <mat-expansion-panel class="position-relative">
+              <mat-expansion-panel-header class="has-actions">
+                 <mat-panel-title>
+                    <div class="row w-100">
+                       <div class="col text-truncate has-badge active-row">
+                          <span class="action-padding text-truncate text-link"
+                             [routerLink]="['../metadata-template-details']">Financial Data</span>
+                             <div class="d-none d-md-inline-block">
+                             <span class="ms-4 me-3">
+                             <mat-icon class="off" aria-hidden="false" matTooltip="Private" class="align-middle off">
+                                visibility_off
+                             </mat-icon>
+                          </span>
+                          <span class="secondary-badge me-3">In Use</span>
+                          <span class="secondary-badge me-3">Content</span>
+                       </div>
+                       </div>
+                    </div>
+                    <div>
+                    </div>
+                 </mat-panel-title>
+              </mat-expansion-panel-header>
+              <div class="expansion-body">
+               <ul class="nav">
+                  <li class="nav-item">
+                     <button mat-button class="icon-button " matTooltip="Remove">
+                        <mat-icon aria-hidden="false">do_not_disturb_on</mat-icon>
+                     </button>
+                  </li>
+               </ul>
+               <div class="pb-2 mb-3 d-block d-md-none">
+                  <span class="me-3">
+                     <mat-icon class="off" aria-hidden="false" matTooltip="Private" class="align-middle off">
+                        visibility_off
+                     </mat-icon>
+                  </span>
+                  <span class="secondary-badge me-3">In Use</span>
+                  <span class="secondary-badge me-3">Content</span>
+                 </div>
+                 <div class="border-bottom pb-2 mb-2">Additional finance related data
+                 </div>
+                 <div class="row">
+                  <div class="col-12 col-sm order-2 order-sm-1">
+                    <ul class="list">
+                      <li>
+                         Source: <span class="text-danger"> * </span> <span class=" text-light fw-bold fst-italic"> &#10100; Main
+                         source of the data &#10101; </span>
+                      </li>
+                      <li>
+                         Expiry Date: <span class="text-light  fst-italic fw-bold"> &#10100; Determines the validity
+                         period &#10101;</span>
+                      </li>
+                      <li>
+                         Department:<span class="fst-italic text-light fw-bold"> &#10100; Inform department name &#10101; </span>
+                      </li>
+                      <li>
+                         Notes: <span class=" fst-italic text-light fw-bold "> &#10100; Additional notes describing
+                         data &#10101;</span>
+                      </li>
+                   </ul>
+                  </div>
+                  <!--Dev Reference Edit not required when category set as content-->
+                  <!-- <div class="col-12 col-sm-auto d-flex align-items-center justify-content-end order-1  order-sm-2">
+                    <button mat-button class="icon-button " matTooltip="Edit"  (click)="editMetadataRepositoryDialog()">
+                      <mat-icon aria-hidden="false">create</mat-icon>
+                   </button>
+                  </div> -->
+                </div>
+              </div>
+           </mat-expansion-panel>
+        </mat-accordion>
+     </div>
+     <div class="gap-2 mt-3 d-md-flex justify-content-md-end">
+        <button mat-button class="secondary-button" (click)="openAssociateTemplateDialog()">Associate Template</button>
+        <button mat-button class="primary-button ms-3" [routerLink]="['../new-metadata-template']">Create New
+        Template</button>
+     </div>
+  </div>
+</div>

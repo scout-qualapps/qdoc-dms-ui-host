@@ -1,0 +1,151 @@
+<nav style="--bs-breadcrumb-divider: '';" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item active" aria-current="page">Settings </li>
+    </ol>
+</nav>
+<div class="title-block">
+    <div class="main-icon">
+        <mat-icon class="align-middle">settings</mat-icon>
+    </div>
+    <div class="flex-grow-1">
+        <div class="title ">
+            Settings
+        </div>
+        <div class="title-info">
+            Customize your application
+        </div>
+    </div>
+    
+
+</div>
+<div class="content-wrapper">
+
+    <div class="row ">
+        <div class="col-md-12">
+
+            <div class="card ">
+                <div class="card-header bg-transparent">
+                    <div class="fw-bold p-2 ps-3"> Theme Customization </div>
+                </div>
+
+                <div class="card-body">
+                    <div class="row ps-3">
+                      
+
+                        <div class="col-md-6 col-lg-12 order-2 order-md-1 ps-0">
+                          
+
+                            <div class="app-input-group mt-4">
+                                <label>Color Theme </label>
+
+                                <div class="custom-radios">
+                                    <div>
+                                        <input type="radio" id="color-3" name="color" value="color-3" checked>
+                                        <label for="color-3" matTooltip=" Orange">
+                                            <span>
+                                                <mat-icon aria-hidden="false">check</mat-icon>
+                                            </span>
+                                        </label>
+                                    </div>
+
+
+                                    <div>
+                                        <input type="radio" id="color-2" name="color" value="color-2">
+                                        <label for="color-2" matTooltip="Green">
+                                            <span>
+                                                <mat-icon aria-hidden="false">check</mat-icon>
+                                            </span>
+                                        </label>
+                                    </div>
+
+                                    <div>
+                                        <input type="radio" id="color-1" name="color" value="color-1">
+                                        <label for="color-1" matTooltip=" Blue Ocean">
+                                            <span>
+                                                <mat-icon aria-hidden="false">check</mat-icon>
+                                            </span>
+                                        </label>
+                                    </div>
+
+                                    <div>
+                                        <input type="radio" id="color-4" name="color" value="color-4">
+                                        <label for="color-4" matTooltip=" Red ">
+                                            <span>
+                                                <mat-icon aria-hidden="false">check</mat-icon>
+                                            </span>
+                                        </label>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="card  mt-4 mb-4 ">
+                <div class="card-header bg-transparent">
+                    <div class="fw-bold p-2 ps-3"> Application Configuration </div>
+                </div>
+                <div class="card-body">
+                    <div class="row ps-3">
+                        <div class="col-md-9  col-lg-6 ps-0">
+                            <div class="app-input-group mt-2">
+                                <label> Recycle Bin Period </label>
+                                <label class="sub-label-sub mb-2">Duration in days after which data will be
+                                    permanently
+                                    deleted from Recycle Bin </label>
+                                <mat-form-field class="app-input-element " appearance="fill" floatLabel="never">
+                                    <input matInput placeholder="Recycle Bin Period ">
+                                </mat-form-field>
+                                
+                            </div>
+
+                            <div class="app-input-group mt-4">
+                                <label class="mb-0"> User Login Method</label>
+                            
+                                <div class="mt-1">
+                                    <mat-radio-group aria-label="Select an option">
+                                        <mat-radio-button value="1">
+                                            Single Sign-on
+                                        </mat-radio-button>
+                                        <mat-radio-button class="ms-4" value="2">
+                                            Custom Database </mat-radio-button>
+                                    </mat-radio-group>
+                                  
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+
+
+    </div>
+    <div class="row mt-2">
+        <div class="col-md-12">
+            <div class="border-top">
+                <div class="gap-2 xs-btn-group-g-2 py-3 d-md-flex justify-content-md-end">
+                    <button mat-button class=" primary-button "> Apply </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>

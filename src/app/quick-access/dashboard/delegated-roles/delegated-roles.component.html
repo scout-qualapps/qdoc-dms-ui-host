@@ -1,0 +1,38 @@
+
+    <div class="card-header row">
+       <div class="col">
+          <h2 class="card-title">Delegated Roles</h2>
+          <h4 class="card-subtitle"> Additional responsibilities assigned to you</h4>
+       </div>
+       <div class="col-auto">
+          <a href="javascript:void(0)">View All</a>
+       </div>
+    </div>
+    <div class="card-body">
+       <div class="table-responsive remove-last-border">
+           <table mat-table [dataSource]="dataSource" matSort (matSortChange)="delrolDocSortChange($event)"
+               class="mat-table ellipsis mat-table-bg-header">
+               <ng-container matColumnDef="role">
+                   <th mat-header-cell style="width: 30%; min-width: 150px;"  *matHeaderCellDef mat-sort-header
+                       sortActionDescription="Sort By role"> Role </th>
+                   <td mat-cell *matCellDef="let element"> <a href="javascript:void(0)">{{element.role}}</a> </td>
+               </ng-container>
+   
+               <ng-container  matColumnDef="startdate">
+                   <th mat-header-cell style="width: 38%; min-width: 120px;"  *matHeaderCellDef mat-sort-header sortActionDescription="Sort By Start Date">Start Date
+                   </th>
+                   <td mat-cell *matCellDef="let element"> {{element.startdate}} </td>
+               </ng-container>
+   
+               <ng-container matColumnDef="enddate"  >
+                   <th mat-header-cell style="width: 32%; min-width: 120px;" *matHeaderCellDef mat-sort-header sortActionDescription="Sort By End Date">
+                      End Date </th>
+                   <td mat-cell *matCellDef="let element"> {{element.enddate}} </td>
+               </ng-container>
+   
+               <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+               <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+           </table>
+       </div>
+    </div>
+ 

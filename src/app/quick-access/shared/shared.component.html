@@ -1,0 +1,139 @@
+<nav style="--bs-breadcrumb-divider: '';" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item active" aria-current="page">Shared</li>
+    </ol>
+</nav>
+<div class="title-block">
+    <div class="main-icon">
+        <mat-icon class="align-middle">share</mat-icon>
+    </div>
+    <div class="flex-grow-1">
+        <div class="title ">
+            Shared Files and Folders
+        </div>
+        <div class="title-info">
+            <span class="">Shared Files/Folder </span>
+        </div>
+    </div>
+
+</div>
+<div class="content-wrapper">
+
+
+    <div class="row">
+        <div class="col-12">
+
+            <mat-tab-group animationDuration="0ms">
+                <mat-tab class="row" label="Shared With Others">
+
+
+                    <div class="filter_controls mx-0 mt-3 row">
+                       
+
+                        <ul class="nav col-md-12 mb-3 justify-content-end">
+                            <li class="b-select-dropdown " *ngIf="!isListView">
+                                <span class="label d-none d-sm-block pe-2"> Sort By</span>
+                                <mat-form-field class="app-input-element b-select w-120 pe-2 " appearance="fill"
+                                    floatLabel="never">
+                                    <mat-select>
+                                        <mat-option *ngFor="let value of sortvalue" [value]="value.value">
+                                            {{value.viewValue}}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </li>
+                            <li class="nav-item  no-hover d-none">
+                                <button mat-button class="icon-button  no-hover" matTooltip="">
+                                    <mat-icon>arrow_downward </mat-icon>
+                                </button>
+                            </li>
+                            <li class="nav-item no-hover">
+                                <button mat-button (click)="openConfigureColumnsDialog()" class="icon-button  no-hover"
+                                    matTooltip="Column Settings">
+                                    <mat-icon>settings_suggest</mat-icon>
+                                </button>
+                            </li>
+                            <li class="nav-item  no-hover">
+                                <div class="nav-link icon divider no-hover">
+                                    <span>
+                                        |
+                                    </span>
+                                </div>
+                            </li>
+                            <li class="nav-item" [ngClass]="isListView? 'active':''">
+                                <button mat-button class="icon-button" matTooltip="List View"
+                                    (click)="isListView=!isListView">
+                                    <mat-icon>menu</mat-icon>
+                                </button>
+                            </li>
+                            <li class="nav-item" [ngClass]="!isListView? 'active':''">
+                                <button mat-button class="icon-button " matTooltip="Grid View"
+                                    (click)="isListView=!isListView">
+                                    <mat-icon aria-hidden="false">grid_view</mat-icon>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <app-shared-list-view *ngIf="isListView"></app-shared-list-view>
+                    <app-shared-card-view *ngIf="!isListView"></app-shared-card-view>
+                </mat-tab>
+                <mat-tab label="Shared With Me">
+                    <div class="filter_controls mx-0  mt-3 row">
+                     
+                        <ul class="nav col-md-12 mb-3 justify-content-end">
+                            <li class="b-select-dropdown " *ngIf="!isListView2">
+                                <span class="label d-none d-sm-block pe-2"> Sort By</span>
+                                <mat-form-field class="app-input-element b-select w-120 pe-2 " appearance="fill"
+                                    floatLabel="never">
+                                    <mat-select>
+                                        <mat-option *ngFor="let value of sortvalue" [value]="value.value">
+                                            {{value.viewValue}}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </li>
+                            <li class="nav-item  no-hover d-none">
+                                <button mat-button class="icon-button  no-hover" matTooltip="">
+                                    <mat-icon>arrow_downward </mat-icon>
+                                </button>
+                            </li>
+                            <li class="nav-item no-hover">
+                                <button (click)="openConfigureColumnsDialog()" mat-button class="icon-button  no-hover"
+                                    matTooltip="Column Settings">
+                                    <mat-icon>settings_suggest</mat-icon>
+                                </button>
+                            </li>
+                            <li class="nav-item  no-hover">
+                                <div class="nav-link icon divider no-hover">
+                                    <span>
+                                        |
+                                    </span>
+                                </div>
+                            </li>
+                            <li class="nav-item" [ngClass]="isListView2? 'active':''">
+                                <button mat-button class="icon-button" matTooltip="List View"
+                                    (click)="isListView2=!isListView2">
+                                    <mat-icon>menu</mat-icon>
+                                </button>
+                            </li>
+                            <li class="nav-item" [ngClass]="!isListView2? 'active':''">
+                                <button mat-button class="icon-button " matTooltip="Grid View"
+                                    (click)="isListView2=!isListView2">
+                                    <mat-icon aria-hidden="false">grid_view</mat-icon>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                    <app-shared-list-view-with-me *ngIf="isListView2"></app-shared-list-view-with-me>
+                    <app-shared-card-view-with-me *ngIf="!isListView2"></app-shared-card-view-with-me>
+                </mat-tab>
+
+
+            </mat-tab-group>
+
+
+        </div>
+    </div>
+
+</div>

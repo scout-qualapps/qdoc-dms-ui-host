@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="21" height="21.167" viewBox="0 0 21 21.167">
+  <g id="Group_499" data-name="Group 499" transform="translate(-159.25 -792)">
+    <g id="Group_10618" data-name="Group 10618">
+      <g id="Rectangle_1193" data-name="Rectangle 1193" transform="translate(161.516 792)" fill="#fff" stroke="#535353" stroke-width="1">
+        <rect width="17.484" height="14.666" rx="2" stroke="none"/>
+        <rect x="0.5" y="0.5" width="16.484" height="13.666" rx="1.5" fill="none"/>
+      </g>
+      <g id="Rectangle_1192" data-name="Rectangle 1192" transform="translate(161 795)" fill="#fff" stroke="#535353" stroke-width="1">
+        <rect width="14.5" height="14.667" rx="2" stroke="none"/>
+        <rect x="0.5" y="0.5" width="13.5" height="13.667" rx="1.5" fill="none"/>
+      </g>
+      <path id="Icon_feather-folder" data-name="Icon feather-folder" d="M3,15.947c0,.79.9,1.431,2,1.431H21c1.1,0,2-.641,2-1.431V5.931c0-.79-.9-1.431-2-1.431H16L14,6.646H5c-1.1,0-2,.641-2,1.431Z" transform="translate(156.75 795.289)" fill="#535353" stroke="#535353" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <path id="Path_9350" data-name="Path 9350" d="M0,0H5" transform="translate(173 806.666)" fill="none" stroke="#fff" stroke-width="1"/>
+      <line id="Line_25" data-name="Line 25" x2="5" transform="translate(166.125 798.666)" fill="none" stroke="#707070" stroke-width="1"/>
+    </g>
+    <path id="Icon_ionic-ios-settings" data-name="Icon ionic-ios-settings" d="M12.778,9.012a1.161,1.161,0,0,1,.745-1.083,4.6,4.6,0,0,0-.557-1.342,1.177,1.177,0,0,1-.472.1,1.159,1.159,0,0,1-1.06-1.631A4.588,4.588,0,0,0,10.095,4.5a1.16,1.16,0,0,1-2.167,0,4.6,4.6,0,0,0-1.342.557,1.159,1.159,0,0,1-1.06,1.631,1.138,1.138,0,0,1-.472-.1A4.7,4.7,0,0,0,4.5,7.931a1.161,1.161,0,0,1,0,2.167,4.6,4.6,0,0,0,.557,1.342,1.159,1.159,0,0,1,1.53,1.53,4.629,4.629,0,0,0,1.342.557,1.158,1.158,0,0,1,2.162,0,4.6,4.6,0,0,0,1.342-.557,1.16,1.16,0,0,1,1.53-1.53,4.629,4.629,0,0,0,.557-1.342A1.167,1.167,0,0,1,12.778,9.012ZM9.033,10.889a1.88,1.88,0,1,1,1.88-1.88A1.879,1.879,0,0,1,9.033,10.889Z" transform="translate(157.567 798.492)" fill="#fff"/>
+  </g>
+</svg>

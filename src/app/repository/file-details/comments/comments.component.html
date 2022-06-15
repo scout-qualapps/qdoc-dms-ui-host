@@ -1,0 +1,64 @@
+<div class="card comments-card">
+  <div class="card-header bg-transparent">
+    <div class="row">
+      <div class="col-md-3 fw-bold ps-4 align-self-center">
+        Comments
+      </div>
+      <div class="col-md-5 col-lg-6 app-input-group coments-text-panel mb-0 col-12">
+        <mat-form-field class="app-input-element b-input" appearance="fill">
+          <input matInput placeholder=" Comments" type="text" class="">
+     </mat-form-field>
+      </div>
+      <div class="col-md-3 col-5">
+        <button mat-button  class="secondary-button me-md-2">Add Comment</button>
+      </div>
+    </div>
+  </div>
+  <div class="card-body py-0">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item position-relative d-flex justify-content-between align-items-start" [ngClass]="isEditClicked?'edit-comment-list-section':''">
+        <div class="user-pic-short">
+          SP
+        </div>
+        <div class="ms-3 me-auto commented-text w-100">
+          <div> <span class="fw-bold">You </span> commented </div>
+          <div class="view-comment">Content for list item </div>
+          <div class="d-flex  edit-comment d-none">
+            <mat-form-field class="app-input-element" appearance="fill" floatLabel="never" >
+              <input matInput placeholder="Comments"  value="Content for list item">
+           </mat-form-field>
+           <button mat-button class="icon-button ms-1" matTooltip="Save" (click)="isEditClicked=!isEditClicked">
+            <mat-icon aria-hidden="false">check_circle</mat-icon>
+          </button>
+           <button mat-button class="icon-button " matTooltip="Cancel"  (click)="isEditClicked=!isEditClicked">
+            <mat-icon aria-hidden="false">cancel</mat-icon>
+          </button>
+          </div>
+          <div class="date"> Just now </div>
+
+        </div>
+        <div class="icon pe-0 commented-action">
+          <button mat-button class="icon-button" matTooltip="Edit" (click)="isEditClicked=!isEditClicked">
+            <mat-icon aria-hidden="false">edit</mat-icon>
+          </button>
+          <button mat-button class="icon-button" matTooltip="Delete">
+            <mat-icon aria-hidden="false">delete</mat-icon>
+          </button>
+        </div>
+
+      </li>
+      <li class="list-group-item position-relative d-flex justify-content-between align-items-start">
+        <div class="user-pic-short">
+          AU
+        </div>
+        <div class="ms-3 me-auto commented-text w-100">
+          <div> <span class="fw-bold">Agasthya, Udupi </span> commented </div>
+          <div>Content for list item </div>
+          <div class="date"> 12/03/2021 11:50 AM </div>
+
+        </div>
+       
+      </li>
+    </ul>
+  </div>
+</div>

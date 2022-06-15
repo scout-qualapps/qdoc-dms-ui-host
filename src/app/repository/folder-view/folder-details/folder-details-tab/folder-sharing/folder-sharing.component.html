@@ -1,0 +1,47 @@
+<div class="card-body">
+    <div class="table-responsive row-select-cursor">
+        <table mat-table [dataSource]="dataSource"  matSort (matSortChange)="announceSortChange($event)"
+            class="mat-table ellipsis  mat-table-bg-header">
+            <ng-container matColumnDef="checkbox">
+                <th style="width:60px" class="text-center" mat-header-cell *matHeaderCellDef>
+                    <mat-checkbox class="b-checkbox" (change)="$event ? masterToggle() : null"
+                        [checked]="selection.hasValue() && isAllSelected()"
+                        [indeterminate]="selection.hasValue() && !isAllSelected()"></mat-checkbox>
+                </th>
+                <td mat-cell class="text-center" *matCellDef="let element">
+                    <mat-checkbox class="b-checkbox" (click)="$event.stopPropagation()"
+                        (change)="$event ? selection.toggle(element) : null" [checked]="selection.isSelected(element)">
+                    </mat-checkbox>
+                </td>
+            </ng-container>
+
+
+            <ng-container matColumnDef="name">
+                <th mat-header-cell mat-sort-header style="min-width: 150px;"  sortActionDescription="Sort by name"
+                    *matHeaderCellDef> User Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="effectivefrom">
+                <th style="width: 30%; min-width: 150px;"  mat-header-cell mat-sort-header sortActionDescription="Sort by effectivefrom" *matHeaderCellDef>
+                    Effective From </th>
+                <td mat-cell *matCellDef="let element"> {{element.effectivefrom}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="effectiveto">
+                <th style="width: 30%; min-width: 150px;"  mat-header-cell mat-sort-header sortActionDescription="Sort by effectiveto" *matHeaderCellDef>
+                    Effective To </th>
+                <td mat-cell *matCellDef="let element"> {{element.effectiveto}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selection.toggle(row)"></tr>
+        </table>
+
+    </div>
+    <div class=" gap-2 xs-btn-group-g-2  mt-3 d-md-flex justify-content-md-end">
+        <button mat-button class="secondary-button me-3 me-md-2">Remove Share</button>
+        <button mat-button (click)="openShareDialog()" class=" me-md-2  me-3 secondary-button ">Edit Share </button>
+        <button mat-button (click)="openShareDialog()" class=" me-md-2 primary-button me-3 ">New Share </button>
+    </div>
+</div>

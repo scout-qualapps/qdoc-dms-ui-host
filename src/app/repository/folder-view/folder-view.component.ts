@@ -1,0 +1,53 @@
+
+import { Component, OnInit } from '@angular/core';
+import {MatDialog} from '@angular/material/dialog';
+import { MoveCopyModalComponent } from 'src/app/shared/move-copy-modal/move-copy-modal.component';
+import { ShareModalComponent } from 'src/app/shared/share-modal/share-modal.component';
+import { ConfigureColumnsModalComponent } from 'src/app/shared/configure-columns-modal/configure-columns-modal.component';
+interface value {
+  value: string;
+  viewValue: string;
+}
+@Component({
+  selector: 'app-folder-view',
+  templateUrl: './folder-view.component.html',
+  styleUrls: ['./folder-view.component.scss']
+})
+export class FolderViewComponent implements OnInit {
+  isListView:boolean = true;
+
+  sortvalue: value[] = [
+    {value: 'name', viewValue: 'Name'},
+    {value: 'last-modified', viewValue: 'Last Modified'},
+    {value: 'repository', viewValue: 'Repository'},
+    {value: 'folder', viewValue: 'Folder'},
+  ];
+ 
+  constructor(public dialog: MatDialog) {}
+  isFavorite: boolean = true;
+  openConfigureColumnsDialog() {
+    const dialogRef = this.dialog.open(ConfigureColumnsModalComponent, {panelClass: 'drag-list-dialog'});
+    dialogRef.afterClosed().subscribe(result => {
+    });
+  }
+
+  openMoveCopyDialog() {
+    const dialogRef = this.dialog.open(MoveCopyModalComponent, {panelClass: 'custon-width-md'});
+    dialogRef.afterClosed().subscribe(result => {  
+    });
+  }
+  openShareDialog() {
+    const dialogRef = this.dialog.open(ShareModalComponent, {panelClass: 'custon-width-md'});
+    dialogRef.afterClosed().subscribe(result => {
+    });
+  }
+
+  favorite() {
+    this.isFavorite = this.isFavorite ? false : true;
+  }
+
+  ngOnInit(): void {
+    window.scroll(0, 0);
+  }
+
+}

@@ -1,0 +1,36 @@
+<nav style="--bs-breadcrumb-divider: '';" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+       <li class="breadcrumb-item active" aria-current="page">Dashboard </li>
+    </ol>
+ </nav>
+ <div class="title-block">
+    <div class="main-icon"><img src="assets/images/nav_icons/icon-dashboard.svg"></div>
+    <div class="flex-grow-1">
+       <div class="title">
+          Dashboard
+       </div>
+       <div class="title-info">
+          Quick snapshot of key data
+       </div>
+    </div>
+ </div>
+ <div class="content-wrapper app-cards">
+    <div class="row g-4 row-cols-1 row-cols-md-2">
+       <div class="col">
+          <div class="card h-100">
+          <app-shared-documents style="display: block;"></app-shared-documents>
+         </div>
+       </div>
+       <div class="col">
+         <div class="card h-100">
+         <app-delegated-roles style="display: block;"></app-delegated-roles>
+         </div>
+       </div>
+       <div class="col">
+         <div class="card h-100">
+         <app-new-repositories></app-new-repositories>
+         </div>
+       </div>
+    </div>
+ </div>
+

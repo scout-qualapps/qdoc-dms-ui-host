@@ -1,0 +1,156 @@
+<nav style="--bs-breadcrumb-divider: '';" aria-label="breadcrumb">
+   <ol class="breadcrumb">
+      <li class="breadcrumb-item flex-hide-sm active" aria-current="page">Messages</li>
+   </ol>
+</nav>
+<div class="title-block">
+   <div class="main-icon">
+      <mat-icon class="main-icon-font">fact_check</mat-icon>
+   </div>
+   <div class="flex-grow-1">
+      <div class="title">
+         Messages
+      </div>
+      <div class="title-info">
+         Examples of all messages for dev reference
+      </div>
+   </div>
+</div>
+<div class="content-wrapper">
+   <div class="mb-4">
+      <button mat-button class="secondary-button" (click)="showSuccess()">Success Toaster</button>
+      <button mat-button class="secondary-button ms-3" (click)="showError()">Error Toaster</button>
+      <button mat-button class="secondary-button ms-3" (click)="showWarning()">Warning Toaster</button>
+   </div>
+   <div class="mb-4">
+      <button mat-button class="secondary-button" (click)="openConfirmationDialog()">Confirmation Dialog</button>
+      <button mat-button class="secondary-button ms-3" (click)="openAlertDialog()">Alert Dialog</button>
+      <a mat-button class="secondary-button ms-3" [routerLink]="['../../page-not-found']" target="_blank">Page Not Found</a>
+
+   </div>
+
+   <div class="row">
+      <div class="col-md-9 col-lg-6">
+         <div class="alert alert-primary d-flex align-items-center" role="alert">
+            <mat-icon class="">info</mat-icon>
+            <div>
+               <strong class="me-1"> Information!</strong> An example alert with an icon
+            </div>
+         </div>
+         <div class="alert alert-success d-flex align-items-center" role="alert">
+            <mat-icon class="">check_circle</mat-icon>
+            <div>
+               <strong class="me-1"> Success!</strong> An example success alert with an icon
+            </div>
+         </div>
+         <div class="alert alert-warning d-flex align-items-center" role="alert">
+            <mat-icon class="">error</mat-icon>
+            <div>
+               <strong class="me-1">Warning!</strong> An example warning alert with an icon
+            </div>
+         </div>
+         <div class="alert alert-danger d-flex align-items-center" role="alert">
+            <mat-icon class="alert-text ">cancel</mat-icon>
+            <div>
+               <strong class="me-1">Error!</strong> An example danger alert with an icon
+            </div>
+
+         </div>
+         <form>
+            <div class="app-input-group">
+               <label>Folder Name <span class="text-danger">*</span> </label>
+               <mat-form-field class="app-input-element mat-form-field-invalid" appearance="fill" floatLabel="never">
+                  <input matInput placeholder="Folder Name">
+               </mat-form-field>
+               <mat-error>
+                  Please enter a folder name
+               </mat-error>
+            </div>
+
+            <div class="app-input-group">
+               <label> File Type <span class="text-danger"> * </span></label>
+
+               <mat-form-field class="app-input-element mat-form-field-invalid" appearance="fill" floatLabel="never">
+                  <mat-select placeholder="File Type" class="select-color" [formControl]="fileType">
+                     <mat-select-trigger>
+                        <div class="d-flex">
+                           <img class="grid-file-img icon me-2" src="{{fileType.value}}" />
+                           <span>{{getFileTypeName(fileType.value)}}</span>
+                        </div>
+                     </mat-select-trigger>
+                     <mat-option *ngFor="let value of fileTypeValue" [value]="value.value">
+                        <img class="grid-file-img icon me-3" src="{{value.value}}" />
+                        {{value.viewValue}}
+                     </mat-option>
+                  </mat-select>
+               </mat-form-field>
+               <mat-error>
+                  Please select a valid file type
+               </mat-error>
+            </div>
+            <div class="app-input-group">
+               <label>Choose or drag file(s) to upload <span class="text-danger"> * </span></label>
+               <div draggable="true" ngClass="{{dragAreaClass}} mat-form-field-invalid">
+                  <div class="drag-box">
+                     <div class="col-md-12 text-center drag-file">
+                        Drag files here <br />
+                        <div class="my-2"> or</div>
+                        <button mat-button class="btn secondary-button btn-sm mt-1" (click)="file.click()">
+                           Browse
+                        </button>
+                        <input type="file" #file [multiple]="false" (change)="onFileChange($event)"
+                           style="display:none" />
+                        <div class="dragged-files-wrapper" *ngIf="draggedFiles">
+                           <div class="file" *ngFor="let file of draggedFiles">
+                              {{file}}
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <mat-error class="error">
+                  Please upload a file
+               </mat-error>
+            </div>
+            <div class="app-input-group mb-4">
+               <label>Description</label>
+               <mat-form-field class="app-input-element mat-form-field-invalid text-area" appearance="fill"
+                  floatLabel="never">
+                  <textarea matInput placeholder="Enter description"></textarea>
+                  <mat-hint align="end">1 / 100 characters</mat-hint>
+               </mat-form-field>
+               <mat-error>
+                  Please enter a description
+               </mat-error>
+            </div>
+
+            <div class="app-input-group">
+               <label>Repository Admin <span class="text-danger">*</span> </label>
+
+               <mat-form-field class="app-chip-list mat-form-field-invalid app-input-element" appearance="fill">
+
+                  <mat-chip-list #chipList aria-label="AdminUserName selection">
+                     <mat-chip *ngFor="let AdminUserName of AdminUser" (removed)="remove(AdminUserName)">
+                        {{AdminUserName}}
+                        <button matChipRemove>
+                           <mat-icon>cancel</mat-icon>
+                        </button>
+                     </mat-chip>
+                     <input placeholder="Select Repository Admin" #AdminUserInput [formControl]="AdminUserCtrl"
+                        [matAutocomplete]="auto" [matChipInputFor]="chipList"
+                        [matChipInputSeparatorKeyCodes]="separatorKeysCodes" (matChipInputTokenEnd)="add($event)">
+                  </mat-chip-list>
+                  <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+                     <mat-option *ngFor="let AdminUserName of filteredAdminUser | async" [value]="AdminUserName">
+                        {{AdminUserName}}
+                     </mat-option>
+                  </mat-autocomplete>
+               </mat-form-field>
+               <mat-error>
+                  Please select/enter a repository admin admin
+               </mat-error>
+               <label class="sub-label  text-end">Enter user name or email address of users to search </label>
+            </div>
+         </form>
+      </div>
+   </div>

@@ -1,0 +1,54 @@
+<h2 mat-dialog-title class="has-close-icon">Configure Display Order of Repositories
+    <button mat-button class="icon-button" matTooltip="Close" mat-dialog-close>
+        <mat-icon>close</mat-icon>
+    </button>
+</h2>
+<mat-dialog-content class="mat-typography min-w-500">
+    <div class="sub-breadcrumb rounded mb-2 ">Move the repositories to change order of display </div>
+
+    
+    <div class="row">
+        <div class="col-12 ">
+            <div class="table-responsive app-draggable-table">
+                <table mat-table #table [dataSource]="dataSource" class="mat-table ellipsis drag-list mat-table-bg-header" cdkDropList
+                  [cdkDropListData]="dataSource" (cdkDropListDropped)="dropTable($event)">
+          
+                  <ng-container matColumnDef="dragicon">
+                    <th mat-header-cell *matHeaderCellDef style="width: 60px"></th>
+                    <td mat-cell *matCellDef="let element">
+                      <mat-icon cdkDragHandl class="drag-icon">drag_indicator</mat-icon>
+                    </td>
+                  </ng-container>
+          
+                  <ng-container matColumnDef="fieldname">
+                    <th mat-header-cell *matHeaderCellDef style="width: 90%; min-width: 150px;"> Type</th>
+                    <td mat-cell class="select-td" *matCellDef="let element" style="width: 100%;">
+                        <div class="px-2 details drag-repository-block">
+                            <h3 >  {{element.reponame}}
+                                <mat-icon class="" matTooltip="Public" *ngIf="element.public">visibility</mat-icon>
+                                <mat-icon class="off" matTooltip="Private" *ngIf="!element.public">visibility_off</mat-icon>
+                        
+                            </h3>
+                            Created by <span class="bold"> Srikanta Prakash </span>  on 12/03/2021 11:50
+                            
+                            
+                        </div>
+                    </td>
+                  </ng-container>
+          
+                  <!-- <tr mat-header-row  *matHeaderRowDef="displayedColumns"></tr> -->
+                  <tr mat-row *matRowDef="let row; columns: displayedColumns;" cdkDrag [cdkDragData]="row"></tr>
+                </table>
+              </div>
+          
+          </div>
+   
+    </div>
+
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    
+    <button mat-button class="secondary-button me-2" mat-dialog-close>Cancel</button>
+    <button mat-button class=" primary-button" [mat-dialog-close]="true" cdkFocusInitial>Apply </button>
+</mat-dialog-actions>

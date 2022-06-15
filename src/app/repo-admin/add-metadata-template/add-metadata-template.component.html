@@ -1,0 +1,92 @@
+<nav style="--bs-breadcrumb-divider: '';" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+       <li class="breadcrumb-item d-block d-sm-none">
+          <a mat-button class="icon-button back-btn" matTooltip="Back" [routerLink]="['../repository']">
+             <mat-icon aria-hidden="false">arrow_back</mat-icon>
+          </a>
+       </li>
+       <li class="breadcrumb-item flex-hide-sm">
+          <a href="#" [routerLink]="['/repo-admin']">Manage Repositories </a>
+          <mat-icon>navigate_next</mat-icon>
+          
+       </li>
+       <li class="breadcrumb-item flex-hide-sm">
+          <a href="#" [routerLink]="['../repository-details']">Repository 1</a>
+          <mat-icon>navigate_next</mat-icon>
+          
+       </li>
+       <li class="breadcrumb-item flex-hide-sm active" aria-current="page">New Metadata Template</li>
+    </ol>
+  </nav>
+  <div class="title-block">
+    <div class="main-icon"><mat-icon>integration_instructions</mat-icon></div>
+    <div class="flex-grow-1">
+       <div class="title">
+        New Metadata Template
+       </div>
+       <div class="title-info">
+         Create a new  metadata template
+       </div>
+    </div>
+  </div>
+  <div class="content-wrapper">
+    <div class="row">
+       <div class="col-md-9 col-lg-6">
+          <form>
+           <div class="mb-4">
+              <span class="text-danger"> * </span> indicates required field
+           </div>
+             <div class="app-input-group">
+                <label>Template Name <span class="text-danger">*</span> </label>
+                <mat-form-field class="app-input-element" appearance="fill" floatLabel="never">
+                   <input matInput placeholder="Template Name">
+                </mat-form-field>
+             </div>
+        
+             <div class="app-input-group mb-4">
+                <label>Description</label>
+                <mat-form-field class="app-input-element  text-area" appearance="fill" floatLabel="never">
+                   <textarea matInput placeholder="Enter description"></textarea>
+                   <mat-hint align="end">1 / 100 characters</mat-hint>
+                </mat-form-field>
+             </div>
+
+             <div class="app-input-group mb-3">
+               <label class="d-block">Type <span class="text-danger">*</span> </label>
+               <mat-radio-group aria-label="Select an option">
+                  <mat-radio-button value="1" checked>Content</mat-radio-button>
+                  <mat-radio-button value="2" class="ms-4">Repository</mat-radio-button>
+                </mat-radio-group>
+            </div>
+            <div class="app-input-group mb-3">
+               <label class="d-block">Category <span class="text-danger">*</span> </label>
+               <mat-radio-group aria-label="Select Category">
+                  <mat-radio-button value="1">
+                     <mat-icon aria-hidden="false" matTooltip="Private" class="align-middle visibility-off">visibility_off</mat-icon>
+                     Private </mat-radio-button>
+                  <mat-radio-button class="ms-4" value="2">  <mat-icon aria-hidden="false" matTooltip="Private" class="align-middle ">visibility</mat-icon> Public </mat-radio-button>
+                </mat-radio-group>
+            </div>
+
+             <div class="app-input-group">
+                 <section class="">
+                    <mat-checkbox class="" [(ngModel)]="Default2">Active</mat-checkbox>
+                  </section>
+                </div>
+
+             <div class="app-input-group">
+                 <section class="">
+                    <mat-checkbox class="" [(ngModel)]="Default">Set as Default</mat-checkbox>
+                  </section>
+                </div>
+           
+             <div class="border-top">
+                <div class="gap-2 py-3 d-flex justify-content-end">
+                    <button mat-button class="secondary-button me-3 me-md-2" [routerLink]="['../repository-details']">Cancel</button>
+                    <button mat-button class="primary-button" [routerLink]="['../metadata-template-details']">Create Template</button>
+                </div>
+             </div>
+          </form>
+       </div>
+    </div>
+  </div>

@@ -1,0 +1,50 @@
+<mat-accordion class="accordion" [togglePosition]="'before'">
+    <mat-expansion-panel class="position-relative" expanded>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Template Properties
+                <div>
+                </div>
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="expansion-body">
+            <button mat-button (click)="openEditTemplateProperties()"  class="icon-button edit-btn" matTooltip="Edit">
+                <mat-icon aria-hidden="false">create</mat-icon>
+              </button>
+            <div class="list">
+                <div class="row">
+                    <div class="col-12 col-sm-4 col-md-3 col-lg-2">Name:</div>
+                    <div class="col bold mt-1 mt-sm-0">Department Data</div>
+                </div>
+                <div class="row mt-15">
+                    <div class="col-12 col-sm-4 col-md-3 col-lg-2">Description:</div>
+                    <div class="col col-lg-7 bold mt-1 mt-sm-0">Captures departmental data</div>
+                </div>
+                <div class="row mt-15">
+                    <div class="col-12 col-sm-4 col-md-3 col-lg-2">Type:</div>
+                    <div class="col col-lg-7 bold mt-1 mt-sm-0">Content</div>
+                </div>
+                <div class="row mt-15">
+                    <div class="col-12 col-sm-4 col-md-3 col-lg-2">Category:</div>
+                    <div class="col col-lg-7 bold mt-1 mt-sm-0">Public</div>
+                </div>
+                <div class="row mt-15">
+                    <div class="col-12 col-sm-4 col-md-3 col-lg-2">Active:</div>
+                    <div class="col col-lg-7 bold mt-1 mt-sm-0">Yes</div>
+                </div>
+                <div class="row mt-15">
+                    <div class="col-12 col-sm-4 col-md-3 col-lg-2">ID:</div>
+                    <div class="col col-lg-7 bold mt-1 mt-sm-0">123459</div>
+                </div>
+                <div class="row mt-15">
+                    <div class="col-12 col-sm-4 col-md-3 col-lg-2">Author:</div>
+                    <div class="col col-lg-7 bold mt-1 mt-sm-0">Jone, Doe</div>
+                </div>
+                <div class="row mt-15">
+                    <div class="col-12 col-sm-4 col-md-3 col-lg-2">Date Created:</div>
+                    <div class="col col-lg-7 bold mt-1 mt-sm-0">01/05/2022 3:30 PM</div>
+                </div>
+            </div>
+        </div>
+    </mat-expansion-panel>
+</mat-accordion>

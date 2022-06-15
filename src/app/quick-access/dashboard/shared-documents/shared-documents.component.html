@@ -1,0 +1,39 @@
+
+    <div class="card-header row">
+       <div class="col">
+          <h2 class="card-title">Shared Documents</h2>
+          <h4 class="card-subtitle"> About to expire soon</h4>
+       </div>
+       <div class="col-auto">
+         
+          <a href="javascript:void(0)"[routerLink]="['../shared']">View All</a>
+       </div>
+    </div>
+    <div class="card-body">
+       <div class="table-responsive remove-last-border">
+           <table mat-table [dataSource]="dataSource"  matSort (matSortChange)="sharedDocSortChange($event)"
+               class="mat-table mat-table-bg-header ellipsis">
+               <ng-container matColumnDef="file">
+                   <th mat-header-cell style="width: 25%; min-width: 150px;"  *matHeaderCellDef mat-sort-header
+                       sortActionDescription="Sort By file"> File </th>
+                   <td mat-cell *matCellDef="let element"><a href="javascript:void(0)" [routerLink]="['/repository/file-details']">{{element.file}}</a> </td>
+               </ng-container>
+   
+               <ng-container  matColumnDef="sharedby">
+                   <th mat-header-cell style="width: 38%; min-width: 150px;"  *matHeaderCellDef mat-sort-header sortActionDescription="Sort By Shared By">Shared By
+                   </th>
+                   <td mat-cell *matCellDef="let element"> {{element.sharedby}} </td>
+               </ng-container>
+   
+               <ng-container matColumnDef="expirydate"  >
+                   <th mat-header-cell style="width: 32%; min-width: 150px;" *matHeaderCellDef mat-sort-header sortActionDescription="Sort By Expiry Date">
+                      Expiry Date </th>
+                   <td mat-cell *matCellDef="let element"> {{element.expirydate}} </td>
+               </ng-container>
+   
+               <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+               <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+           </table>
+       </div>
+    </div>
+ 

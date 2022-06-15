@@ -1,0 +1,68 @@
+<h2 mat-dialog-title class="has-close-icon">
+   New Metadata Field
+   <button mat-button class="icon-button" matTooltip="Close" mat-dialog-close>
+      <mat-icon>close</mat-icon>
+   </button>
+</h2>
+<mat-dialog-content class="mat-typography ">
+   <div class="sub-breadcrumb rounded mb-3">Add new field to metadata template <span class="fw-bold">"Department Data"</span></div>
+   <div class="row">
+      <div class="col-12">
+         <div class="app-input-group row">
+            <label class="col-12 col-sm-4 col-md-3 col-lg-2 field-col-label">Field Name <span class="text-danger"> * </span></label>
+            <div class="col">
+               <mat-form-field class="app-input-element" appearance="fill" floatLabel="never">
+                  <input matInput placeholder="Field Name">
+               </mat-form-field>
+            </div>
+         </div>
+         <div class="app-input-group row mb-4 pb-2">
+            <label class="col-12 col-sm-4 col-md-3 col-lg-2 field-col-label">Description </label>
+            <div class="col">
+               <mat-form-field class="app-input-element" appearance="fill" floatLabel="never">
+                  <textarea matInput placeholder="Enter description"></textarea>
+                  <mat-hint align="end">1 / 100 characters</mat-hint>
+               </mat-form-field>
+            </div>
+         </div>
+         <div class="app-input-group row">
+            <label class="col-12 col-sm-4 col-md-3 col-lg-2 field-col-label">Data Type <span class="text-danger"> * </span></label>
+            <div class="col">
+               <mat-form-field class="app-input-element" appearance="fill" floatLabel="never">
+                  <mat-select class="select-color" [(ngModel)]="selectedValue" placeholder="Data Type">
+                  <mat-option *ngFor="let value of sortvalue" [value]="value.value">
+                  {{value.viewValue}}
+                  </mat-option>
+                  </mat-select>
+               </mat-form-field>
+            </div>
+         </div>
+         <div *ngIf="selectedValue  == 'Lookup'">
+            <div class="app-input-group row">
+               <label class="col-12 col-sm-4 col-md-3 col-lg-2 Lookup-Text field-col-label">Lookup Text <span class="text-danger"> * </span></label>
+               <div class="col">
+                  <mat-form-field class="app-input-element" appearance="fill" floatLabel="never">
+                     <textarea matInput placeholder="Enter Lookup Text"></textarea>
+                  </mat-form-field>
+                  <label class="sub-label text-end">Add multiple lookup text each separated by comma</label>
+               </div>
+            </div>
+         </div>
+         <div class="app-input-group row mt-4">
+            <label class="col-12 col-sm-4 col-md-3 col-lg-2 field-col-label">Set as Mandatory</label>
+            <div class="col">
+               <section class="">
+                  <mat-checkbox></mat-checkbox>
+               </section>
+            </div>
+         </div>
+      </div>
+   </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+   <div class="me-auto  indicates">
+      <span class="text-danger"> * </span> indicates required field
+   </div>
+   <button mat-button class="secondary-button me-2" mat-dialog-close>Cancel</button>
+   <button mat-button class=" primary-button" [mat-dialog-close]="true" cdkFocusInitial>Add Field </button>
+</mat-dialog-actions>

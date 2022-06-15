@@ -1,0 +1,46 @@
+<mat-sidenav-container class="sidenav-container" autosize>
+    <mat-sidenav #sidenav class="sidenav-lists" mode="side" opened="true" (mouseenter)="mouseenter()" (mouseleave)="mouseleave()" autosize>
+    <ng-material-multilevel-menu [items]='appitems' [configuration]='config'>
+    <ng-template #listTemplate let-item="item" let-configuration="configuration">
+       <div class="app-menu-item" [ngClass]="item.class">
+          <div class="title-and-image" [matTooltip]="item.tooltip" matTooltipClass="nav-tooltip" matTooltipPosition="right">
+             <div class="icon-container">
+                <span [ngClass]="getClass(item)" class="icon"></span>
+             </div>
+             <div class="label-container">
+                <span class="label">{{item.label}}</span>
+                <span class="nav-badge">{{item.badge}}</span>
+                <span class="repos-setting-icon"  (click)="openRepositoriesOrderDialog()" >
+                  <mat-icon [ngClass]="item.repoMainclass">{{item.repoMainIcon}}</mat-icon>
+               </span>
+                <span class="repos-icon">
+                   <mat-icon [ngClass]="item.repoclass">{{item.repoIcon}}</mat-icon>
+                </span>
+             </div>
+          </div>
+          <div class="d-flex multimenu-icon-item">
+             <div class="icon-arrow-container" *ngIf='item.hasChilden'>
+                <mat-icon *ngIf="!configuration.rtlLayout" [@ExpandedLTR]="item.expanded ? 'yes' : 'no'">
+                keyboard_arrow_down
+                </mat-icon>
+             </div>
+          </div>
+          
+       </div>
+      </ng-template>
+    </ng-material-multilevel-menu>
+    
+    <div class="d-none d-xl-block menu-toggle-wrapper">
+       <div class="menu-toggle" (click)="closeNavmenu()">
+          <div class="item"  *ngIf="isExpanded || isShowing">
+             <div class="icon-container" [matTooltip]="isMenuClosed?'Expand Menu':'Collapse Menu'">
+                <mat-icon class="icon">keyboard_arrow_left</mat-icon>
+             </div>
+          </div>
+       </div>
+    </div>
+
+<div class="user-login-history login-history-sm responsive-menu">Last login: 03/12/2021 09:00 AM</div>
+
+    </mat-sidenav>
+ </mat-sidenav-container>

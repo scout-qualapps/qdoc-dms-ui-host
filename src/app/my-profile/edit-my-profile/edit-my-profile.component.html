@@ -1,0 +1,71 @@
+<nav style="--bs-breadcrumb-divider: '';" aria-label="breadcrumb">
+   <ol class="breadcrumb">
+      <li class="breadcrumb-item active" aria-current="page">My Profile</li>
+   </ol>
+</nav>
+<div class="title-block">
+   <div class="main-icon">
+      <mat-icon>edit</mat-icon>
+   </div>
+   <div class="flex-grow-1">
+      <div class="title">
+         Update Profile
+      </div>
+      <div class="title-info">
+         Update your profile
+      </div>
+   </div>
+</div>
+<div class="content-wrapper">
+   <div class="px-2">
+<div class="row">
+   <div class="col col-lg-9">
+      <div class="row g-3">
+         <div class="col-md-8 col-lg-8 order-2 order-md-1 pe-md-4">
+            <div class="mb-4 mt-0 mt-md-2">
+               <span class="text-danger"> * </span> indicates required field
+            </div>
+            <form>
+               <div class="app-input-group">
+                  <label>First Name <span class="text-danger">*</span> </label>
+                  <mat-form-field class="app-input-element" appearance="fill" floatLabel="never">
+                     <input matInput placeholder="First Name" value="Srikanta">
+                  </mat-form-field>
+               </div>
+               <div class="app-input-group">
+                  <label>Last Name <span class="text-danger">*</span> </label>
+                  <mat-form-field class="app-input-element" appearance="fill" floatLabel="never">
+                     <input matInput placeholder="Last Name" value="Prakash">
+                  </mat-form-field>
+               </div>
+               <div class="app-input-group">
+                  <label >Email Address</label>
+                  <mat-form-field class="app-input-element" appearance="fill" floatLabel="never">
+                     <input matInput type="email" placeholder="Email Address" value="user@domain.com" disabled>
+                  </mat-form-field>
+               </div>
+
+
+            </form>
+         </div>
+         <div class="col-md-4 col-lg-4 order-1 order-md-2 mb-4 mb-md-0">
+            <div class="d-flex flex-column mt-2 mt-md-4">
+               <div class="mt-md-5 profile-section">
+                  <input type="file" #file [multiple]="false"   (change)="onFileChange($event)" style="display:none" />
+                  <img src="assets/images/user-profile-photo.jpg" matTooltip="Change Profile Picture"   alt="Profile Photo"
+                     class="img-thumbnail profile-picture" (click)="file.click()">
+                  <span class="profile-edit">
+                     <mat-icon>photo_camera</mat-icon>
+                  </span>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="border-top">
+         <div class="gap-2 py-3 d-flex justify-content-end">
+            <button mat-button class=" primary-button ">Update </button>
+         </div>
+      </div>
+   </div>
+   </div>
+   </div>

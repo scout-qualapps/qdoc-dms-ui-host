@@ -1,0 +1,152 @@
+<nav style="--bs-breadcrumb-divider: '';" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item active" aria-current="page">Search</li>
+    </ol>
+</nav>
+<div class="title-block">
+    <div class="main-icon">
+        <mat-icon class="align-middle">search</mat-icon>
+    </div>
+    <div class="flex-grow-1">
+        <div class="title ">
+            Search
+        </div>
+        <div class="title-info">
+            <span class="">Folders, Files, Users </span>
+        </div>
+    </div>
+    <div class="title-nav-block">
+        <ul class="nav justify-content-end">
+
+            <li class="nav-item d-none d-sm-block">
+                <button mat-button class="icon-button" matTooltip="Mark as Favorite">
+                    <mat-icon aria-hidden="false">star_outline</mat-icon>
+                </button>
+            </li>
+            <li class="nav-item d-none d-sm-block">
+                <button mat-button class="icon-button" matTooltip="Share">
+                    <mat-icon aria-hidden="false">share</mat-icon>
+                </button>
+            </li>
+            <li class="nav-item d-none d-sm-block">
+                <button mat-button class="icon-button" matTooltip="Download">
+                    <mat-icon>download</mat-icon>
+                </button>
+            </li>
+            <li class="nav-item d-none d-sm-block">
+                <button mat-button class="icon-button" matTooltip="Delete">
+                    <mat-icon aria-hidden="false">delete</mat-icon>
+                </button>
+            </li>
+            <li class="nav-item">
+                <button mat-button class="icon-button" matTooltip="More" [matMenuTriggerFor]="menu">
+                    <mat-icon>more_vert</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu" class="menu-dropdown general-dropdown" xPosition="before">
+                    <ul class="menu-lists title-nav-list">
+
+                        <li mat-menu-item class=" d-block d-sm-none">
+                            <mat-icon>star_outline</mat-icon>
+                            Favorite
+                        </li>
+                        <li mat-menu-item class=" d-block d-sm-none">
+                            <mat-icon>share</mat-icon>
+                            Share To
+                        </li>
+                        <li mat-menu-item class=" d-block d-sm-none">
+                            <mat-icon>download</mat-icon>
+                            Download
+                        </li>
+                        <li mat-menu-item class=" d-block d-sm-none divider">
+                            <mat-icon>delete</mat-icon>
+                            Delete
+                        </li>
+
+                        <li mat-menu-item mat-menu-item (click)="openMoveCopyDialog()">
+                            <mat-icon>airline_stops</mat-icon>
+                            Move To
+                        </li>
+                        <li mat-menu-item (click)="openMoveCopyDialog()">
+                            <mat-icon>file_copy</mat-icon>
+                            Copy To
+                        </li>
+
+                    </ul>
+                </mat-menu>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="content-wrapper">
+    <div class="row align-items-center search-row">
+        <div class="col-md-2 col-lg-1 fw-bold  label align-self-center">
+            Keyword:
+        </div>
+        <div class="col-lg-4 col-md-5 fw-bold  align-self-center">
+            <div class="app-input-group mb-0">
+                <mat-form-field class="app-input-element" appearance="fill" floatLabel="never">
+                    <input matInput placeholder="Search ">
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="col-md-2 col-lg-1 col-4">
+            <button mat-button class="primary-button me-md-2"> Search</button>
+        </div>
+        <div class="col-lg-2  col-md-3 col-7 flex-center">
+            <a [routerLink]="['./advanced-search']">Advanced Search </a>
+            <mat-icon>expand_more</mat-icon>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="filter_controls row mt-3">
+                <div class="align-self-center mb-3 col-md-6 filter-title">Search Results: <span class="fw-bold dark-text"> Total
+                        (8), Folders (3), Files (5) </span> </div>
+                <ul class="nav col-md-6 mb-3 justify-content-end">
+                    <!--This will be removed after the clint approval -->
+                    <li class="b-select-dropdown " *ngIf="!isListView">
+                        <span class="label d-none d-sm-block pe-2"> Sort By</span>
+                        <mat-form-field class="app-input-element b-select w-120 pe-2 " appearance="fill"
+                            floatLabel="never">
+                            <mat-select>
+                                <mat-option *ngFor="let value of sortvalue" [value]="value.value">
+                                    {{value.viewValue}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </li>
+                    <li class="nav-item  no-hover d-none">
+                        <button mat-button class="icon-button  no-hover" matTooltip="">
+                            <mat-icon>arrow_downward </mat-icon>
+                        </button>
+                    </li>
+                    <li class="nav-item no-hover">
+                        <button mat-button (click)="openConfigureColumnsDialog()" class="icon-button  no-hover" matTooltip="Column Settings">
+                            <mat-icon>settings_suggest</mat-icon>
+                        </button>
+                    </li>
+                    <li class="nav-item  no-hover">
+                        <div class="nav-link icon divider no-hover">
+                            <span>
+                                |
+                            </span>
+                        </div>
+                    </li>
+                    <li class="nav-item" [ngClass]="isListView? 'active':''">
+                        <button mat-button class="icon-button" matTooltip="List View" (click)="isListView=!isListView">
+                            <mat-icon>menu</mat-icon>
+                        </button>
+                    </li>
+                    <li class="nav-item" [ngClass]="!isListView? 'active':''">
+                        <button mat-button class="icon-button " matTooltip="Grid View" (click)="isListView=!isListView">
+                            <mat-icon aria-hidden="false">grid_view</mat-icon>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            <app-search-list-view *ngIf="isListView"></app-search-list-view>
+            <app-search-card-view *ngIf="!isListView"></app-search-card-view>
+        </div>
+    </div>
+</div>

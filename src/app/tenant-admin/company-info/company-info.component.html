@@ -1,0 +1,251 @@
+<nav style="--bs-breadcrumb-divider: '';" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item active" aria-current="page">Company Information</li>
+    </ol>
+</nav>
+<div class="title-block">
+    <div class="main-icon">
+        <mat-icon class="align-middle">apartment</mat-icon>
+    </div>
+    <div class="flex-grow-1">
+        <div class="title ">
+            Company Information
+        </div>
+        <div class="title-info">
+            Company and contact information
+        </div>
+    </div>
+
+
+
+</div>
+<div class="content-wrapper">
+    <div class="row">
+        <div class="col-md-12 ">
+            <div class="card accordion">
+                <div class="card-header bg-transparent position-relative">
+                    <div class="fw-bold p-2 ps-3">
+                        Company Details
+                    </div>
+                    <button mat-button class="icon-button right-btn" (click)="openEditCompanyDetailsDialog()"
+                        matTooltip="Edit">
+                        <mat-icon aria-hidden="false">create</mat-icon>
+                    </button>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6 order-2  order-md-1 border-end-0-mobile  border-end">
+                            <div class="list">
+                                <div class="row">
+                                    <div class="col-12 col-sm-5 col-md-5 pe-0 col-lg-4">Company Name:</div>
+                                    <div class="col bold mt-1 mt-sm-0">QualApps </div>
+                                </div>
+                                <div class="row mt-15">
+                                    <div class="col-12 col-sm-5 col-md-5 pe-0 col-lg-4">Company&nbsp;Address&nbsp;:</div>
+                                    <div class="col bold mt-1 mt-sm-0">2701 Del Paso Road #394<br /> Sacramento, CA 95835</div>
+                                </div>
+        
+                            </div>
+                        </div>
+                        <div class="col-md-6 order-1 ps-md-4 mb-3  pb-3 mb-md-0 mb-md-0 border-bottom-mobile  order-md-2">
+                            <div class="app-input-group company-logo">
+                                <label>Logo: </label>
+                                <div class="d-sm-flex logo-setting-block align-items-center">
+                                    <div class="img-box mb-3 mb-sm-0 me-3">
+                                        <div class=" logo-section">
+                                           
+                                            <img src="assets/images/logo/logo.png" matTooltip="Logo"
+                                                alt="Profile Photo" class="img-thumbnail profile-picture"
+                                                >
+
+                                        </div>
+                                    </div>
+                                  
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                  
+                </div>
+            </div>
+
+            <div class="card  accordion  mb-4 mt-4">
+                <div class="card-header bg-transparent position-relative">
+                    <div class="fw-bold p-2 ps-3">
+                        Contact Details
+                    </div>
+                    <button mat-button class="icon-button right-btn" (click)="openEditCompanyContactDetailsDialog()"
+                        matTooltip="Add New Contact">
+                        <mat-icon aria-hidden="false">add_circle_outline</mat-icon>
+                    </button>
+                </div>
+                <div class="card-body pb-4">
+
+                    <div class="row g-4 row-cols-1 row-cols-md-2 row-cols-lg-3">
+                        <div class="col">
+                            <div class="card contact-address-card mt-2">
+                                <div class="card-header bg-transparent position-relative">
+                                    <div class="fw-bold p-2 ps-3">
+                                        Srikanta, Prakash
+                                    </div>
+                                    <ul class="nav">
+                                        <li class="nav-item">
+                                            <button mat-button class="icon-button" matTooltip="More"
+                                                [matMenuTriggerFor]="menu">
+                                                <mat-icon>more_vert</mat-icon>
+                                            </button>
+                                            <mat-menu #menu="matMenu" class="menu-dropdown general-dropdown"
+                                                xPosition="before">
+                                                <ul class="menu-lists title-nav-list">
+
+                                                    <li mat-menu-item (click)="openEditCompanyContactDetailsDialog()">
+                                                        <mat-icon>create</mat-icon>
+                                                        Edit
+                                                    </li>
+                                                    <li mat-menu-item>
+                                                        <mat-icon>delete</mat-icon>
+                                                        Delete
+                                                    </li>
+                                                </ul>
+                                            </mat-menu>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="card-body">
+                                    <div class="list">
+                                        <div class="row">
+                                            <div class="col-12  col-sm-4 col-md-12 col-lg-12"> Address:</div>
+                                            <div class="col bold mt-1 mt-sm-0">2701 Del Paso Road #394 <br />Sacramento,
+                                                CA
+                                                95835</div>
+                                        </div>
+                                        <div class="row mt-2">
+                                            <div class="col-12 col-sm-4 col-md-12 col-lg-12 "> Phone:</div>
+                                            <div class="col bold mt-1 mt-sm-0">(916) 999-0470</div>
+                                        </div>
+                                        <div class="row mt-2">
+                                            <div class="col-12 col-sm-4 col-md-12 col-lg-12"> Email:</div>
+                                            <div class="col bold mt-1 mt-sm-0"> Srikanta.prakash@qualapps.com</div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card contact-address-card  mt-2">
+                                <div class="card-header bg-transparent position-relative">
+                                    <div class="fw-bold p-2 ps-3">
+                                        Sunil, Kumar
+                                    </div>
+                                    <ul class="nav">
+                                        <li class="nav-item">
+                                            <button mat-button class="icon-button" matTooltip="More"
+                                                [matMenuTriggerFor]="menu">
+                                                <mat-icon>more_vert</mat-icon>
+                                            </button>
+                                            <mat-menu #menu="matMenu" class="menu-dropdown general-dropdown"
+                                                xPosition="before">
+                                                <ul class="menu-lists title-nav-list">
+
+                                                    <li mat-menu-item (click)="openEditCompanyContactDetailsDialog()">
+                                                        <mat-icon>create</mat-icon>
+                                                        Edit
+                                                    </li>
+                                                    <li mat-menu-item>
+                                                        <mat-icon>delete</mat-icon>
+                                                        Delete
+                                                    </li>
+                                                </ul>
+                                            </mat-menu>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="card-body">
+                                    <div class="list">
+
+                                        <div class="row">
+                                            <div class="col-12  col-sm-4 col-md-12 col-lg-12"> Address:</div>
+                                            <div class="col bold mt-1 mt-sm-0">2701 Del Paso Road #394 <br />Sacramento,
+                                                CA
+                                                958325</div>
+                                        </div>
+                                        <div class="row mt-2">
+                                            <div class="col-12 col-sm-4 col-md-12 col-lg-12 "> Phone:</div>
+                                            <div class="col bold mt-1 mt-sm-0">(916) 999-6570</div>
+                                        </div>
+                                        <div class="row mt-2">
+                                            <div class="col-12 col-sm-4 col-md-12 col-lg-12"> Email:</div>
+                                            <div class="col bold mt-1 mt-sm-0">Sunil@qualapps.com</div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card contact-address-card  mt-2">
+                                <div class="card-header bg-transparent position-relative">
+                                    <div class="fw-bold p-2 ps-3">
+                                        Jone, Adam
+                                    </div>
+                                    <ul class="nav">
+                                        <li class="nav-item">
+                                            <button mat-button class="icon-button" matTooltip="More"
+                                                [matMenuTriggerFor]="menu">
+                                                <mat-icon>more_vert</mat-icon>
+                                            </button>
+                                            <mat-menu #menu="matMenu" class="menu-dropdown general-dropdown"
+                                                xPosition="before">
+                                                <ul class="menu-lists title-nav-list">
+
+                                                    <li mat-menu-item (click)="openEditCompanyContactDetailsDialog()">
+                                                        <mat-icon>create</mat-icon>
+                                                        Edit
+                                                    </li>
+                                                    <li mat-menu-item>
+                                                        <mat-icon>delete</mat-icon>
+                                                        Delete
+                                                    </li>
+                                                </ul>
+                                            </mat-menu>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="card-body">
+                                    <div class="list">
+
+                                        <div class="row">
+                                            <div class="col-12  col-sm-4 col-md-12 col-lg-12"> Address:</div>
+                                            <div class="col bold mt-1 mt-sm-0">2701 Del Paso Road #3534 <br />Sacramento,
+                                                CA
+                                                958325</div>
+                                        </div>
+                                        <div class="row mt-2">
+                                            <div class="col-12 col-sm-4 col-md-12 col-lg-12 "> Phone:</div>
+                                            <div class="col bold mt-1 mt-sm-0">(916) 999-6777</div>
+                                        </div>
+                                        <div class="row mt-2">
+                                            <div class="col-12 col-sm-4 col-md-12 col-lg-12"> Email:</div>
+                                            <div class="col bold mt-1 mt-sm-0"> Jone.adam@qualapps.com</div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </div>
+</div>

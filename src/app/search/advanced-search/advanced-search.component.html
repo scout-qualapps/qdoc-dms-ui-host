@@ -1,0 +1,83 @@
+<nav style="--bs-breadcrumb-divider: '';" aria-label="breadcrumb">
+   <ol class="breadcrumb">
+       <li class="breadcrumb-item active" aria-current="page">Search</li>
+   </ol>
+</nav>
+<div class="title-block">
+   <div class="main-icon">
+       <mat-icon class="align-middle">search</mat-icon>
+
+   </div>
+   <div class="flex-grow-1">
+       <div class="title ">
+           Search
+       </div>
+       <div class="title-info">
+               <span class="">Folders, Files, Users </span>
+
+       </div>
+   </div>
+ 
+</div>
+<div class="content-wrapper">
+
+   <div class="row">
+       <div class="col-md-8 order-2 order-md-1 col-lg-6">
+        
+            <div class="app-input-group">
+               <label>Keyword  </label>
+               <mat-form-field class="app-input-element" appearance="fill" floatLabel="never">
+                  <input matInput placeholder="Keyword">
+               </mat-form-field>
+            </div>
+            <div class="app-input-group">
+               <label>File Name  </label>
+               <mat-form-field class="app-input-element" appearance="fill" floatLabel="never">
+                  <input matInput placeholder="File Name">
+               </mat-form-field>
+            </div>
+            <div class="app-input-group">
+               <label>Folder Name </label>
+               <mat-form-field class="app-input-element" appearance="fill" floatLabel="never">
+                  <input matInput placeholder="Folder Name">
+               </mat-form-field>
+            </div>
+            <div class="app-input-group">
+               <label>Repository Name </label>
+               <mat-form-field class="app-input-element" appearance="fill" floatLabel="never">
+                  <input matInput placeholder="Repository Name">
+               </mat-form-field>
+            </div>
+            <div class="app-input-group">
+              <label>File Type </label>
+               <section class="">
+                  <mat-checkbox class="" [(ngModel)]="PDF"><img class="me-1 ms-0" src="assets/images/icon-pdf.svg">PDF</mat-checkbox>
+                  <mat-checkbox class="ms-4" [(ngModel)]="DOCX"><img class="me-1 ms-0" src="assets/images/icon-doc.svg">DOC</mat-checkbox>
+                  <mat-checkbox class="ms-4" [(ngModel)]="XLS"><img class="me-1 ms-0" src="assets/images/icon-xls.svg">XLS</mat-checkbox>
+                </section>
+              </div>
+            <div class="app-input-group mb-4 pb-2">
+               <label>Tags </label><br/>
+               <label class="sub-label">Multiple tags separated by comma </label>
+               <mat-form-field class="app-input-element" appearance="fill" floatLabel="never">
+                  <textarea matInput placeholder="Enter Tags"></textarea>
+                  <mat-hint align="end">1 / 100 characters</mat-hint>
+               </mat-form-field>
+            </div>
+            <div class="border-top">
+               <div class="py-3  gap-2 xs-btn-group-g-2  d-md-flex justify-content-md-end">
+                   <button mat-button class="primary-button"> Search</button>
+               </div>
+            </div>
+
+
+    </div>
+       <div class="col-md-4  col-lg-6 mb-3 order-1 order-md-2 col-7 ">
+          <div class="d-flex mt-2">
+             <a [routerLink]="['../']" >Advanced Search</a>
+             <mat-icon>expand_less</mat-icon>
+          </div>
+         </div>
+   </div>
+
+   </div>

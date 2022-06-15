@@ -1,0 +1,68 @@
+<nav style="--bs-breadcrumb-divider: '';" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item d-block d-sm-none">
+          <a mat-button class="icon-button back-btn" matTooltip="Back" [routerLink]="['../dashboard']">
+            <mat-icon aria-hidden="false">arrow_back</mat-icon>
+          </a>
+        </li>
+        <li class="breadcrumb-item flex-hide-sm">
+          <a href="#" [routerLink]="['../dashboard']">Dashboard</a>
+          <mat-icon>navigate_next</mat-icon>
+        </li>
+    
+    
+        <li class="breadcrumb-item flex-hide-sm active">Repositories</li>
+      </ol>
+ </nav>
+ <div class="title-block">
+    <div class="main-icon"><img src="assets/images/nav_icons/icon-repository.svg"></div>
+    <div class="flex-grow-1">
+       <div class="title ">
+         Repositories
+       </div>
+       <div class="title-info">
+         List of all repositories
+       </div>
+    </div>
+ 
+  
+ </div>
+
+ <div class="content-wrapper">
+    <div class="row">
+       <div class="col-12">
+          <div class="filter_controls justify-content-end mb-2">
+             <ul class="nav">
+                <li class="b-select-dropdown"  *ngIf="!isListView">
+                   <span class="label d-none d-sm-block pe-2">Sort By</span>
+                   <mat-form-field class="app-input-element b-select w-120 pe-2 " appearance="fill" floatLabel="never">
+                      <mat-select >
+                         <mat-option *ngFor="let value of sortvalue" [value]="value.value">
+                         {{value.viewValue}}
+                         </mat-option>
+                      </mat-select>
+                   </mat-form-field>
+                </li>
+                <li class="nav-item  no-hover"  *ngIf="!isListView">
+                   <button mat-button class="icon-button  no-hover" matTooltip="">
+                      <mat-icon>arrow_downward </mat-icon>
+                   </button>
+                </li>
+
+                <li class="nav-item" [ngClass]="isListView? 'active':''">
+                   <button mat-button class="icon-button" matTooltip="List View" (click)="isListView=!isListView">
+                      <mat-icon>menu</mat-icon>
+                   </button>
+                </li>
+                <li class="nav-item" [ngClass]="!isListView? 'active':''">
+                   <button mat-button class="icon-button " matTooltip="Grid View" (click)="isListView=!isListView">
+                      <mat-icon aria-hidden="false">grid_view</mat-icon>
+                   </button>
+                </li>
+             </ul>
+          </div>
+          <app-list-view *ngIf="isListView"></app-list-view>
+          <app-card-view *ngIf="!isListView"></app-card-view>
+       </div>
+    </div>
+  </div>

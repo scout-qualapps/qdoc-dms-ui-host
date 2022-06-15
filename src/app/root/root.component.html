@@ -1,0 +1,18 @@
+<app-header (hamburger)="menuSlide()"></app-header>
+<div [ngClass]="isNavClosedClicked ? 'nav-collapsed' : 'nav-expanded'">
+   <div [ngClass]="isMouseEnteredClicked ? '' : 'nav-expanded'">
+      <mat-drawer-container [ngClass]="isHamburgerEnabled ? 'open-sidenav' : 'hide-sidenav'">
+         <mat-drawer mode="side" opened="true" class="sidenav-drawer">
+            <app-navigation (menutoggle)="navSlide()" (mousetoggle)="mouseSlide()" #sidenav></app-navigation>
+            <div class="sidenav-overlay" (hamburger)="menuSlide()" [ngClass]="isHamburgerEnabled ? 'show' : 'hide'">
+            </div>
+         </mat-drawer>
+         <mat-drawer-content>
+            <div  class="main-container">
+            <router-outlet></router-outlet>
+         </div>
+            <app-footer></app-footer>
+         </mat-drawer-content>
+      </mat-drawer-container>
+   </div>
+</div>

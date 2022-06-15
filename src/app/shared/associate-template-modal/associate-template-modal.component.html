@@ -1,0 +1,147 @@
+<h2 mat-dialog-title class="has-close-icon">Associate Template
+    <button mat-button class="icon-button" matTooltip="Close" mat-dialog-close>
+        <mat-icon>close</mat-icon>
+    </button>
+</h2>
+<mat-dialog-content class="mat-typography min-w-500">
+    <div class="sub-breadcrumb rounded mb-3 ">Please add/remove the applicable metadata template for <span
+            class="fw-bold">"Repository 1" </span></div>
+
+    <mat-accordion class="accordion" [togglePosition]="'before'" multi>
+
+        <mat-expansion-panel [expanded]="step === 0"  class="position-relative mt-3" (opened)="panelOpenState = true"
+            (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Department Data
+                    <span class="ms-3 me-3">
+                        <mat-icon  aria-hidden="false" matTooltip="Public" class="align-middle">visibility_on</mat-icon>
+                     </span>
+                    <span class="secondary-badge me-3">Content</span>
+                </mat-panel-title>
+                <button mat-button matTooltip="Remove  Metadata Template" class="  icon-button right-btn">
+                    <mat-icon aria-hidden="false">do_not_disturb_on</mat-icon>
+                </button>
+               
+            </mat-expansion-panel-header>
+            <div class="expansion-body">
+                <span class="badge bg-secondary"></span>
+                <div class="border-bottom pb-2 mb-3">Captures departmental data</div>
+                <ul class="list">
+                    
+                    <li>
+                        Source: <span class="text-danger"> * </span> <span class=" text-light fw-bold fst-italic">
+                            &#10100; Main source of the data &#10101; </span>
+                    </li>
+                   
+                    <li>
+                        Expiry Date: <span class="text-light  fst-italic fw-bold"> &#10100; Determines the validity
+                            period &#10101;</span>
+                    </li>
+                    <li>
+                        Department:<span class="fst-italic text-light fw-bold"> &#10100; Inform department name &#10101;
+                        </span>
+                    </li>
+                    <li>
+                        Notes: <span class=" fst-italic text-light fw-bold "> &#10100; Additional notes describing
+                            data &#10101;</span>
+                    </li>
+                  
+
+                </ul>
+            </div>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel class="position-relative mt-3" (opened)="panelOpenState = true"
+            (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Financial Data
+                    <span class="ms-3 me-3">
+                        <mat-icon  aria-hidden="false" matTooltip="Public" class="align-middle">visibility_on</mat-icon>
+                     </span>
+                    <span class="secondary-badge me-3">Repository</span>
+                </mat-panel-title>
+                <button mat-button matTooltip="Remove  Metadata Template" class="icon-button right-btn">
+                    
+                    <mat-icon aria-hidden="false">do_not_disturb_on</mat-icon>
+                </button>
+            </mat-expansion-panel-header>
+            <div class="expansion-body">
+                <span class="badge bg-secondary"></span>
+                <div class="border-bottom pb-2 mb-3">Additional finance related data</div>
+                <ul class="list">
+                    
+                    <li>
+                        Source: <span class="text-danger"> * </span> <span class=" text-light fw-bold fst-italic">
+                            &#10100; Main source of the data &#10101; </span>
+                    </li>
+                   
+                    <li>
+                        Expiry Date: <span class="text-light  fst-italic fw-bold"> &#10100; Determines the validity
+                            period &#10101;</span>
+                    </li>
+                    <li>
+                        Department:<span class="fst-italic text-light fw-bold"> &#10100; Inform department name &#10101;
+                        </span>
+                    </li>
+                    <li>
+                        Notes: <span class=" fst-italic text-light fw-bold "> &#10100; Additional notes describing
+                            data &#10101;</span>
+                    </li>
+                  
+
+                </ul>
+            </div>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel class="position-relative mt-3" (opened)="panelOpenState = true"
+            (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Custom Metadata 3
+                    <span class="ms-3 me-3">
+                        <mat-icon  aria-hidden="false" matTooltip="Private" class="align-middle off">visibility_off</mat-icon>
+                     </span>
+                    <span class="secondary-badge me-3">Content</span>
+                </mat-panel-title>
+                <button mat-button matTooltip="Add Metadata Template" class="add-mat-icon  icon-button right-btn">
+                    
+                    <mat-icon aria-hidden="false">add_circle_outline </mat-icon>
+                </button>
+            </mat-expansion-panel-header>
+            <div class="expansion-body">
+                <div class="border-bottom pb-2 mb-3">Additional related data</div>
+                <ul class="list">
+                    
+                    <li>
+                        Source: <span class="text-danger"> * </span> <span class=" text-light fw-bold fst-italic">
+                            &#10100; Main source of the data &#10101; </span>
+                    </li>
+                 
+                    <li>
+                        Expiry Date: <span class="text-light  fst-italic fw-bold"> &#10100; Determines the validity
+                            period &#10101;</span>
+                    </li>
+                    <li>
+                        Department:<span class="fst-italic text-light fw-bold"> &#10100; Informs department name &#10101;
+                        </span>
+                    </li>
+                    <li>
+                        Notes: <span class=" fst-italic text-light fw-bold "> &#10100; Additional notes describing
+                            data &#10101;</span>
+                    </li>
+                
+
+                </ul>
+
+            </div>
+        </mat-expansion-panel>
+
+    </mat-accordion>
+
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button class="secondary-button me-2" mat-dialog-close>Cancel</button>
+</mat-dialog-actions>

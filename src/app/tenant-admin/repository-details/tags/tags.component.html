@@ -1,0 +1,46 @@
+<div class="card">
+    <div class="card-header bg-transparent">
+        <div class="fw-bold p-2 ps-3">
+            Tags 
+        </div> 
+    </div>
+    <div class="card-body tag-block">
+        <span class="badge rounded-pill me-2">
+            Tag 1 <span class="close" aria-hidden="true">
+                <a href="#">
+                    <mat-icon class="material-icons-round">
+                        close</mat-icon>
+                </a>
+            </span>
+        </span>
+        <span class=" badge rounded-pill me-2">
+            Tag 2 <span class="close" aria-hidden="true">
+                <a href="#">
+                    <mat-icon>close</mat-icon>
+                </a>
+            </span>
+        </span>
+        <div class="row mt-4">
+            <div class="col-lg-5">
+                <div class="app-input-group mb-2 d-none" [ngClass]="isTagClicked?'d-block':''">
+                    <mat-form-field class="app-input-element tag-element position-relative b-input" appearance="fill">
+                      <input matInput placeholder="Add Tag" type="text" class="">
+                      <div class=" right-action">
+          
+                        <button mat-button class="icon-button ms-1" matTooltip="Save" >
+                          <mat-icon aria-hidden="false">check_circle</mat-icon>
+                        </button>
+                        <button mat-button class="icon-button " (click)="isTagClicked=!isTagClicked" matTooltip="Cancel">
+                          <mat-icon aria-hidden="false">cancel</mat-icon>
+                        </button>
+                      </div>
+                   </mat-form-field>
+                   
+                  </div>
+                  <div class="" [ngClass]="isTagClicked?'d-none':'d-block'" >
+                    <button mat-button class="secondary-button mb-3 "  (click)="isTagClicked=!isTagClicked" >Add Tag</button>
+                  </div>
+        </div>
+        </div>
+    </div>
+</div>

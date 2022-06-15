@@ -1,0 +1,1 @@
+This reposiotry contains the UI project of QDoc DMS application

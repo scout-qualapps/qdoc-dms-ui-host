@@ -1,0 +1,64 @@
+<header>
+    <mat-toolbar>
+       <button mat-button (click)="hamburgerMenu()" class="icon-button hamburger-menu d-xl-none">
+          <mat-icon *ngIf="showHamburger">menu</mat-icon>
+          <mat-icon *ngIf="!showHamburger">close</mat-icon>
+       </button>
+       <a class="logo" href="./quick-access/dashboard">
+            <img src="assets/images/logo/logo.png" alt="Logo" />
+       </a>
+       <span class="logo-name-devider d-none d-md-block"></span>
+      <span class="company-name d-none d-md-block">COMPANY NAME</span> 
+       <span class="spacer"></span>
+       <div class="header-tools">
+         <!-- mobile-search -->
+         <div class="mobile-serach-wrapper d-md-block" [ngClass]="!showSearchFilter ? 'd-none' : 'show-search-res'">
+        <div class="app-input-group search-input mobile-search">
+          <mat-form-field class="app-input-element" appearance="fill">
+            <input matInput placeholder="Search folders, files, users">
+            <button mat-button class="icon-button search-icon">
+               <mat-icon matTooltip="Search" [routerLink]="['../search']">search</mat-icon>
+            </button>
+            <button mat-button class="icon-button back-icon" (click)="showSearch()">
+              <mat-icon class="d-block d-md-none mobile-arrow-back" matTooltip="Back">arrow_back</mat-icon>
+           </button>
+          </mat-form-field>
+        </div>
+        <div class="search-results d-none"></div>
+      </div>
+        <span class="header-icon d-block d-md-none p-0">
+          <button mat-button class="icon-button" matTooltip="Search" (click)="showSearch()">
+              <mat-icon>search</mat-icon>
+          </button>
+       </span>
+          <span class="header-icon d-none d-lg-block">
+             <button mat-button class="icon-button" matTooltip="Help">
+             <mat-icon>help</mat-icon>
+             </button>
+          </span>
+          <span class="header-icon d-none d-lg-block">
+            <button mat-button class="icon-button" matTooltip="Notification">
+               <mat-icon>notifications</mat-icon>
+            </button>
+         </span>
+         <span class="header-icon d-none d-lg-block">
+            <button mat-button aria-label="Logged in user profile" class="user-profile-button" [matMenuTriggerFor]="userprofile"
+              matTooltip="Profile">
+          
+              <span class="icon icon-profile-photo"></span>
+              <span class="person-circle">SP</span>
+              <mat-icon>keyboard_arrow_down</mat-icon>
+            </button>
+          </span>
+       </div>
+       <mat-menu #userprofile="matMenu" class="menu-dropdown view-profile-dropdown" xPosition="before">
+           <div class="user-name">Srikanta, Prakash</div>
+           <div class="user-login-history">Last login: 03/12/2021 09:00 AM</div>
+       <ul class="menu-lists">
+        <li mat-menu-item [routerLink]="['../my-profile/my-profile']"><mat-icon>edit</mat-icon>Edit Profile</li>
+         <li mat-menu-item [routerLink]="['../my-profile/change-password']"><mat-icon>lock</mat-icon>Change Password</li>
+         <li mat-menu-item [routerLink]="['../login']"><mat-icon>power_settings_new</mat-icon>Sign Out</li>
+       </ul>
+     </mat-menu>
+    </mat-toolbar>
+  </header>

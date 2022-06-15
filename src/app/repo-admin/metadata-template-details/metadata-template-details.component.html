@@ -1,0 +1,86 @@
+<nav style="--bs-breadcrumb-divider: '';" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item d-block d-sm-none">
+            <a mat-button class="icon-button back-btn" matTooltip="Back" [routerLink]="['/repo-admin']">
+                <mat-icon aria-hidden="false">arrow_back</mat-icon>
+            </a>
+        </li>
+        <li class="breadcrumb-item flex-hide-sm">
+            <a href="#" [routerLink]="['/repo-admin']">Manage Repositories</a>
+            <mat-icon>navigate_next</mat-icon>
+        </li>
+        <li class="breadcrumb-item flex-hide-sm">
+            <a href="#" [routerLink]="['../repository-details']">Repository 1</a>
+            <mat-icon>navigate_next</mat-icon>
+        </li>
+        <li class="breadcrumb-item flex-hide-sm active" aria-current="page">Department Data</li>
+    </ol>
+</nav>
+<div class="title-block">
+    <div class="main-icon">
+        <mat-icon class="align-middle">integration_instructions</mat-icon>
+    </div>
+    <div class="flex-grow-1">
+        <div class="title">
+         <span class="d-inline-block">Department Data</span> 
+        
+         <span class="dafault-badge ms-3 me-3">Default</span> 
+         <span class="secondary-badge">In Use</span> 
+        </div>
+        <div class="title-info d-block mt-1">
+            Modified by 
+            <span class="bold">
+                Srikanta, Prakash
+            </span>on
+            <span class="bold">
+                12/03/2021 11:50 AM
+            </span>
+        </div>
+    </div>
+    <div class="title-nav-block">
+        <ul class="nav justify-content-end">
+            <li class="nav-item d-none d-sm-block">
+                <button mat-button class="icon-button" matTooltip="Set as Default">
+                   <mat-icon aria-hidden="false">check_box</mat-icon>
+                </button>
+             </li>
+           <li class="nav-item d-none d-sm-block">
+              <button mat-button class="icon-button" matTooltip="Delete">
+                 <mat-icon aria-hidden="false">delete</mat-icon>
+              </button>
+           </li>
+           <li class="nav-item d-lg-none">
+            <button mat-button class="icon-button" matTooltip="More" [matMenuTriggerFor]="menu">
+               <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu" class="menu-dropdown general-dropdown" xPosition="before">
+               <ul class="menu-lists title-nav-list">
+                  <li mat-menu-item class=" d-block d-sm-none">
+                     <mat-icon>check_box</mat-icon>
+                     Set as Default 
+                  </li>
+                  <li mat-menu-item class=" d-block d-sm-none " [routerLink]="['./new-folder']">
+                     <mat-icon>delete</mat-icon>
+                     Delete
+                  </li>
+               </ul>
+            </mat-menu>
+         </li>
+        </ul>
+     </div>
+</div>
+
+<div class="content-wrapper">
+    <div class="row">
+        <div class="col-12">
+            <app-template-properties></app-template-properties>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-12">
+            <app-fields></app-fields>
+        </div>
+    </div>
+</div>
+
+

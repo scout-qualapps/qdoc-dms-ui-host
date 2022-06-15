@@ -1,0 +1,78 @@
+<nav style="--bs-breadcrumb-divider: '';" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item d-block d-sm-none">
+            <a mat-button class="icon-button back-btn" matTooltip="Back" [routerLink]="['/tenant-repo-admin']">
+                <mat-icon aria-hidden="false">arrow_back</mat-icon>
+            </a>
+        </li>
+        <li class="breadcrumb-item flex-hide-sm">
+            <a href="#" [routerLink]="['/tenant-repo-admin']">Manage Repositories</a>
+            <mat-icon>navigate_next</mat-icon>
+        </li>
+        <li class="breadcrumb-item flex-hide-sm active" aria-current="page">Details</li>
+    </ol>
+</nav>
+<div class="title-block">
+    <div class="main-icon">
+        <img src="assets/images/nav_icons/icon-manage-repository.svg">
+    </div>
+    <div class="flex-grow-1">
+        <div class="title">
+            Repository 1
+            <span class="ps-2">
+                <mat-icon class="off" aria-hidden="false" matTooltip="Private" class="align-middle off">visibility_off
+                </mat-icon>
+            </span>
+        </div>
+        <div class="title-info d-block">
+            Modified by 
+            <span class="bold">
+                Srikanta, Prakash
+            </span>on
+            <span class="bold">
+                12/03/2021 11:50 AM
+            </span>
+        </div>
+    </div>
+
+    <div class="title-nav-block">
+        <ul class="nav justify-content-end">
+
+            <li class="nav-item ">
+                <button mat-button class="icon-button" matTooltip="Delete">
+                    <mat-icon aria-hidden="false">delete</mat-icon>
+                </button>
+            </li>
+
+        </ul>
+    </div>
+</div>
+
+
+<div class="content-wrapper">
+    <div class="row">
+        <div class="col-12">
+            <app-properties></app-properties>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-12">
+            <app-metadata-template></app-metadata-template>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-12">
+            <app-tags></app-tags>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-12">
+            <app-comments></app-comments>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-12">
+            <app-user-access></app-user-access>
+        </div>
+    </div>
+</div>

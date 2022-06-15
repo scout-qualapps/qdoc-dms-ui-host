@@ -1,0 +1,122 @@
+<nav style="--bs-breadcrumb-divider: '';" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+       <li class="breadcrumb-item active" aria-current="page"> Trash</li>
+    </ol>
+ </nav>
+ <div class="title-block">
+    <div class="main-icon">
+       <mat-icon class="align-middle">delete</mat-icon>
+    </div>
+    <div class="flex-grow-1">
+       <div class="title ">
+          My Trash
+       </div>
+       <div class="title-info">
+          <span class="">List of deleted content</span>
+       </div>
+    </div>
+    <div class="title-nav-block">
+       <ul class="nav justify-content-end">
+       
+       
+          <li class="nav-item d-none d-sm-block">
+             <button mat-button class="icon-button" matTooltip="Download">
+                <mat-icon>download</mat-icon>
+             </button>
+          </li>
+          <li class="nav-item d-none d-sm-block">
+             <button mat-button class="icon-button" matTooltip="Restore">
+                <mat-icon>settings_backup_restore</mat-icon>
+             </button>
+          </li>
+          <li class="nav-item d-none d-sm-block">
+             <button mat-button class="icon-button" matTooltip="Delete">
+                <mat-icon aria-hidden="false">delete</mat-icon>
+             </button>
+          </li>
+          <li class="nav-item">
+             <button mat-button class="icon-button" matTooltip="More" [matMenuTriggerFor]="menu">
+                <mat-icon>more_vert</mat-icon>
+             </button>
+             <mat-menu #menu="matMenu" class="menu-dropdown general-dropdown" xPosition="before">
+                <ul class="menu-lists title-nav-list">
+                 
+                 
+                   <li mat-menu-item class=" d-block d-sm-none">
+                      <mat-icon>download</mat-icon>
+                      Download
+                   </li>
+                 
+                   <li mat-menu-item class=" d-block d-sm-none">
+                      <mat-icon>settings_backup_restore</mat-icon>
+                      Restore
+                   </li>
+                   <li mat-menu-item class=" d-block d-sm-none divider">
+                      <mat-icon>delete</mat-icon>
+                      Delete
+                   </li>
+                   <li mat-menu-item mat-menu-item (click)="openMoveCopyDialog()">
+                      <mat-icon>airline_stops</mat-icon>
+                      Move To
+                   </li>
+                   <li mat-menu-item (click)="openMoveCopyDialog()">
+                      <mat-icon>file_copy</mat-icon>
+                      Copy To
+                   </li>
+                </ul>
+             </mat-menu>
+          </li>
+       </ul>
+    </div>
+ </div>
+ <div class="content-wrapper">
+    <div class="row">
+       <div class="col-12">
+          <div class="filter_controls row">
+             <ul class="nav col-md-12 mb-3 justify-content-end">
+                <li class="b-select-dropdown " *ngIf="!isListView">
+                   <span class="label d-none d-sm-block pe-2"> Sort By</span>
+                   <mat-form-field class="app-input-element b-select w-120 pe-2 " appearance="fill"
+                      floatLabel="never">
+                      <mat-select>
+                         <mat-option *ngFor="let value of sortvalue" [value]="value.value">
+                         {{value.viewValue}}
+                         </mat-option>
+                      </mat-select>
+                   </mat-form-field>
+                </li>
+                <li class="nav-item  no-hover d-none">
+                   <button mat-button class="icon-button  no-hover" matTooltip="">
+                      <mat-icon>arrow_downward </mat-icon>
+                   </button>
+                </li>
+                <li class="nav-item no-hover">
+                   <button mat-button class="icon-button  no-hover"   (click)="openConfigureColumnsDialog()"
+                    matTooltip="Column Settings">
+                      <mat-icon>settings_suggest</mat-icon>
+                   </button>
+                </li>
+                <li class="nav-item  no-hover">
+                   <div class="nav-link icon divider no-hover">
+                      <span>
+                      |
+                      </span>
+                   </div>
+                </li>
+                <li class="nav-item" [ngClass]="isListView? 'active':''">
+                   <button mat-button class="icon-button" matTooltip="List View" (click)="isListView=!isListView">
+                      <mat-icon>menu</mat-icon>
+                   </button>
+                </li>
+                <li class="nav-item" [ngClass]="!isListView? 'active':''">
+                   <button mat-button class="icon-button " matTooltip="Grid View" (click)="isListView=!isListView">
+                      <mat-icon aria-hidden="false">grid_view</mat-icon>
+                   </button>
+                </li>
+             </ul>
+          </div>
+          <app-trash-list-view *ngIf="isListView"></app-trash-list-view>
+          <app-trash-card-view *ngIf="!isListView"></app-trash-card-view>
+       </div>
+    </div>
+ </div>

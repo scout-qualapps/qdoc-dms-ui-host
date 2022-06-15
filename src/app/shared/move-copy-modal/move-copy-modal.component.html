@@ -1,0 +1,29 @@
+<h2 mat-dialog-title class="has-close-icon">Move To / Copy To
+    <button mat-button class="icon-button" matTooltip="Close"  mat-dialog-close>
+        <mat-icon>close</mat-icon>
+     </button>
+</h2>
+<mat-dialog-content>
+    <div class="sub-breadcrumb rounded mb-3 ">Select the target path to move <span class="fw-bold">"File name.pdf / Folder name"</span></div>
+    <mat-tree [dataSource]="dataSource" [treeControl]="treeControl" class="app-tree-view">
+      <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle (click)="activeNode = node" [ngClass]="{ 'active': activeNode === node }" matTreeNodePadding>
+        <button mat-icon-button disabled></button> 
+        <mat-icon [ngStyle]="{'color': node.folderColor}">{{node.iconName}}</mat-icon>
+        {{node.name}}
+      </mat-tree-node>
+      <mat-tree-node *matTreeNodeDef="let node;when: hasChild" (click)="activeNode = node" [ngClass]="{ 'active': activeNode === node }" matTreeNodePadding>
+        <button mat-icon-button matTreeNodeToggle
+                [attr.aria-label]="'Toggle ' + node.name">
+          <mat-icon class="mat-icon-rtl-mirror">
+            {{treeControl.isExpanded(node) ? 'remove' : 'add'}}
+          </mat-icon>
+        </button>
+        <mat-icon [ngClass]="node.class" [ngStyle]="{'color': node.folderColor}">{{node.iconName}}</mat-icon>
+        {{node.name}}
+      </mat-tree-node>
+    </mat-tree>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button class="secondary-button me-2" mat-dialog-close>Cancel</button>
+  <button mat-button class=" primary-button" [mat-dialog-close]="true" cdkFocusInitial>Move</button>
+</mat-dialog-actions>

@@ -1,0 +1,82 @@
+
+<h2 mat-dialog-title class="has-close-icon">Configure Columns
+  <button mat-button class="icon-button" matTooltip="Close" mat-dialog-close>
+    <mat-icon>close</mat-icon>
+  </button>
+</h2>
+<mat-dialog-content class="mat-typography  configure-columns-dialog">
+  <div class="sub-breadcrumb rounded mb-4 ">Select columns for the folder <span class="fw-bold">"folder name"</span></div>
+ 
+ 
+  <div class="row" >
+    <div class="col-12 ">
+      <div class="table-responsive app-draggable-table drag-list">
+          <table mat-table #table [dataSource]="dataSource" class="mat-table  ellipsis mat-table-bg-header" cdkDropList
+            [cdkDropListData]="dataSource" (cdkDropListDropped)="dropTable($event)">
+    
+            <ng-container matColumnDef="dragicon">
+              <th mat-header-cell *matHeaderCellDef style="width: 60px"></th>
+              <td mat-cell *matCellDef="let element" style="width: 10%">
+                <mat-icon cdkDragHandl class="drag-icon">drag_indicator</mat-icon>
+              </td>
+            </ng-container>
+    
+            <ng-container matColumnDef="fieldname">
+              <th mat-header-cell *matHeaderCellDef style="width: 100%; min-width: 150px;"> Type</th>
+              <td mat-cell class="select-td" *matCellDef="let element" style="width:75%;">
+                <mat-form-field  class="app-input-element custm-selct" appearance="fill" floatLabel="never">
+                  <mat-select  placeholder="Type" class="select-color"  [formControl]="stateList"  >
+                   <mat-select-trigger>
+                      {{stateList.value}}
+                    </mat-select-trigger>
+                     <mat-option  *ngFor="let value of statevalueValue" [value]="value.value" >
+                         {{value.viewValue}} </mat-option>
+                   </mat-select>
+               </mat-form-field>
+              </td>
+            </ng-container>
+    
+       
+    
+       
+    
+            <ng-container matColumnDef="actions">
+              <th class="grid-list-nav-td-th"  mat-header-cell *matHeaderCellDef> </th>
+              <td class="grid-list-nav-td text-end" style="width: 10%" mat-cell *matCellDef="let element">
+                <div class="justify-content-start text-start">
+                  <button mat-button     class="icon-button" matTooltip="Remove">
+                    <mat-icon aria-hidden="false" >do_not_disturb_on</mat-icon>
+                  </button>
+              
+                </div>
+              </td>
+            </ng-container>
+            <!-- <tr mat-header-row  *matHeaderRowDef="displayedColumns"></tr> -->
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;" cdkDrag [cdkDragData]="row"></tr>
+          </table>
+        </div>
+    
+     
+ 
+    </div>
+    <div class="col-12">
+      <div  class="mt-4 mb-2 ">
+        <a  class="w-100 py-1 " >
+          <mat-icon  aria-hidden="false" class="me-1 align-middle link-color" >add_circle_outline</mat-icon>
+          Add new column</a>
+       
+        </div>
+    </div>
+  </div>
+
+ 
+
+</mat-dialog-content>
+<mat-dialog-actions class="configure-columns-dialog" align="end">
+
+
+    <button mat-button class="secondary-button me-2" mat-dialog-close>Cancel </button>
+    <button mat-button class=" primary-button"  [mat-dialog-close]="true" cdkFocusInitial> Apply </button>
+ 
+ 
+</mat-dialog-actions>

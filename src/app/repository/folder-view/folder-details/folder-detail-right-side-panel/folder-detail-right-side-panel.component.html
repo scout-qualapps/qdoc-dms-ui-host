@@ -1,0 +1,154 @@
+
+<mat-accordion class="accordion" [togglePosition]="'before'" multi>
+
+    <mat-expansion-panel  class="position-relative">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <div class="right-expanion-card-titel" >
+            Folder Properties 
+          </div>
+         
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="expansion-body">
+        <button mat-button class="icon-button edit-btn"  (click)="openEditPropertiesDialog()"  matTooltip="Edit">
+          <mat-icon aria-hidden="false">create</mat-icon>
+        </button>
+        <ul class="list">
+            <li>
+              Name: <span class="fw-bold"> Folder  1</span>
+            </li>
+            <li>
+              Description: <span class="fw-bold"> Description text appears here in multiple lines related to the file in context 
+                  which can be viewed.</span>
+            </li>
+            <li>
+              Security: <span class="fw-bold">Private</span>
+            </li>
+            <li>
+              Sensitive: <span class="fw-bold">No</span>
+            </li>
+            <li>
+              ID: <span class="fw-bold"> 123456</span>
+            </li>
+            <li>
+              Author: <span class="fw-bold"> Srikanta, Prakash </span>
+            </li>
+            <li>
+              Date Created: <span class="fw-bold"> 03/15/2021 09:00 AM </span>
+            </li>
+           
+    
+          </ul>
+      </div>
+    </mat-expansion-panel>
+    <mat-expansion-panel class="position-relative mt-3" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <div class="right-expanion-card-titel" >
+          Custom Metadata 1 
+          </div>
+          <span  class="dafault-badge ms-3">Default</span>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="expansion-body">
+        <button mat-button class="icon-button edit-btn" matTooltip="Remove">
+          <mat-icon aria-hidden="false">do_not_disturb_on</mat-icon>
+        </button>
+        <ul class="list">
+            <li>
+              Source: <span class="text-danger"> * </span> <span class=" text-light fw-bold fst-italic"> &#10100; Main source of the data &#10101; </span>
+            </li>
+            <li>
+              Expiry Date: <span class="text-light  fst-italic fw-bold"> &#10100; Determines the validity period &#10101;</span>
+            </li>
+            <li>
+              Department:<span class="fst-italic text-light fw-bold"> &#10100; Inform department name &#10101; </span>
+            </li>
+            <li>
+              Notes: <span class=" fst-italic text-light fw-bold "> &#10100; Additional notes describing data &#10101;</span>
+            </li>
+           
+    
+          </ul>
+      </div>
+    </mat-expansion-panel>
+  
+    <mat-expansion-panel class="mt-3" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      <mat-expansion-panel-header class="position-relative">
+        <mat-panel-title>
+          <div class="right-expanion-card-titel ">
+          Custom Metadata 2
+          </div>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="expansion-body">
+        <button mat-button class="icon-button edit-btn" matTooltip="Remove ">
+          <mat-icon aria-hidden="false">do_not_disturb_on</mat-icon>
+        </button>
+        <ul class="list">
+            <li>
+              Format: <span class="fst-italic text-light  fw-bold">&#10100; Informs the format of the files &#10101;</span>
+            </li>
+            <li>
+              Location: <span class="text-danger"> * </span> <span class="fst-italic fw-bold text-light ">&#10100; Informs the location of data &#10101;</span>
+            </li>
+            <li>
+              Correspondence:  <span class="fst-italic text-light fw-bold "> &#10100; Communication methods, such as email, phone, etc &#10101;</span>
+            </li>
+            
+          </ul>
+      </div>
+    </mat-expansion-panel>
+
+    <div class="mt-3 mb-4 text-center">
+      <a (click)="openAddMetadataTemplateDialog()" class="w-100  py-1 mt-3">  
+        <mat-icon aria-hidden="false" class="me-1 align-middle link-color">add_circle_outline</mat-icon>Add Metadata Template
+      </a> 
+    </div>
+    <mat-expansion-panel class="mt-3" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Tags
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="expansion-body tag-block">
+        <span class="badge rounded-pill me-2">
+          Tag 1 <span class="close" aria-hidden="true">
+            <a href="#">
+              <mat-icon class="material-icons-round">
+                close</mat-icon>
+            </a>
+          </span>
+        </span>
+        <span class=" badge rounded-pill me-2">
+          Tag 2 <span class="close" aria-hidden="true">
+            <a href="#">
+              <mat-icon>close</mat-icon>
+            </a>
+          </span>
+        </span>
+        <div class="mt-4 " >
+         <div class="app-input-group mb-2 d-none" [ngClass]="isTagClicked?'d-block':''">
+            <mat-form-field class="app-input-element tag-element position-relative b-input" appearance="fill">
+              <input matInput placeholder="Add Tag" type="text" class="">
+              <div class=" right-action">
+  
+                <button mat-button class="icon-button ms-1" matTooltip="Save" >
+                  <mat-icon aria-hidden="false">check_circle</mat-icon>
+                </button>
+                <button mat-button class="icon-button " (click)="isTagClicked=!isTagClicked" matTooltip="Cancel">
+                  <mat-icon aria-hidden="false">cancel</mat-icon>
+                </button>
+              </div>
+           </mat-form-field>
+           
+          </div>
+          <div class="" [ngClass]="isTagClicked?'d-none':'d-block'" >
+            <button mat-button class="secondary-button mb-3 "  (click)="isTagClicked=!isTagClicked" >Add Tag</button>
+          </div>
+        </div>
+      </div>
+    </mat-expansion-panel>
+  
+  </mat-accordion>

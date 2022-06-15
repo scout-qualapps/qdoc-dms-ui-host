@@ -1,0 +1,99 @@
+<h2 mat-dialog-title class="has-close-icon"> User Access
+    <button mat-button class="icon-button" matTooltip="Close" mat-dialog-close>
+       <mat-icon>close</mat-icon>
+    </button>
+ </h2>
+ <mat-dialog-content class="mat-typography min-w-500">
+    <div class="sub-breadcrumb rounded mb-2 ">Give access to file <span class="fw-bold">"file name.pdf"</span> 
+    </div>
+ 
+ 
+    <div class="row">
+       <div class="col-12 ">
+ 
+          <div class="app-input-group row">
+             <div class="col-12  repositor-admin-Text ">
+                <label>Enter email address of people to give access  <span class="text-danger">*</span> </label>
+             </div>
+             <div class="col-12">
+ 
+ 
+                <mat-form-field class="app-chip-list app-input-element" appearance="fill">
+ 
+                   <mat-chip-list #chipList aria-label="AdminUserName selection">
+                      <mat-chip *ngFor="let AdminUserName of AdminUser" (removed)="remove(AdminUserName)">
+                         {{AdminUserName}}
+                         <button matChipRemove>
+                            <mat-icon>cancel</mat-icon>
+                         </button>
+                      </mat-chip>
+                      <input placeholder="" #AdminUserInput [formControl]="AdminUserCtrl" [matAutocomplete]="auto"
+                         [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                         (matChipInputTokenEnd)="add($event)">
+                   </mat-chip-list>
+                   <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+                      <mat-option *ngFor="let AdminUserName of filteredAdminUser | async" [value]="AdminUserName">
+                         {{AdminUserName}}
+                      </mat-option>
+                   </mat-autocomplete>
+                </mat-form-field>
+             </div>
+          </div>
+          <div class="app-input-group row mb-4 pb-2">
+             <label class="col-12">Message </label>
+             <div class="col-12">
+                <mat-form-field class="app-input-element" appearance="fill" floatLabel="never">
+                   <textarea matInput placeholder=" Message"></textarea>
+                   <mat-hint align="end">1 / 100 characters</mat-hint>
+                </mat-form-field>
+             </div>
+          </div>
+          <div class="app-input-group row mb-2 pb-2">
+             <label class="col-12">Role Privilege  <span class="text-danger">*</span></label>
+             <div class="col-12">
+               <section class="">
+                  <mat-checkbox class="" [(ngModel)]="Readonly">Read-only</mat-checkbox>
+                  <mat-checkbox class="ms-4" [(ngModel)]="Write">Write</mat-checkbox>
+                  <mat-checkbox class="ms-4" [(ngModel)]="Print">Print</mat-checkbox>
+                  <mat-checkbox class="ms-4" [(ngModel)]="Download">Download</mat-checkbox>
+                </section>
+             </div>
+          </div>
+          <div class="app-input-group row ">
+             <div class="col">
+                <mat-checkbox class="" [(ngModel)]="Default">Expiration 
+                </mat-checkbox>
+             </div>
+          </div>
+         
+          <div class="app-input-group row"  *ngIf="Default" >
+             <div class="col">
+ 
+                <mat-form-field class="app-input-element app-date-range-input" (click)="picker.open()">
+ 
+                   <mat-date-range-input [formGroup]="range" [rangePicker]="picker">
+                      <input matStartDate formControlName="start" placeholder=" Effective from">
+                      <input matEndDate formControlName="end" placeholder="Effective to ">
+                   </mat-date-range-input>
+                   <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                   <mat-date-range-picker #picker></mat-date-range-picker>
+ 
+                   <mat-error *ngIf="range.controls.start.hasError('matStartDateInvalid')">Invalid start date</mat-error>
+                   <mat-error *ngIf="range.controls.end.hasError('matEndDateInvalid')">Invalid end date</mat-error>
+                </mat-form-field>
+ 
+ 
+ 
+             </div>
+          </div>
+ 
+       </div>
+    </div>
+ </mat-dialog-content>
+ <mat-dialog-actions align="end">
+    <div class="me-auto  indicates">
+       <span class="text-danger"> * </span> indicates required field
+    </div>
+    <button mat-button class="secondary-button me-2" mat-dialog-close>Cancel</button>
+    <button mat-button class=" primary-button" [mat-dialog-close]="true" cdkFocusInitial>Provide Access </button>
+ </mat-dialog-actions> 

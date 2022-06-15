@@ -1,0 +1,160 @@
+<nav style="--bs-breadcrumb-divider: '';" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+       <li class="breadcrumb-item active" aria-current="page">Metadata Templates</li>
+    </ol>
+ </nav>
+ <div class="title-block">
+    
+    <div class="main-icon">
+      <mat-icon>integration_instructions</mat-icon>
+      </div>
+    <div class="flex-grow-1">
+       <div class="title ">
+        Metadata Templates
+       </div>
+       <div class="title-info">
+          List of all metadata templates
+       </div>
+    </div>
+ 
+    <div class="title-nav-block">
+      <ul class="nav justify-content-end">
+         <li class="nav-item d-none d-sm-block">
+            <button mat-button class="icon-button" matTooltip="New Metadata Template"
+            [routerLink]="['../new-metadata-templates']">
+            <mat-icon aria-hidden="false">add_circle_outline
+            </mat-icon>
+         </button>
+          </li>
+        <li class="nav-item d-none d-sm-block">
+         <button mat-button class="icon-button" matTooltip="Delete">
+            <mat-icon aria-hidden="false">delete</mat-icon>
+         </button>
+        </li>
+        <li class="nav-item d-lg-none">
+         <button mat-button class="icon-button" matTooltip="More" [matMenuTriggerFor]="menu">
+            <mat-icon>more_vert</mat-icon>
+         </button>
+         <mat-menu #menu="matMenu" class="menu-dropdown general-dropdown" xPosition="before">
+            <ul class="menu-lists title-nav-list">
+               <li mat-menu-item class=" d-block d-sm-none" [routerLink]="['../new-metadata-templates']">
+                  <mat-icon>add_circle_outline</mat-icon>
+                  New Metadata Template
+               </li>
+               <li mat-menu-item class=" d-block d-sm-none " [routerLink]="['./new-folder']">
+                  <mat-icon>delete</mat-icon>
+                  Delete
+               </li>
+            </ul>
+         </mat-menu>
+      </li>
+     </ul>
+       
+    </div>
+ </div>
+ <div class="content-wrapper">
+   <div class="row">
+      <div class="col-12">
+         <div class="filter_controls justify-content-end mb-4">
+            <ul class="nav">
+               <li class="b-select-dropdown">
+                  <span class="label d-none d-sm-block pe-2">Filter By</span>
+                  <mat-form-field class="app-input-element b-select w-120 pe-2 " appearance="fill" floatLabel="never">
+                     <mat-select >
+                        <mat-option>In Use</mat-option>
+                        <mat-option>Content</mat-option>
+                        <mat-option>Repository</mat-option>
+                     </mat-select>
+                  </mat-form-field>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </div>
+    <div class="row">
+       <div class="col-12">
+          <div class="table-responsive row-select-cursor">
+             <table mat-table [dataSource]="dataSource" matSort class="mat-table ellipsis"
+                (matSortChange)="announceSortChange($event)">
+                <ng-container matColumnDef="checkbox">
+                   <th style="width: 20px" class="text-center" mat-header-cell *matHeaderCellDef>
+                      <mat-checkbox class="b-checkbox" (change)="$event ? masterToggle() : null"
+                         [checked]="selection.hasValue() && isAllSelected()"
+                         [indeterminate]="selection.hasValue() && !isAllSelected()"></mat-checkbox>
+                   </th>
+                   <td mat-cell class="text-center" *matCellDef="let element">
+                      <mat-checkbox class="b-checkbox" (click)="$event.stopPropagation()"
+                         (change)="$event ? selection.toggle(element) : null" [checked]="selection.isSelected(element)">
+                      </mat-checkbox>
+                   </td>
+                </ng-container>
+ 
+                <ng-container matColumnDef="TemplateName">
+                   <th style="width: 25%" class="text-nowrap" mat-header-cell *matHeaderCellDef mat-sort-header
+                      sortActionDescription="Sort by TemplateName">
+                      Template&nbsp;Name </th>
+                   <td class="" mat-cell *matCellDef="let element"><a href="javascript:void(0)" [routerLink]="['../metadata-templates-details']"> {{element.TemplateName}} </a> </td>
+                </ng-container>
+                <ng-container matColumnDef="Type">
+                   <th style="width:20%" mat-header-cell *matHeaderCellDef mat-sort-header
+                      sortActionDescription="Sort by folder"> Type </th>
+                   <td mat-cell *matCellDef="let element"> {{element.Type}} </td>
+                </ng-container>
+ 
+                <ng-container matColumnDef="DateModified">
+                   <th style="width:20%" mat-header-cell *matHeaderCellDef mat-sort-header
+                      sortActionDescription="Sort by DateModified"> Date&nbsp;Modified </th>
+                   <td mat-cell *matCellDef="let element"> {{element.DateModified}} </td>
+                </ng-container>
+                <ng-container matColumnDef="ModifiedBy">
+                   <th style="width: 20%" mat-header-cell *matHeaderCellDef mat-sort-header
+                      sortActionDescription="Sort by ModifiedBy"> Modified&nbsp;By </th>
+                   <td mat-cell *matCellDef="let element"> {{element.ModifiedBy}} </td>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                   <th class="grid-list-nav-td-th" style="width: 40px" mat-header-cell *matHeaderCellDef> </th>
+                   <td class="grid-list-nav-td" mat-cell *matCellDef="let element">
+                      <div class="justify-content-end">
+ 
+                         <button mat-button class="icon-button" matTooltip="Delete">
+                            <mat-icon aria-hidden="false">delete</mat-icon>
+                         </button>
+                         <button mat-button class="icon-button" [matMenuTriggerFor]="contextMenu" matTooltip=""
+                            [id]="element.position" (click)="selctedMenuPosition(element);">
+                            <mat-icon aria-hidden="false">more_vert</mat-icon>
+                         </button>
+ 
+                      </div>
+                   </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;" [class.active-row]="clickedRows.has(row)"
+                   (contextmenu)="onContextMenu($event, row)"
+                   [ngClass]="selectedPosition===row.position?'active-row':''" (click)="selection.toggle(row)"></tr>
+             </table>
+          </div>
+          <div class="row mt-3">
+           
+             <div class="col-md-12">
+                <mat-paginator [pageSizeOptions]="[10, 20, 50]" showFirstLastButtons
+                   aria-label="Select page of periodic elements">
+                </mat-paginator>
+             </div>
+          </div>
+       </div>
+    </div>
+ </div>
+ 
+ 
+ <div style="visibility: hidden; position: fixed" [style.left]="contextMenuPosition.x"
+    [style.top]="contextMenuPosition.y" [matMenuTriggerFor]="contextMenu">
+ </div>
+ <mat-menu #contextMenu="matMenu" class="menu-dropdown general-dropdown">
+    <ul class="menu-lists">
+ 
+       <li mat-menu-item [routerLink]="['../metadata-templates-details']">
+          <mat-icon>preview</mat-icon>
+          View Details
+       </li>
+    </ul>
+ </mat-menu>

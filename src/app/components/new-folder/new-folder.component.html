@@ -1,0 +1,83 @@
+<nav style="--bs-breadcrumb-divider: '';" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+       <li class="breadcrumb-item active" aria-current="page">Form Entry</li>
+    </ol>
+  </nav>
+  <div class="title-block">
+    <div class="main-icon"> <mat-icon class="align-middle">folder</mat-icon></div>
+    <div class="flex-grow-1">
+       <div class="title">
+          Form Entry
+       </div>
+       <div class="title-info">
+          Create a new folder
+       </div>
+    </div>
+  </div>
+  <div class="content-wrapper">
+    <div class="row">
+       <div class="col-md-9 col-lg-6">
+          <form>
+           <div class="mb-4">
+              <span class="text-danger"> * </span> indicates required field
+           </div>
+             <div class="app-input-group">
+                <label>Folder Name <span class="text-danger">*</span> </label>
+                <mat-form-field class="app-input-element" appearance="fill" floatLabel="never">
+                   <input matInput placeholder="Folder Name">
+                </mat-form-field>
+             </div>
+             <div class="app-input-group">
+              <label>Folder Color</label> 
+               
+              <mat-form-field  class="app-input-element" appearance="fill" floatLabel="never">
+                 <mat-select  placeholder="Folder Color" class="select-color" [formControl]="toppings"  >
+                  <mat-select-trigger>
+                   <div class="d-flex "> 
+                     <mat-icon aria-hidden="false" class="align-self-center me-2" [ngStyle]="{'color':toppings.value}">folder</mat-icon>
+                      <span>{{toppings.value}}</span>
+                   </div>  
+                   </mat-select-trigger>
+                    
+                    <mat-option  *ngFor="let value of folderColor" [value]="value.value" >
+                       <mat-icon aria-hidden="false" [ngStyle]="{'color':value.value}">folder</mat-icon>
+                        {{value.viewValue}} </mat-option>
+                  </mat-select>
+              </mat-form-field>
+           </div>
+             <div class="app-input-group mb-4">
+                <label>Description </label>
+                <mat-form-field class="app-input-element  text-area" appearance="fill" floatLabel="never">
+                   <textarea matInput placeholder="Enter description"></textarea>
+                   <mat-hint align="end">1 / 100 characters</mat-hint>
+                </mat-form-field>
+             </div>
+             <div class="app-input-group mb-3">
+               <label> Security <span class="text-danger"> * </span></label> 
+               <mat-form-field  class="app-input-element" appearance="fill" floatLabel="never">
+                  <mat-select  placeholder="Security" class="select-color" [formControl]="security"  >
+                   <mat-select-trigger>
+                    <div class="d-flex "> 
+                      <mat-icon aria-hidden="false" class="align-self-center me-2" > {{security.value}}</mat-icon>
+                      <span>{{getSecurityTypeName(security.value)}}</span>
+                    </div>  
+                    </mat-select-trigger>
+                     
+                     <mat-option  *ngFor="let value of securityValue" [value]="value.value" >
+                        <mat-icon aria-hidden="false" class="{{value.className}}">{{value.value}}</mat-icon>
+                         {{value.viewValue}} </mat-option>
+                   </mat-select>
+               </mat-form-field>
+            </div>
+           
+
+             <div class="border-top">
+                <div class="gap-2 py-3 d-flex justify-content-end">
+                    <button mat-button class="secondary-button me-3 me-md-2">Cancel</button>
+                    <button mat-button class=" primary-button ">Create Folder</button>
+                </div>
+             </div>
+          </form>
+       </div>
+    </div>
+  </div>
