@@ -406,7 +406,9 @@ display: none;
   }
 }
 
-
+.min-w-100p{
+  min-width: 100px !important;
+}
 .alert-primary{
   border:1px solid $dark-info;
   color: $dark;
@@ -2684,6 +2686,11 @@ ul.password-instruction {
  .table-responsive{
    max-height: 300px;
 }
+}
+.card-subtitle {
+  font-size: 0.875rem;
+  color:$dark-medium;
+  font-weight: normal;
 }
 /***Card Ends***/
 
