@@ -9,6 +9,7 @@ import { FolderViewComponent } from './folder-view/folder-view.component';
 import { FolderDetailsComponent } from './folder-view/folder-details/folder-details.component';
 import { FolderVewFileDetailsComponent } from './folder-view/folder-vew-file-details/folder-vew-file-details.component';
 import { UploadFileComponent } from './upload-file/upload-file.component';
+import { UserAccessDetailsComponent } from 'src/app/tenant-admin/user-access-details/user-access-details.component';
 
 export const routes: Routes = [
   {
@@ -47,7 +48,10 @@ export const routes: Routes = [
         path: 'upload-file',
         component: UploadFileComponent
       },
-     
+      {
+        path: 'user-access-details',
+        component: UserAccessDetailsComponent
+      },
     
       {
         path: '',

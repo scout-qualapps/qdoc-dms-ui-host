@@ -1,0 +1,57 @@
+<nav style="--bs-breadcrumb-divider: '';" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item active" aria-current="page">User Access Details</li>
+    </ol>
+</nav>
+<div class="title-block">
+    <div class="main-icon">
+        <mat-icon class="align-middle">group</mat-icon>
+    </div>
+    <div class="flex-grow-1">
+        <div class="title ">
+            User Access Details
+        </div>
+        <div class="title-info">
+            <span class="">Manage users who have access to the repository </span>
+        </div>
+    </div>
+
+</div>
+<div class="content-wrapper">
+
+
+    <div class="row">
+        <div class="col-12">
+
+            <mat-tab-group animationDuration="0ms" [selectedIndex]="selectedTab" >
+                <mat-tab class="row" label="Repository Users">
+
+
+                   <app-repository-users-table ></app-repository-users-table>
+                      
+    <div class=" gap-2 xs-btn-group-g-2  mt-3 d-md-flex justify-content-md-end">
+        <button mat-button class="secondary-button me-3 me-md-2">Remove Access</button>
+        <button mat-button  (click)="openUserAccessModalDialog()" class=" me-md-2  me-3 secondary-button ">Edit Access </button>
+        <button mat-button  class=" me-md-2 primary-button " (click)="changeTab(2)"    >New Access </button>
+        
+    </div>
+                 
+                </mat-tab>
+                <mat-tab label="Other Users" >
+                  
+                    <app-other-users-table ></app-other-users-table>
+                    <div class=" gap-2 xs-btn-group-g-2  mt-3 d-md-flex justify-content-md-end">
+                        <button mat-button (click)="openUserAccessModalDialog()"   class=" me-md-2 primary-button ">Add to Repository</button>
+                      
+                    </div>
+                  
+                </mat-tab>
+
+
+            </mat-tab-group>
+
+
+        </div>
+    </div>
+
+</div>
