@@ -26,14 +26,6 @@ import { AddTemplateFieldsComponent } from './metadata-templates/metadata-templa
 import { EditTemplateFieldsComponent } from './metadata-templates/metadata-templates-details/metadata-template-fields/edit-template-fields/edit-template-fields.component';
 import { EditCompanyDetailsComponent } from './company-info/edit-company-details/edit-company-details.component';
 import { EditCompanyContactDetailsComponent } from './company-info/edit-company-contact-details/edit-company-contact-details.component';
-import { UserAccessDetailsComponent } from './user-access-details/user-access-details.component';
-import { RepositoryUsersTableComponent } from './user-access-details/repository-users-table/repository-users-table.component';
-import { RolesPrivilegesComponent } from './roles-privileges/roles-privileges.component';
-import { OtherUsersTableComponent } from './user-access-details/other-users-table/other-users-table.component';
-import { CreateNewRoleComponent } from './roles-privileges/create-new-role/create-new-role.component';
-import { UsersComponent } from './users/users.component';
-import { AddUserComponent } from './users/add-user/add-user.component';
-import { UserActivityComponent } from './users/user-activity/user-activity.component';
 
 
 @NgModule({
@@ -61,15 +53,7 @@ import { UserActivityComponent } from './users/user-activity/user-activity.compo
     AddTemplateFieldsComponent,
     EditTemplateFieldsComponent,
     EditCompanyDetailsComponent,
-    EditCompanyContactDetailsComponent,
-    UserAccessDetailsComponent,
-    RepositoryUsersTableComponent,
-    RolesPrivilegesComponent,
-    OtherUsersTableComponent,
-    CreateNewRoleComponent,
-    UsersComponent,
-    AddUserComponent,
-    UserActivityComponent
+    EditCompanyContactDetailsComponent
   ],
   imports: [
     CommonModule,

@@ -20,23 +20,11 @@ interface value {
   styleUrls: ['./user-access-modal.component.scss']
 })
 export class UserAccessModalComponent implements OnInit {
-
-  sortvalue: value[] = [
-    {value: 'User', viewValue: 'User',className:''},
-    {value: 'UserAdmin', viewValue: 'User Admin',className:''},
-    {value: 'RepoAdmin', viewValue: 'Repo Admin',className:''},
-    {value: 'FinanceRepoAdmin', viewValue: 'Finance Repo Admin',className:''},
-    {value: 'HRRepoAdmin', viewValue: 'HR Repo Admin',className:''},
-  ];
-  selectedValue = '0';
-
- 
-
   Readonly = false;
   Write = false;
   Print = false;
   Download = false;
-  Default = true;
+  Default = false;
   range = new FormGroup({
     start: new FormControl(),
     end: new FormControl(),

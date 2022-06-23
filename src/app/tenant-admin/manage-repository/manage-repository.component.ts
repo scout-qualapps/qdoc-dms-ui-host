@@ -99,7 +99,6 @@ export class ManageRepositoryComponent implements OnInit {
      
     });
   }
-  
   ngOnInit(): void {
     window.scroll(0, 0);
   }

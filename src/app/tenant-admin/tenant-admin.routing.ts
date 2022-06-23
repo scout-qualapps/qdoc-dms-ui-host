@@ -11,12 +11,6 @@ import { SettingsComponent } from './settings/settings.component';
 import { MetadataTemplatesListComponent } from './metadata-templates/metadata-templates-list/metadata-templates-list.component';
 import { NewMetadataTemplateComponent } from './metadata-templates/new-metadata-template/new-metadata-template.component';
 import { MetadataTemplatesDetailsComponent } from './metadata-templates/metadata-templates-details/metadata-templates-details.component';
-import { UserAccessDetailsComponent } from './user-access-details/user-access-details.component';
-import { RolesPrivilegesComponent } from './roles-privileges/roles-privileges.component';
-import { CreateNewRoleComponent } from './roles-privileges/create-new-role/create-new-role.component';
-import { UsersComponent } from './users/users.component';
-import { AddUserComponent } from './users/add-user/add-user.component';
-import { UserActivityComponent } from './users/user-activity/user-activity.component';
 
 
 export const routes: Routes = [
@@ -61,31 +55,6 @@ export const routes: Routes = [
         path: 'settings',
         component: SettingsComponent
       },
-      {
-        path: 'user-access-details',
-        component: UserAccessDetailsComponent
-      },
-      {
-        path: 'user-roles-privileges',
-        component: RolesPrivilegesComponent
-      },
-      {
-        path: 'create-new-role',
-        component: CreateNewRoleComponent
-      },
-      {
-        path: 'users',
-        component: UsersComponent
-      },
-      {
-        path: 'add-user',
-        component: AddUserComponent
-      },
-      {
-        path: 'user-activity',
-        component: UserActivityComponent
-      },
-      
       {
         path: '',
         component: ManageRepositoryComponent

@@ -13,12 +13,12 @@
  
           <div class="app-input-group row">
              <div class="col-12  repositor-admin-Text ">
-                <label>Give access for selected users to repository  <span class="fw-bold">"Repository 1"</span>  </label>
+                <label>Enter email address of people to give access  <span class="text-danger">*</span> </label>
              </div>
-             <!-- <div class="col-12">
+             <div class="col-12">
  
  
-               <mat-form-field class="app-chip-list app-input-element" appearance="fill">
+                <mat-form-field class="app-chip-list app-input-element" appearance="fill">
  
                    <mat-chip-list #chipList aria-label="AdminUserName selection">
                       <mat-chip *ngFor="let AdminUserName of AdminUser" (removed)="remove(AdminUserName)">
@@ -36,26 +36,10 @@
                          {{AdminUserName}}
                       </mat-option>
                    </mat-autocomplete>
-                </mat-form-field> 
-             </div> -->
+                </mat-form-field>
+             </div>
           </div>
-          <div class="app-input-group row">
-            <label class="col-12 ">Role <span class="text-danger"> * </span></label>
-           <div class="col">
-    
-              <mat-form-field class="app-input-element" appearance="fill" floatLabel="never">
-        
-                 <mat-select class="select-color" [(ngModel)]="selectedValue" placeholder="Role">
-                    <mat-option *ngFor="let value of sortvalue" [value]="value.value">
-                       {{value.viewValue}}
-                    </mat-option>
-        
-        
-                 </mat-select>
-              </mat-form-field>
-           </div>
-         </div>
-          <!-- <div class="app-input-group row mb-4 pb-2">
+          <div class="app-input-group row mb-4 pb-2">
              <label class="col-12">Message </label>
              <div class="col-12">
                 <mat-form-field class="app-input-element" appearance="fill" floatLabel="never">
@@ -63,8 +47,8 @@
                    <mat-hint align="end">1 / 100 characters</mat-hint>
                 </mat-form-field>
              </div>
-          </div> -->
-          <!-- <div class="app-input-group row mb-2 pb-2">
+          </div>
+          <div class="app-input-group row mb-2 pb-2">
              <label class="col-12">Role Privilege  <span class="text-danger">*</span></label>
              <div class="col-12">
                <section class="">
@@ -74,7 +58,7 @@
                   <mat-checkbox class="ms-4" [(ngModel)]="Download">Download</mat-checkbox>
                 </section>
              </div>
-          </div> -->
+          </div>
           <div class="app-input-group row ">
              <div class="col">
                 <mat-checkbox class="" [(ngModel)]="Default">Expiration 

@@ -55,7 +55,6 @@ export class NavigationComponent {
           label: 'Dashboard',
           link: '/quick-access/dashboard',
           faIcon: 'icon-dashboard'
-          
        },
        {
           label: 'Recent',
@@ -151,13 +150,11 @@ export class NavigationComponent {
         },
         {
           label: 'Users',
-          link: '/tenant-repo-admin/users',
           faIcon: 'icon-group '
         },
         {
           label: 'Roles & Privileges',
-          link: '/tenant-repo-admin/user-roles-privileges',
-          faIcon: 'icon-role'
+          faIcon: 'icon-role '
         },
         {
           label: 'Company Info',

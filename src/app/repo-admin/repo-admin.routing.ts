@@ -5,7 +5,6 @@ import { RepositoryDetailsComponent } from './repository-details/repository-deta
 import { AddMetadataTemplateComponent } from './add-metadata-template/add-metadata-template.component';
 import { ManageRepositoryComponent } from './manage-repository/manage-repository.component';
 import { MetadataTemplateDetailsComponent } from './metadata-template-details/metadata-template-details.component';
-import { UserAccessDetailsComponent } from 'src/app/tenant-admin/user-access-details/user-access-details.component';
 
 export const routes: Routes = [
   {
@@ -23,10 +22,6 @@ export const routes: Routes = [
       {
         path: 'metadata-template-details',
         component: MetadataTemplateDetailsComponent
-      },
-      {
-        path: 'user-access-details',
-        component: UserAccessDetailsComponent
       },
       
       {
