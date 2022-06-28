@@ -62,6 +62,7 @@ html,
 body {
   height: 100%;
   font-size: 1rem;
+  // -webkit-font-smoothing: antialiased !important;
 }
 body {
   margin: 0;
@@ -72,6 +73,7 @@ body {
   font-size: 0.875rem;
 }
 .mat-menu-item.mat-form-field,
+.mat-form-field,
 .mat-tab-label,
 .mat-tab-link,
 .mat-menu-item,
@@ -406,7 +408,9 @@ display: none;
   }
 }
 
-
+.min-w-100p{
+  min-width: 100px !important;
+}
 .alert-primary{
   border:1px solid $dark-info;
   color: $dark;
@@ -640,7 +644,8 @@ header {
   }
   .company-name {
     font-size: 1.05rem;
-    font-family: "Open SansBold";
+    // font-family: "Open SansBold";
+    font-weight: bold;
   }
   .logo-name-devider {
     display: inline-block;
@@ -667,7 +672,8 @@ header {
     padding: 0;
     line-height: normal;
     padding: 5px;
-    font-family: "Open Sans SemiBold";
+    // font-family: "Open Sans SemiBold";
+    font-weight: bold;
     font-size: 0.938rem;
   }
   .person-circle {
@@ -690,7 +696,8 @@ header {
   }
   .user-name {
     font-size: 0.875rem;
-    font-family: "Open SansBold";
+    // font-family: "Open SansBold";
+    font-weight: bold;
   }
 
   .menu-lists {
@@ -878,7 +885,8 @@ html.cdk-global-scrollblock {
     padding: 17px 24px;
     border-bottom: 1px solid $light-devider-color;
     background-color: $section-bg;
-    font-family: "Open Sans SemiBold";
+    // font-family: "Open Sans SemiBold";
+    font-weight: bold;
 
     &.has-close-icon {
       position: relative;
@@ -1045,7 +1053,8 @@ html.cdk-global-scrollblock {
   .selected-amml-item {
     background: $primary-active;
     .label {
-      font-family: "Open Sans SemiBold";
+        // font-family: "Open Sans SemiBold";
+    font-weight: bold;
       color: $dark !important;
     }
     .icon {
@@ -1062,7 +1071,7 @@ html.cdk-global-scrollblock {
       z-index: 99;
     }
     .level-1 .label {
-      font-family: "Open Sans";
+      font-family: var(-- primary-font);
     }
   }
   .app-menu-item {
@@ -1152,7 +1161,7 @@ html.cdk-global-scrollblock {
       padding: 0 4px;
       min-width: 20px;
       color: $dark;
-      font-family: "Open Sans Medium";
+      // font-family: "Open Sans Medium";
     }
     .repos-setting-icon {
       display: none;
@@ -1279,7 +1288,8 @@ html.cdk-global-scrollblock {
   .person-name {
     font-size: 0.938rem;
     margin: 0 10px;
-    font-family: "Open Sans SemiBold";
+      // font-family: "Open Sans SemiBold";
+      font-weight: bold;
   }
 }
 /***Navigation Menu End***/
@@ -1308,7 +1318,8 @@ html.cdk-global-scrollblock {
 
   .active {
     background-color: $primary-active;
-    font-family: "Open Sans SemiBold";
+      // font-family: "Open Sans SemiBold";
+      font-weight: bold;
     border-radius: 5px;
   }
 }
@@ -1401,7 +1412,8 @@ html.cdk-global-scrollblock {
     line-height: initial;
     margin-bottom: 1rem;
     font-size: 4.5rem;
-    font-family: "Open Sans SemiBold";
+      // font-family: "Open Sans SemiBold";
+      font-weight: bold;
   }
   p {
     font-size: 2.3rem;
@@ -1626,7 +1638,8 @@ hr{
   }
 }
 .bold {
-  font-family: "Open Sans SemiBold";
+    // font-family: "Open Sans SemiBold";
+    font-weight: bold;
 }
 .mt-10 {
   margin-top: 10px;
@@ -1664,6 +1677,19 @@ hr{
   tbody tr:target,
   tbody tr:focus-visible {
     background: $primary-active;
+    
+  }
+  &.remove-hover{
+    tbody tr.active-row,
+    tbody tr:hover,
+    tbody tr:focus,
+    tbody tr:active,
+    tbody tr:target,
+    tbody tr:focus-visible {
+      background: inherit !important;
+      cursor:auto !important;
+      
+    }
   }
 }
 tr.mat-header-row {
@@ -1760,6 +1786,11 @@ td .table-td-info{
   table tbody tr {
     cursor: pointer;
   }
+}
+
+.md-table-height {
+  max-height: 50vh;
+  overflow-y: auto;
 }
 
 .filter_controls {
@@ -1950,7 +1981,8 @@ td .table-td-info{
       line-height: 2.9rem;;
     }
     .card-file-title {
-      font-family: "Open Sans SemiBold";
+        // font-family: "Open Sans SemiBold";
+    font-weight: bold;
       font-size: 0.875rem;
       margin: 15px 0 6px;
       width: 100%;
@@ -2249,6 +2281,11 @@ table {
     height: 100px;
   }
 }
+.remove-cursor {
+  .profile-picture {
+    cursor: auto !important;
+  }
+}
 .company-logo{
   .img-box{
     height: 90px;
@@ -2257,6 +2294,9 @@ table {
       cursor: default;
     }
   }
+}
+.small-text {
+    font-size: 0.813rem;
 }
 .logo-section{
   margin-left: 0;
@@ -2357,7 +2397,6 @@ table {
       margin-top: -3px;
     }
   }
-
 }
 
 .card {
@@ -2365,6 +2404,15 @@ table {
 }
 .card-header {
   border-bottom: 1px solid #e2e2e2;
+}
+.header-has-right-button { 
+  position: relative;
+  .right-btn {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-20px);
+  }
 }
 .card-accordion {
   .mat-accordion {
@@ -2380,7 +2428,7 @@ table {
         background: $card-accordion-bg;
       }
       &.has-actions .mat-expansion-panel-header-title {
-        padding-right: 30px;
+        padding-right: 40px;
       }
     }
   }
@@ -2403,7 +2451,8 @@ table {
   }
 }
 .card-accordion-title {
-  font-family: "Open Sans SemiBold";
+    // font-family: "Open Sans SemiBold";
+    font-weight: bold;
   margin-bottom: 10px;
   .meta-title {
     margin-left: 12px;
@@ -2511,6 +2560,15 @@ table {
   }
   .edit-comment{
     margin-top: 10px;
+    .nav{
+      position: absolute;
+    right: 4px;
+    z-index: 9999;
+    top: 2px;
+    }
+    .mat-form-field-infix{
+      padding-right: 85px;
+    }
     .mat-form-field-appearance-fill .mat-form-field-flex{
        background: none;
        padding: 0;
@@ -2555,7 +2613,8 @@ table {
   }
   .company-name {
     font-size: 1.05rem;
-    font-family: "Open SansBold";
+     // font-family: "Open SansBold";
+     font-weight: bold;
     margin-top: 15px;
   }
   .footer-logo {
@@ -2571,7 +2630,8 @@ table {
     width: 410px;
     .welcome {
       font-size: 1.25rem;
-      font-family: "Open Sans SemiBold";
+       // font-family: "Open Sans SemiBold";
+    font-weight: bold;
       margin: 0;
     }
 
@@ -2635,7 +2695,8 @@ ul.password-instruction {
           padding: 0;
           h2.card-title{
               font-size: 1.1rem;
-              font-family: "Open Sans SemiBold";
+                // font-family: "Open Sans SemiBold";
+                 font-weight: bold;
               margin-bottom:10px;
           }
           .card-subtitle {
@@ -2675,7 +2736,8 @@ ul.password-instruction {
           font-weight: 400;
           color: $dark-medium;;
           .bold{
-              font-family: "Open Sans SemiBold";
+                // font-family: "Open Sans SemiBold";
+                font-weight: bold;
           }
       }
   }
@@ -2684,6 +2746,14 @@ ul.password-instruction {
  .table-responsive{
    max-height: 300px;
 }
+}
+.tab-height-auto {
+  max-height: initial !important;
+}
+.card-subtitle {
+  font-size: 0.875rem;
+  color:$dark-medium;
+  font-weight: normal;
 }
 /***Card Ends***/
 
@@ -2695,7 +2765,8 @@ ul.password-instruction {
     font-size: 1rem;
     margin-bottom: 10px;
     margin-top: 25px;
-    font-family: "Open Sans SemiBold";
+      // font-family: "Open Sans SemiBold";
+      font-weight: bold;
   }
 }
 
@@ -2753,6 +2824,9 @@ ul.password-instruction {
   background: #fff;
   z-index: 999;
   position: relative;
+}
+.visibility-hidden {
+  visibility: hidden;
 }
 @media (min-width: 1200px) {
   .nav-collapsed {
@@ -2954,6 +3028,12 @@ ul.password-instruction {
   }
 }
 
+@media screen and (min-width: 992px) {
+  .medium-size-modal {
+    min-width: 850px !important;
+  }
+}
+
 @media screen and (min-width: 768px) and (max-width: 991px) {
   .contact-dialog {
     max-width: 90vw !important;
@@ -2961,6 +3041,9 @@ ul.password-instruction {
       width: 90vw !important;
       max-width:90vw !important;
     }
+  }
+  .medium-size-modal {
+    min-width: 760px !important;
   }
 }
 
@@ -3003,6 +3086,7 @@ ul.password-instruction {
       height: auto;
     }
   }
+ 
   .contact-modal{
     .col {
       margin-top: 0;
@@ -3015,6 +3099,7 @@ ul.password-instruction {
   .field-col-label{
     width: 100%;
   }
+ 
   .Lookup-Text,.repositor-admin-Text{
     padding-top: 0;
   }
@@ -3208,9 +3293,13 @@ ul.password-instruction {
   }
 }
 
-
 .show-search-res .search-results {
   display: block !important;
+}
+@media screen and (min-width: 768px) {
+  .profile-section {
+    margin-right: auto ;
+  }
 }
 @media (max-width: 599px) {
  
@@ -3331,6 +3420,13 @@ ul.password-instruction {
   .mat-button, .mat-icon-button, .mat-stroked-button, .mat-flat-button {
     padding-left: 9px !important;
     padding-right: 9px !important;
+  }
+}
+
+@media (min-width: 576px) {
+  .release-notes-column {
+    column-count: 2;
+    column-gap: 40px;
   }
 }
 
