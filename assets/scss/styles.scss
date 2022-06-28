@@ -3454,7 +3454,9 @@ ul.password-instruction {
   font-weight: 700 !important;
   font-family: 'Roboto', sans-serif !important;
 }
-.mat-button, .accordion .mat-expansion-panel-header-title,.expansion-body .list li,.expansion-body .list,
+.mat-button, .accordion .mat-expansion-panel-header-title,.expansion-body .list li,
+.app-input-element .mat-input-element,
+.expansion-body .list,
 .has-badge .dafault-badge, .has-badge .secondary-badge, .has-badge .badge-in-use, .comments-card .app-input-element .mat-form-field-infix input{
   font-family: 'Roboto', sans-serif !important;
 }
