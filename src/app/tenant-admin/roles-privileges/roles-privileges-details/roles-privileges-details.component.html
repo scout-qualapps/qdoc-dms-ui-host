@@ -1,0 +1,135 @@
+<nav style="--bs-breadcrumb-divider: '';" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item d-block d-sm-none">
+            <a mat-button class="icon-button back-btn" matTooltip="Back" [routerLink]="['../user-roles-privileges']">
+                <mat-icon aria-hidden="false">arrow_back</mat-icon>
+            </a>
+        </li>
+        <li class="breadcrumb-item flex-hide-sm">
+            <a href="#" [routerLink]="['../user-roles-privileges']">Manage Roles</a>
+            <mat-icon>navigate_next</mat-icon>
+        </li>
+        <li class="breadcrumb-item flex-hide-sm active" aria-current="page">Details</li>
+    </ol>
+</nav>
+<div class="title-block">
+    <div class="main-icon">
+        <mat-icon>manage_accounts</mat-icon>
+    </div>
+    <div class="flex-grow-1">
+        <div class="title">
+            User Admin
+        </div>
+        <div class="title-info d-block">
+            Modified by
+            <span class="bold">
+                John, Doe
+            </span>on
+            <span class="bold">
+                01/05/2022 3:30 PM
+            </span>
+        </div>
+    </div>
+
+    <div class="title-nav-block">
+        <ul class="nav justify-content-end">
+            <li class="nav-item d-none d-sm-block">
+                <button mat-button class="icon-button" matTooltip="Delete">
+                    <mat-icon aria-hidden="false">delete</mat-icon>
+                </button>
+            </li>
+            <li class="nav-item d-lg-none">
+                <button mat-button class="icon-button" matTooltip="More" [matMenuTriggerFor]="moreMenu">
+                    <mat-icon>more_vert</mat-icon>
+                </button>
+                <mat-menu #moreMenu="matMenu" class="menu-dropdown general-dropdown">
+                    <ul class="menu-lists title-nav-list">
+                        <li mat-menu-item>
+                            <mat-icon>delete</mat-icon>
+                            Delete
+                        </li>
+                    </ul>
+                </mat-menu>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="content-wrapper">
+    <div class="row">
+        <div class="col-12">
+            <mat-accordion class="accordion" [togglePosition]="'before'">
+                <mat-expansion-panel class="position-relative" expanded>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Role Properties
+                            <div>
+                            </div>
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <div class="expansion-body">
+                        <button mat-button (click)="editRolesPrivilegesModal()" class="icon-button edit-btn"
+                            matTooltip="Edit">
+                            <mat-icon aria-hidden="false">create</mat-icon>
+                        </button>
+                        <div class="list">
+                            <div class="row">
+                                <div class="col-12 col-sm-4 col-md-3 col-lg-2">Name:</div>
+                                <div class="col bold mt-1 mt-sm-0">User Admin</div>
+                            </div>
+                            <div class="row mt-15">
+                                <div class="col-12 col-sm-4 col-md-3 col-lg-2">Description:</div>
+                                <div class="col col-lg-7 bold mt-1 mt-sm-0">Manage users</div>
+                            </div>
+
+                            <div class="row mt-15">
+                                <div class="col-12 col-sm-4 col-md-3 col-lg-2">Date Created:</div>
+                                <div class="col col-lg-7 bold mt-1 mt-sm-0">01/05/2022 3:30 PM</div>
+                            </div>
+                            <div class="row mt-15">
+                                <div class="col-12 col-sm-4 col-md-3 col-lg-2">Modified By</div>
+                                <div class="col col-lg-7 bold mt-1 mt-sm-0">John, Doe (john.doe@qualapps.com)</div>
+                            </div>
+                        </div>
+                    </div>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 mt-4">
+            <div class="card ">
+                <div class="card-header bg-transparent header-has-right-button">
+                    <div class="fw-bold p-2 ps-3">
+                        Privileges <span class="text-danger">*</span>
+                        <h4 class="card-subtitle mt-1">Applied permissions for the role</h4>
+                    </div>
+                    <button mat-button (click)="editPrivilegesModal()" class="icon-button right-btn edit-btn"
+                    matTooltip="Edit">
+                    <mat-icon aria-hidden="false">create</mat-icon>
+                </button>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive  tab-height-auto tab-first-column-space">
+                        <table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)"
+                            class="mat-table ellipsis mat-table-bg-header">
+                            <ng-container matColumnDef="permission">
+                                <th mat-header-cell style="width: 35%; min-width: 150px;" *matHeaderCellDef
+                                    mat-sort-header sortActionDescription="Sort by permission"> Permission </th>
+                                <td mat-cell *matCellDef="let element" class="text-uppercase"> {{element.permission}} </td>
+                            </ng-container>
+                            <ng-container matColumnDef="description">
+                                <th mat-header-cell style="width: 59%; min-width: 150px;" *matHeaderCellDef
+                                    mat-sort-header sortActionDescription="Sort by description"> Description
+                                </th>
+                                <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+                            </ng-container>
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

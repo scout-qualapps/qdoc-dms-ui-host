@@ -38,18 +38,18 @@ export class RepositoriesOrderModalComponent implements OnInit {
  
   data = [
     {
-      content: ' <div class="drag-repository-block"> <img class="drag" src="assets/images/drag-icon.svg"> <div class="px-2 details"> <h3>Repository 1  <img class="public-icon" src="assets/images/public-icon.svg"></h3>  Created by <span class="bold"> Srikanta Prakash </span>  on 12/03/2021 11:50 </div> </div>'
+      content: ' <div class="drag-repository-block"> <img class="drag" src="assets/images/drag-icon.svg"> <div class="px-2 details"> <h3>Repository 1  <img class="public-icon" src="assets/images/public-icon.svg"></h3>  Created by <span class="bold"> Srikanta Prakash </span>  on 12/03/2021 11:50 AM </div> </div>'
     },
     {
-      content: ' <div class="drag-repository-block"> <img class="drag" src="assets/images/drag-icon.svg"> <div class="px-2 details"> <h3>Repository 2  <img class="private-icon" src="assets/images/private-icon.svg"></h3>  Created by <span class="bold"> Srikanta Prakash </span>  on 12/03/2021 11:50 </div> </div>'
+      content: ' <div class="drag-repository-block"> <img class="drag" src="assets/images/drag-icon.svg"> <div class="px-2 details"> <h3>Repository 2  <img class="private-icon" src="assets/images/private-icon.svg"></h3>  Created by <span class="bold"> Srikanta Prakash </span>  on 12/03/2021 11:50 AM </div> </div>'
    
     },
     {
-      content: ' <div class="drag-repository-block"> <img class="drag" src="assets/images/drag-icon.svg"> <div class="px-2 details"> <h3>Repository 3  <img class="public-icon" src="assets/images/public-icon.svg"></h3>  Created by <span class="bold"> Srikanta Prakash </span>  on 12/03/2021 11:50 </div> </div>'
+      content: ' <div class="drag-repository-block"> <img class="drag" src="assets/images/drag-icon.svg"> <div class="px-2 details"> <h3>Repository 3  <img class="public-icon" src="assets/images/public-icon.svg"></h3>  Created by <span class="bold"> Srikanta Prakash </span>  on 12/03/2021 11:50 AM </div> </div>'
    
     },
     {
-      content: ' <div class="drag-repository-block"> <img class="drag" src="assets/images/drag-icon.svg"> <div class="px-2 details"> <h3>Repository 4  <img class="public-icon" src="assets/images/public-icon.svg"></h3>  Created by <span class="bold"> Srikanta Prakash </span>  on 12/03/2021 11:50 </div> </div>'
+      content: ' <div class="drag-repository-block"> <img class="drag" src="assets/images/drag-icon.svg"> <div class="px-2 details"> <h3>Repository 4  <img class="public-icon" src="assets/images/public-icon.svg"></h3>  Created by <span class="bold"> Srikanta Prakash </span>  on 12/03/2021 11:50 AM </div> </div>'
    
     }
   ];

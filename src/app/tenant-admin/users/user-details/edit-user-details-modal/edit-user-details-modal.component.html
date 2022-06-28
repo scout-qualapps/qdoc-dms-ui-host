@@ -1,0 +1,72 @@
+<h2 mat-dialog-title class="has-close-icon"> Edit User
+    <button mat-button class="icon-button" matTooltip="Close" mat-dialog-close>
+       <mat-icon>close</mat-icon>
+    </button>
+ </h2>
+ <mat-dialog-content class="mat-typography min-w-500">
+    <div class="sub-breadcrumb rounded mb-3 ">Edit details of <span class="fw-bold">"John, Doe" </span></div>
+          <div class="row g-3">
+              <div class="col-md-8 col-lg-8 order-2 order-md-1 pe-md-4">
+                  <form  class="mb-2 mt-0 mt-md-2">
+                      <div class="app-input-group row">
+                        <label class="col-12 col-sm-4 col-md-2 col-lg-2 field-col-label"> First Name&nbsp;<span class="text-danger"> *
+                           </span></label>
+                        <div class="col">
+                           <mat-form-field class="app-input-element" appearance="fill" floatLabel="never">
+                              <input matInput placeholder=" Name" value="John">
+                           </mat-form-field>
+                        </div>
+                     </div>
+                     <div class="app-input-group row">
+                        <label class="col-12 col-sm-4 col-md-2 col-lg-2 field-col-label"> Last Name&nbsp;<span class="text-danger"> *
+                           </span></label>
+                        <div class="col">
+                           <mat-form-field class="app-input-element" appearance="fill" floatLabel="never">
+                              <input matInput placeholder=" Name" value="Doe">
+                           </mat-form-field>
+                        </div>
+                     </div>
+                     <div class="app-input-group row">
+                        <label class="col-12 col-sm-4 col-md-2 col-lg-2 field-col-label">Email Address&nbsp;<span class="text-danger"> *
+                           </span></label>
+                        <div class="col">
+            
+                           <mat-form-field class="app-input-element" appearance="fill" floatLabel="never">
+                              <input matInput placeholder=" Name" value="john.doe@email.com">
+                           </mat-form-field>
+                           <label class="sub-label text-end">Email address is the login id for this application</label>
+                        </div>
+                     </div>
+                     <div class="app-input-group row mb-0">
+                        <label class="col-auto col-sm-4 col-md-3 col-lg-2 field-col-label">Active</label>
+                        <div class="col">
+                            <mat-checkbox class="" [(ngModel)]="active"></mat-checkbox>
+                        </div>
+                     </div>
+                  </form>
+              </div>
+              <div class="col-md-4 col-lg-4 order-1 order-md-2 mb-4 mb-md-0">
+                  <div class="d-flex flex-column align-items-center">
+                      <div class="profile-section mx-auto">
+                          <input type="file" #file [multiple]="false" (change)="onFileChange($event)"
+                              style="display:none" />
+                          <img src="assets/images/user-profile-photo.jpg" matTooltip="Change Profile Picture"
+                              alt="Profile Photo" class="img-thumbnail profile-picture" (click)="file.click()">
+                          <span class="profile-edit">
+                              <mat-icon>photo_camera</mat-icon>
+                          </span>
+                      </div>
+                      <button mat-button class="secondary-button mb-0 mt-3 mb-md-3" (click)="fileInput.click()">Upload Profile Picture</button>
+                      <input hidden (change)="onFileSelected()" #fileInput type="file" id="file">
+                  </div>
+              </div>
+          </div>
+        
+ </mat-dialog-content>
+ <mat-dialog-actions align="end">
+    <div class="me-auto  indicates">
+       <span class="text-danger"> * </span> indicates required field
+    </div>
+    <button mat-button class="secondary-button me-2" mat-dialog-close>Cancel</button>
+    <button mat-button class=" primary-button" [mat-dialog-close]="true" cdkFocusInitial>Save</button>
+ </mat-dialog-actions>

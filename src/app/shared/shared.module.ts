@@ -44,7 +44,7 @@ import { ConfigureColumnsModalComponent } from './configure-columns-modal/config
 import { RepositoriesOrderModalComponent } from './repositories-order-modal/repositories-order-modal.component';
 import { UserAccessModalComponent } from './user-access-modal/user-access-modal.component';
 import { ReleaseNotesComponent } from './release-notes/release-notes.component';
-
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 @NgModule({
   declarations: [
     FooterComponent,
@@ -93,7 +93,8 @@ import { ReleaseNotesComponent } from './release-notes/release-notes.component';
     MatDatepickerModule,
     MatNativeDateModule,
     MatChipsModule,
-    MatRadioModule
+    MatRadioModule,
+    Ng2SearchPipeModule
   ],
   exports: [
     HeaderComponent,
@@ -125,7 +126,8 @@ import { ReleaseNotesComponent } from './release-notes/release-notes.component';
     MatDatepickerModule,
     MatNativeDateModule,
     MatChipsModule,
-    MatRadioModule
+    MatRadioModule,
+    Ng2SearchPipeModule
   ],
   providers: [
    MultilevelMenuService

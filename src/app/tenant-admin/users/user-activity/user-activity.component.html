@@ -1,0 +1,82 @@
+<nav style="--bs-breadcrumb-divider: '';" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item d-block d-sm-none">
+            <a mat-button class="icon-button back-btn" matTooltip="Back" [routerLink]="['./../user-details']">
+                <mat-icon aria-hidden="false">arrow_back</mat-icon>
+            </a>
+        </li>
+        <li class="breadcrumb-item flex-hide-sm">
+            <a href="#" [routerLink]="['../users']">Manage Users </a>
+            <mat-icon>navigate_next</mat-icon>
+        </li>
+        <li class="breadcrumb-item flex-hide-sm">
+            <a href="#" [routerLink]="['../user-details']">John, Doe</a>
+            <mat-icon>navigate_next</mat-icon>
+        </li>
+        <li class="breadcrumb-item flex-hide-sm active" aria-current="page">User Activity</li>
+    </ol>
+</nav>
+<div class="title-block">
+    <div class="main-icon">
+        <mat-icon>person</mat-icon>
+    </div>
+    <div class="flex-grow-1">
+        <div class="title">
+            User Activity
+        </div>
+        <div class="title-info">
+            A view of all user activities
+        </div>
+    </div>
+    <div class="title-nav-block">
+        <ul class="nav justify-content-end">
+          <li class="nav-item d-none d-sm-block">
+           <button mat-button class="icon-button" matTooltip="Download as Excel">
+              <mat-icon aria-hidden="false">download</mat-icon>
+           </button>
+          </li>
+          <li class="nav-item d-lg-none">
+           <button mat-button class="icon-button" matTooltip="More" [matMenuTriggerFor]="menu">
+              <mat-icon>more_vert</mat-icon>
+           </button>
+           <mat-menu #menu="matMenu" class="menu-dropdown general-dropdown" xPosition="before">
+              <ul class="menu-lists title-nav-list">
+                
+                 <li mat-menu-item>
+                    <mat-icon>download</mat-icon>
+                    Download as Excel
+                 </li>
+              </ul>
+           </mat-menu>
+        </li>
+       </ul>
+      
+     </div>
+</div>
+<div class="content-wrapper">
+    <div class="row">
+        <div class="col-12">
+            <div class="table-responsive tab-first-column-space md-table-height">
+                <table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)"
+                    class="mat-table ellipsis mat-table-bg-header remove-hover">
+
+                    <ng-container matColumnDef="activity">
+                        <th mat-header-cell style="width: 40%; min-width: 200px;" *matHeaderCellDef mat-sort-header
+                            sortActionDescription="Sort by activity"> Activity </th>
+                        <td mat-cell *matCellDef="let element"> {{element.activity}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="date">
+                        <th mat-header-cell style="width: 60%; min-width: 200px;" *matHeaderCellDef mat-sort-header
+                            sortActionDescription="Sort by date"> Date
+                        </th>
+                        <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+                    </ng-container>
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+            </div>
+            
+        </div>
+    </div>
+</div>

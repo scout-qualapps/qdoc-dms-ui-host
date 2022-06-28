@@ -9,10 +9,26 @@ export class EditMyProfileComponent implements OnInit {
   error: string;
   dragAreaClass: string;
   draggedFiles: any;
+  srcResult: any;
   onFileChange(event: any) {
     let files: FileList = event.target.files;
     this.saveFiles(files);
   }
+
+  onFileSelected() {
+    const inputNode: any = document.querySelector('#file');
+  
+    if (typeof (FileReader) !== 'undefined') {
+      const reader = new FileReader();
+  
+      reader.onload = (e: any) => {
+        this.srcResult = e.target.result;
+      };
+  
+      reader.readAsArrayBuffer(inputNode.files[0]);
+    }
+  }
+  
   constructor() { }
 
   

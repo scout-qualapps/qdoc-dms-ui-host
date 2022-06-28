@@ -1,0 +1,59 @@
+<nav style="--bs-breadcrumb-divider: '';" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+       <li class="breadcrumb-item active" aria-current="page">Manage Users</li>
+    </ol>
+ </nav>
+ <div class="title-block">
+    <div class="main-icon"><img src="assets/images/nav_icons/icon-group.svg"></div>
+    <div class="flex-grow-1">
+       <div class="title ">
+        Users
+       </div>
+       <div class="title-info">
+        List of all users
+       </div>
+    </div>
+ 
+    <div class="title-nav-block">
+       <ul class="nav justify-content-end">
+          <li class="nav-item d-none d-sm-block">
+             <button mat-button class="icon-button" matTooltip="Create New User"
+             [routerLink]="['./../add-user']">
+             <mat-icon aria-hidden="false">add_circle_outline
+             </mat-icon>
+          </button>
+           </li>
+         <li class="nav-item d-none d-sm-block">
+          <button mat-button class="icon-button" matTooltip="Delete">
+             <mat-icon aria-hidden="false">delete</mat-icon>
+          </button>
+         </li>
+         <li class="nav-item d-lg-none">
+          <button mat-button class="icon-button" matTooltip="More" [matMenuTriggerFor]="menu">
+             <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu" class="menu-dropdown general-dropdown" xPosition="before">
+             <ul class="menu-lists title-nav-list">
+                <li mat-menu-item class=" d-block d-sm-none"  [routerLink]="['./../add-user']">
+                   <mat-icon>add_circle_outline</mat-icon>
+                  Create New User
+                </li>
+                <li mat-menu-item class=" d-block d-sm-none">
+                   <mat-icon>delete</mat-icon>
+                   Delete
+                </li>
+             </ul>
+          </mat-menu>
+       </li>
+      </ul>
+     
+    </div>
+ </div>
+ <div class="content-wrapper">
+    <div class="row">
+       <div class="col-12">
+         <app-user-list-view></app-user-list-view>
+       </div>
+    </div>
+ </div>
+ 

@@ -26,6 +26,25 @@ import { AddTemplateFieldsComponent } from './metadata-templates/metadata-templa
 import { EditTemplateFieldsComponent } from './metadata-templates/metadata-templates-details/metadata-template-fields/edit-template-fields/edit-template-fields.component';
 import { EditCompanyDetailsComponent } from './company-info/edit-company-details/edit-company-details.component';
 import { EditCompanyContactDetailsComponent } from './company-info/edit-company-contact-details/edit-company-contact-details.component';
+import { UserAccessDetailsComponent } from './user-access-details/user-access-details.component';
+import { RepositoryUsersTableComponent } from './user-access-details/repository-users-table/repository-users-table.component';
+import { RolesPrivilegesComponent } from './roles-privileges/roles-privileges.component';
+import { OtherUsersTableComponent } from './user-access-details/other-users-table/other-users-table.component';
+import { CreateNewRoleComponent } from './roles-privileges/create-new-role/create-new-role.component';
+import { UsersComponent } from './users/users.component';
+import { AddUserComponent } from './users/add-user/add-user.component';
+import { UserActivityComponent } from './users/user-activity/user-activity.component';
+import { UserDetailsComponent } from './users/user-details/user-details.component';
+import { ViewUserModalComponent } from './user-access-details/view-user-modal/view-user-modal.component';
+import { EditUserDetailsModalComponent } from './users/user-details/edit-user-details-modal/edit-user-details-modal.component';
+import { RolesPrivilegesDetailsComponent } from './roles-privileges/roles-privileges-details/roles-privileges-details.component';
+import { EditRolesPrivilegesModalComponent } from './roles-privileges/edit-roles-privileges-modal/edit-roles-privileges-modal.component';
+import { EditPrivilegesModalComponent } from './roles-privileges/edit-privileges-modal/edit-privileges-modal.component';
+import { UserListViewComponent } from './users/user-list-view/user-list-view.component';
+import { RolesPrivilegesListViewComponent } from './roles-privileges/roles-privileges-list-view/roles-privileges-list-view.component';
+import { RepositoryListViewComponent } from './manage-repository/repository-list-view/repository-list-view.component';
+import { TemplatesListViewComponent } from './metadata-templates/metadata-templates-list/templates-list-view/templates-list-view.component';
+import { UserAccessModalComponent } from './user-access-details/user-access-modal/user-access-modal.component';
 
 
 @NgModule({
@@ -53,7 +72,26 @@ import { EditCompanyContactDetailsComponent } from './company-info/edit-company-
     AddTemplateFieldsComponent,
     EditTemplateFieldsComponent,
     EditCompanyDetailsComponent,
-    EditCompanyContactDetailsComponent
+    EditCompanyContactDetailsComponent,
+    UserAccessDetailsComponent,
+    RepositoryUsersTableComponent,
+    RolesPrivilegesComponent,
+    OtherUsersTableComponent,
+    CreateNewRoleComponent,
+    UsersComponent,
+    AddUserComponent,
+    UserActivityComponent,
+    UserDetailsComponent,
+    ViewUserModalComponent,
+    EditUserDetailsModalComponent,
+    RolesPrivilegesDetailsComponent,
+    EditRolesPrivilegesModalComponent,
+    EditPrivilegesModalComponent,
+    UserListViewComponent,
+    RolesPrivilegesListViewComponent,
+    RepositoryListViewComponent,
+    TemplatesListViewComponent,
+    UserAccessModalComponent,
   ],
   imports: [
     CommonModule,

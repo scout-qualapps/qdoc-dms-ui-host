@@ -1,0 +1,81 @@
+<div class="filter_controls mx-0  row">
+                     
+    <ul class="nav col-md-12 mb-3 justify-content-end">
+        <!-- <li class="b-select-dropdown " >
+            <span class="label d-none d-sm-block pe-2 min-w-100p"> Search&nbsp;Users:</span>
+            <mat-form-field  class="app-input-element" appearance="fill" floatLabel="never">
+                <input matInput (keyup)="applyFilter($event)" placeholder="Search" #input>
+            </mat-form-field>
+        </li> -->
+   
+       
+        
+     
+    </ul>
+</div>
+
+<div class="card-body">
+    <div class="row align-items-center search-row mb-3">
+        <div class="col-md-auto fw-bold label align-self-center">
+          Search Users:
+        </div>
+        <div class="col-lg-4 col-md-5 fw-bold  align-self-center">
+            <div class="app-input-group mb-0">
+                <mat-form-field class="app-input-element" appearance="fill" floatLabel="never">
+                    <input matInput placeholder="Search">
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="col-4 col-md-2 col-lg-2">
+            <button mat-button class="secondary-button me-md-2"> Search</button>
+        </div>
+      
+    </div>
+    <div class="table-responsive row-select-cursor">
+       <table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)"
+            class="mat-table ellipsis mat-table-bg-header">
+        
+            <ng-container matColumnDef="checkbox">
+                <th style="width:60px" class="text-center" mat-header-cell *matHeaderCellDef>
+                    <mat-checkbox class="b-checkbox" (change)="$event ? masterToggle() : null"
+                        [checked]="selection.hasValue() && isAllSelected()"
+                        [indeterminate]="selection.hasValue() && !isAllSelected()"></mat-checkbox>
+                </th>
+                <td mat-cell class="text-center" *matCellDef="let element">
+                    <mat-checkbox class="b-checkbox" (click)="$event.stopPropagation()"
+                        (change)="$event ? selection.toggle(element) : null" [checked]="selection.isSelected(element)">
+                    </mat-checkbox>
+                </td>
+            </ng-container>
+            <ng-container matColumnDef="name">
+                <th mat-header-cell style="width: 40%; min-width: 200px;" *matHeaderCellDef mat-sort-header
+                    sortActionDescription="Sort by name"> User&nbsp;Name </th>
+                <td mat-cell *matCellDef="let element"><a href="javascript:void(0)" (click)="ViewUserModalDialog()" > {{element.name}}</a> </td>
+            </ng-container>
+
+            <ng-container matColumnDef="access">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by access"> Role
+                </th>
+                <td mat-cell *matCellDef="let element"> {{element.access}} </td>
+            </ng-container>
+
+
+            <tr  mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns | filter: filterTerm;" (click)="selection.toggle(row)"></tr>
+        </table> 
+        
+      
+          
+       
+    </div>
+    <div class="row mt-3">
+            
+        <div class="col-md-12">
+           <mat-paginator [pageSizeOptions]="[5, 20, 50]" showFirstLastButtons
+              aria-label="Select page of periodic elements">
+           </mat-paginator>
+        </div>
+     </div>
+     
+   
+</div>

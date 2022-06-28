@@ -22,7 +22,7 @@ export class FooterComponent implements OnInit {
     const dialogRef = this.dialog.open(ContactComponent,{panelClass: ['full-screen', 'contact-dialog']});
   }
   releaseNotes() {
-    const dialogRef = this.dialog.open(ReleaseNotesComponent,{panelClass: 'full-screen'});
+    const dialogRef = this.dialog.open(ReleaseNotesComponent,{panelClass: ['full-screen', 'medium-size-modal']});
   }
 }
 
