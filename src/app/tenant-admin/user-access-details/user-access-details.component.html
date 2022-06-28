@@ -5,8 +5,6 @@
                 <mat-icon aria-hidden="false">arrow_back</mat-icon>
             </a>
         </li>
-      
-
         <li class="breadcrumb-item flex-hide-sm">
             <a href="#" [routerLink]="['/tenant-repo-admin']">Manage Repositories</a>
             <mat-icon>navigate_next</mat-icon>
@@ -33,42 +31,26 @@
 
 </div>
 <div class="content-wrapper">
-
-
     <div class="row">
         <div class="col-12">
-
             <mat-tab-group animationDuration="0ms" [selectedIndex]="selectedTab">
                 <mat-tab class="row" label="Repository Users">
-
-
                     <app-repository-users-table></app-repository-users-table>
-
                     <div class="border-top gap-2 xs-btn-group-g-2  py-3 d-md-flex justify-content-md-end">
                         <button mat-button class="secondary-button me-3 me-md-2">Remove Access</button>
                         <button mat-button (click)="openUserAccessModalDialog()"
-                            class=" me-md-2  me-3 secondary-button ">Edit Access </button>
+                            class=" me-md-2  me-3 secondary-button ">Override Access </button>
                         <button mat-button class=" me-md-2 primary-button " (click)="changeTab(1)">New Access </button>
-
                     </div>
-
                 </mat-tab>
-                <mat-tab label="Other Users">
-
+                <mat-tab label="Unassigned Users">
                     <app-other-users-table></app-other-users-table>
                     <div class=" border-top gap-2 xs-btn-group-g-2  py-3 d-md-flex justify-content-md-end">
                         <button mat-button (click)="openUserAccessModalDialog()" class=" me-md-2 primary-button ">Add to
                             Repository</button>
-
                     </div>
-
                 </mat-tab>
-
-
             </mat-tab-group>
-
-
         </div>
     </div>
-
 </div>

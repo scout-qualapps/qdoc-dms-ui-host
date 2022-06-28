@@ -9,7 +9,7 @@
 
     <mat-accordion class="accordion" [togglePosition]="'before'" multi>
 
-        <mat-expansion-panel [expanded]="step === 0"  class="position-relative mt-3" (opened)="panelOpenState = true"
+        <mat-expansion-panel #panel1 [expanded]="step === 0"  class="position-relative mt-3" (opened)="panelOpenState = true"
             (closed)="panelOpenState = false">
             <mat-expansion-panel-header>
                 <mat-panel-title>
@@ -19,7 +19,7 @@
                      </span>
                     <span class="secondary-badge me-3">Content</span>
                 </mat-panel-title>
-                <button mat-button matTooltip="Remove  Metadata Template" class="  icon-button right-btn">
+                <button mat-button (click)="panel1.toggle()" matTooltip="Remove  Metadata Template" class="  icon-button right-btn">
                     <mat-icon aria-hidden="false">do_not_disturb_on</mat-icon>
                 </button>
                
@@ -52,7 +52,7 @@
             </div>
         </mat-expansion-panel>
 
-        <mat-expansion-panel class="position-relative mt-3" (opened)="panelOpenState = true"
+        <mat-expansion-panel #panel2 class="position-relative mt-3" (opened)="panelOpenState = true"
             (closed)="panelOpenState = false">
             <mat-expansion-panel-header>
                 <mat-panel-title>
@@ -62,7 +62,7 @@
                      </span>
                     <span class="secondary-badge me-3">Repository</span>
                 </mat-panel-title>
-                <button mat-button matTooltip="Remove  Metadata Template" class="icon-button right-btn">
+                <button mat-button (click)="panel2.toggle()" matTooltip="Remove  Metadata Template" class="icon-button right-btn">
                     
                     <mat-icon aria-hidden="false">do_not_disturb_on</mat-icon>
                 </button>
@@ -95,7 +95,7 @@
             </div>
         </mat-expansion-panel>
 
-        <mat-expansion-panel class="position-relative mt-3" (opened)="panelOpenState = true"
+        <mat-expansion-panel #panel3 class="position-relative mt-3" (opened)="panelOpenState = true"
             (closed)="panelOpenState = false">
             <mat-expansion-panel-header>
                 <mat-panel-title>
@@ -105,7 +105,7 @@
                      </span>
                     <span class="secondary-badge me-3">Content</span>
                 </mat-panel-title>
-                <button mat-button matTooltip="Add Metadata Template" class="add-mat-icon  icon-button right-btn">
+                <button mat-button (click)="panel3.toggle()"  matTooltip="Add Metadata Template" class="add-mat-icon  icon-button right-btn">
                     
                     <mat-icon aria-hidden="false">add_circle_outline </mat-icon>
                 </button>

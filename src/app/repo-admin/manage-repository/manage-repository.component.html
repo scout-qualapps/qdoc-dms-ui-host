@@ -23,7 +23,7 @@
       <div class="col-12">
           
           <div class="table-responsive row-select-cursor tab-first-column-space">
-              <table mat-table [dataSource]="dataSource" matSort class="mat-table ellipsis" (matSortChange)="announceSortChange($event)">
+              <table mat-table [dataSource]="dataSource" matSort class="mat-table remove-hover  ellipsis" (matSortChange)="announceSortChange($event)">
                   <ng-container matColumnDef="RepositoryName">
                       <th style="width: 30%;  min-width: 150px;" mat-header-cell *matHeaderCellDef mat-sort-header 
                          sortActionDescription="Sort by RepositoryName"> Repository&nbsp;Name </th>

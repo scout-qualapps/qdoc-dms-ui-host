@@ -35,16 +35,14 @@ export class UserAccessDetailsComponent implements OnInit {
 
    }
   logClick() {
-   // activeLink = Other Users
    
     };
   
     openUserAccessModalDialog() {
-      const dialogRef = this.dialog.open(UserAccessModalComponent, {panelClass: 'full-screen-dialog'});
+      const dialogRef = this.dialog.open(UserAccessModalComponent, {panelClass: ['full-screen', 'small-size-modal']});
       dialogRef.afterClosed().subscribe(result => {
       });
     }
-    
    
     ViewUserModalDialog() {
       const dialogRef = this.dialog.open(ViewUserModalComponent, {panelClass: 'full-screen-dialog'});

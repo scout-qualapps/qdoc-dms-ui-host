@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild } from '@angular/core';
 import {FormControl} from '@angular/forms';
-
+import { MatExpansionPanel } from '@angular/material/expansion';
 @Component({
   selector: 'app-associate-template-modal',
   templateUrl: './associate-template-modal.component.html',
@@ -11,6 +11,16 @@ export class AssociateTemplateModalComponent implements OnInit {
   selected = new FormControl('Private');
   selected2 = new FormControl('SrikantaPrakash');
   panelOpenState = false;
+
+  @ViewChild('panel1') firstPanel: MatExpansionPanel;
+
+  public forcedState = false;
+
+
+  public toggleFirstPanel(){
+    this.firstPanel.toggle();
+  }
+
   constructor() { }
 
   ngOnInit(): void {

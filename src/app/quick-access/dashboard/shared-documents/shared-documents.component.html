@@ -10,9 +10,9 @@
        </div>
     </div>
     <div class="card-body">
-       <div class="table-responsive remove-last-border">
+       <div class="table-responsive tab-first-column-space remove-last-border">
            <table mat-table [dataSource]="dataSource"  matSort (matSortChange)="sharedDocSortChange($event)"
-               class="mat-table mat-table-bg-header ellipsis">
+               class="mat-table mat-table-bg-header  ellipsis">
                <ng-container matColumnDef="file">
                    <th mat-header-cell style="width: 25%; min-width: 150px;"  *matHeaderCellDef mat-sort-header
                        sortActionDescription="Sort By file"> File </th>

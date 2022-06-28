@@ -10,7 +10,8 @@
       </div>
       <div class="card-accordion">
          <mat-accordion class="accordion" [togglePosition]="'before'">
-            <mat-expansion-panel class="position-relative" expanded>
+            <mat-expansion-panel class="position-relative" expanded  [expanded]="step === 0"  class="position-relative mt-3" (opened)="panelOpenState = true"
+            (closed)="panelOpenState = false">
                <mat-expansion-panel-header class="has-actions">
                   <mat-panel-title>
                      <div class="row w-100">
@@ -23,9 +24,8 @@
                               <mat-icon aria-hidden="false" matTooltip="Public" class="align-middle">visibility_on</mat-icon>
                            </span>
                            
-                            <span class="dafault-badge me-3">Default</span>
-                            <span class="secondary-badge me-3">In Use</span>
-                            <span class="secondary-badge me-3">Repository</span>
+                           <span class="secondary-badge me-3">Repository</span>
+                           <span class="dafault-badge me-3">Default</span>
                          </div>
                         </div>
                      </div>
@@ -45,9 +45,8 @@
                    <span class="me-3">
                       <mat-icon aria-hidden="false" matTooltip="Public" class="align-middle">visibility_on</mat-icon>
                    </span>
-                   <span class="dafault-badge me-3">Default</span>
-                   <span class="secondary-badge me-3">In Use</span>
                    <span class="secondary-badge me-3">Repository</span>
+                   <span class="dafault-badge me-3">Default</span>
                   </div>
                   <div class="border-bottom pb-2 mb-2">
                      Captures departmental data
@@ -80,11 +79,10 @@
    </div>
  </div>
  
-                 
-                
                </div>
             </mat-expansion-panel>
-            <mat-expansion-panel class="position-relative">
+            <mat-expansion-panel class="position-relative" #panel2  (opened)="panelOpenState = true"
+            (closed)="panelOpenState = false">
                <mat-expansion-panel-header class="has-actions">
                   <mat-panel-title>
                      <div class="row w-100">
@@ -97,8 +95,8 @@
                                  visibility_off
                               </mat-icon>
                            </span>
-                           <span class="secondary-badge me-3">In Use</span>
                            <span class="secondary-badge me-3">Content</span>
+                           <button mat-button  class="secondary-button btn-sm me-md-2" (click)="panel2.toggle()">Set as Default</button>
                         </div>
                         </div>
                      </div>
@@ -108,11 +106,6 @@
                </mat-expansion-panel-header>
                <div class="expansion-body">
                 <ul class="nav">
-                  <li class="nav-item">
-                     <button mat-button class="icon-button " matTooltip="Set as Default">
-                        <mat-icon aria-hidden="false">check_box</mat-icon>
-                     </button>
-                  </li>
                    <li class="nav-item">
                       <button mat-button class="icon-button " matTooltip="Remove">
                          <mat-icon aria-hidden="false">do_not_disturb_on</mat-icon>
@@ -125,8 +118,8 @@
                          visibility_off
                       </mat-icon>
                    </span>
-                   <span class="secondary-badge me-3">In Use</span>
                    <span class="secondary-badge me-3">Content</span>
+                   <button mat-button  class="secondary-button btn-sm me-md-2">Set as Default</button>
                   </div>
                   <div class="border-bottom pb-2 mb-2">Additional finance related data
                   </div>

@@ -90,6 +90,10 @@ body {
 .mat-typography h3,
 .mat-expansion-panel-header,
 .mat-radio-button,
+.mat-paginator,
+.mat-paginator-page-size-label,
+.mat-paginator-range-label,
+.mat-select-min-line
 .mat-expansion-panel-content {
   font-family: var(--primary-font);
 }
@@ -322,7 +326,7 @@ padding-top: 5px;
   }
   .mat-datepicker-toggle {
     position: absolute;
-    right: 4px;
+    right: 5px;
     top: -18px;
     .mat-datepicker-toggle-default-icon {
       fill: $dark-medium;
@@ -465,7 +469,9 @@ display: none;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  max-width: 155px;
+  &.tag{
+    max-width: 165px
+  }
 }
 .app-readonly-form-group {
   margin-bottom: 1rem;
@@ -2252,6 +2258,11 @@ table {
     height: 190px;
     object-fit: cover;
     border-radius: 50%;
+    &.view-profile-picture{
+      width: 165px;
+      max-width: 165px;
+      height: 165px;
+    }
   }
   .profile-edit {
     display: inline-flex;
@@ -2462,22 +2473,31 @@ table {
   }
 }
 .dafault-badge {
-  border-radius: 5px;
-  padding: 2px 5px;
-  background-color: $dark-green;
-  color:#fff;
+  border-radius: 25px;
+  padding: 2px 10px;
   display: inline-block;
-  font-size: 0.813rem;
+  font-size: 0.751rem;
   font-weight: normal;
   margin-right: 1rem;
+  border: 1px solid #00cf2f;
+  background: #f4fff6;
+  color: #000;
+  line-height: 16px;
 }
 .badge-in-use {
   @extend .dafault-badge;
-  background-color: $dark-medium;
+  background: #fef9f5;
+  border: 1px solid #ef6c00;
+}
+.system-role {
+  @extend .dafault-badge;
+  background: #fff7f7;
+  border: 1px solid #ff0000;
 }
 .secondary-badge {
   @extend .dafault-badge;
-  background-color: $dark-medium;
+  background: #f0f7ff;
+  border: 1px solid #004ca9;
 }
 .mat-button.icon-button.add-btn {
   position: absolute;
@@ -3032,6 +3052,9 @@ ul.password-instruction {
   .medium-size-modal {
     min-width: 850px !important;
   }
+  .small-size-modal {
+    width: 525px !important;
+  }
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
@@ -3045,12 +3068,24 @@ ul.password-instruction {
   .medium-size-modal {
     min-width: 760px !important;
   }
+  .right-expanion-card-titel{
+    &.tag{
+      max-width: 100%;
+    }
+  }
 }
 
 
 @media screen and (max-width: 767px) {
   .app-draggable-table{
     padding-bottom: 30px;
+
+    th.mat-header-cell:first-of-type, td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type{
+      padding-left:0 !important;
+    }
+    td{
+      padding:0 !important;
+    }
   }
   .border-0-mobile{
     border: none !important;
@@ -3299,6 +3334,9 @@ ul.password-instruction {
 @media screen and (min-width: 768px) {
   .profile-section {
     margin-right: auto ;
+    &.view-profile-section{
+      margin-right: inherit ;
+    }
   }
 }
 @media (max-width: 599px) {
@@ -3378,6 +3416,11 @@ ul.password-instruction {
     }
    
   }
+  .right-expanion-card-titel{
+    &.tag{
+      max-width: 300px;
+    }
+  }
 
 }
 @media (max-width: 599px) {
@@ -3420,6 +3463,14 @@ ul.password-instruction {
   .mat-button, .mat-icon-button, .mat-stroked-button, .mat-flat-button {
     padding-left: 9px !important;
     padding-right: 9px !important;
+  }
+  .right-expanion-card-titel{
+    &.tag{
+      max-width: 200px;
+    }
+  }
+  .app-input-element .mat-datepicker-toggle {
+    right:15px;
   }
 }
 

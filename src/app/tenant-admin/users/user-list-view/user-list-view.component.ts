@@ -34,7 +34,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./user-list-view.component.scss']
 })
 export class UserListViewComponent implements OnInit {
-
+  
   displayedColumns: string[] = ['checkbox', 'userName', 'emailAddress', 'status', 'dateCreated', 'lastLogin', 'gridListNav'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
   clickedRows = new Set<PeriodicElement>();

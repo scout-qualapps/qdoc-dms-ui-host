@@ -34,6 +34,11 @@
     <div class="title-nav-block">
         <ul class="nav justify-content-end">
             <li class="nav-item d-none d-sm-block">
+                <button mat-button class="icon-button" matTooltip="Copy Role" [routerLink]="['./../create-new-role']">
+                    <mat-icon aria-hidden="false">file_copy</mat-icon>
+                </button>
+            </li>
+            <li class="nav-item d-none d-sm-block">
                 <button mat-button class="icon-button" matTooltip="Delete">
                     <mat-icon aria-hidden="false">delete</mat-icon>
                 </button>
@@ -44,6 +49,10 @@
                 </button>
                 <mat-menu #moreMenu="matMenu" class="menu-dropdown general-dropdown">
                     <ul class="menu-lists title-nav-list">
+                        <li mat-menu-item [routerLink]="['./../create-new-role']">
+                            <mat-icon>file_copy</mat-icon>
+                            Copy Role
+                        </li>
                         <li mat-menu-item>
                             <mat-icon>delete</mat-icon>
                             Delete

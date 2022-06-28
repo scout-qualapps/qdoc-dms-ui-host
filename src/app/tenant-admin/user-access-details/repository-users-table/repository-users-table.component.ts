@@ -45,7 +45,7 @@ export class RepositoryUsersTableComponent implements OnInit {
     return numSelected === numRows;
   }
   openUserAccessModalDialog() {
-    const dialogRef = this.dialog.open(UserAccessModalComponent, {panelClass: 'full-screen-dialog'});
+    const dialogRef = this.dialog.open(UserAccessModalComponent, {panelClass: ['full-screen', 'small-size-modal']});
     dialogRef.afterClosed().subscribe(result => {
     });
   }
