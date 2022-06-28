@@ -3441,3 +3441,21 @@ ul.password-instruction {
 @media screen and (min-width: 920px) and (max-width:991px) {
 .d-lg-none{ display: none;}
 }
+
+//testing roboto fonts for clients
+.roboto-demo{
+  font-family: 'Roboto', sans-serif !important;
+  
+  .bold , .has-badge .action-padding{
+    font-weight: 500 !important;
+    font-family: 'Roboto', sans-serif !important;
+}
+.fw-bold{
+  font-weight: 700 !important;
+  font-family: 'Roboto', sans-serif !important;
+}
+.mat-button, .accordion .mat-expansion-panel-header-title,
+.has-badge .dafault-badge, .has-badge .secondary-badge, .has-badge .badge-in-use{
+  font-family: 'Roboto', sans-serif !important;
+}
+}
