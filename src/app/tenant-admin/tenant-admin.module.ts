@@ -45,6 +45,9 @@ import { RolesPrivilegesListViewComponent } from './roles-privileges/roles-privi
 import { RepositoryListViewComponent } from './manage-repository/repository-list-view/repository-list-view.component';
 import { TemplatesListViewComponent } from './metadata-templates/metadata-templates-list/templates-list-view/templates-list-view.component';
 import { UserAccessModalComponent } from './user-access-details/user-access-modal/user-access-modal.component';
+import { LookupsComponent } from './lookups/lookups.component';
+import { LookupOptionsComponent } from './lookups/lookup-options/lookup-options.component';
+import { AddNewValueComponent } from './lookups/add-new-value/add-new-value.component';
 
 
 @NgModule({
@@ -92,6 +95,9 @@ import { UserAccessModalComponent } from './user-access-details/user-access-moda
     RepositoryListViewComponent,
     TemplatesListViewComponent,
     UserAccessModalComponent,
+    LookupsComponent,
+    LookupOptionsComponent,
+    AddNewValueComponent,
   ],
   imports: [
     CommonModule,

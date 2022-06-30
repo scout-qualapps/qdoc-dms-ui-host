@@ -1,0 +1,134 @@
+<nav style="--bs-breadcrumb-divider: '';" aria-label="breadcrumb">
+   <ol class="breadcrumb">
+      <li class="breadcrumb-item flex-hide-sm">
+         <a href="#" [routerLink]="['../repository']">Repository 1</a>
+         <mat-icon>navigate_next</mat-icon>
+       </li>
+      <li class="breadcrumb-item active" aria-current="page">Search</li>
+   </ol>
+</nav>
+<div class="title-block">
+   <div class="main-icon"><img src="assets/images/nav_icons/icon-repository.svg"></div>
+   <div class="flex-grow-1">
+      <div class="title ">
+         Repository 1
+         <span class="ps-2">
+            <mat-icon class="off" aria-hidden="false" matTooltip="Private" class="align-middle off">visibility_off</mat-icon>
+         </span>
+      </div>
+      <div class="title-info">
+         <span class="">Search contents </span>
+
+      </div>
+   </div>
+
+</div>
+<div class="content-wrapper">
+
+   <div class="row">
+      <div class="col-md-8 order-2 order-md-1 col-lg-6">
+
+         <div class="app-input-group ">
+            <label>Keyword </label>
+            <mat-form-field class="app-input-element" appearance="fill" floatLabel="never">
+               <input matInput placeholder="Keyword">
+            </mat-form-field>
+         </div>
+         <h3 class="header-two mt-2-5 mb-3">Custom Metadata 1</h3>
+
+         <div class="app-input-group">
+            <label>Source</label>
+            <mat-form-field  class="app-input-element xxxx"  appearance="fill">
+            <mat-select class="xx" [formControl]="Source" placeholder="Select Source" multiple>
+               <mat-select-trigger>
+                 {{Source.value ? Source.value[0] : ''}}
+                 <span *ngIf="Source.value?.length > 1" class="example-additional-selection">
+                   (+{{Source.value.length - 1}} {{Source.value?.length === 2 ? 'other' : 'others'}})
+                 </span>
+               </mat-select-trigger>
+               <mat-option *ngFor="let Source of SourceList" [value]="Source">{{Source}}</mat-option>
+             </mat-select>
+            </mat-form-field>
+           
+           
+         </div>
+         
+         <div class="app-input-group">
+            <label>Department</label>
+            <mat-form-field  class="app-input-element"  appearance="fill">
+            <mat-select [formControl]="Department"  placeholder="Select Department" multiple>
+               <mat-select-trigger>
+                 {{Department.value ? Department.value[0] : ''}}
+                 <span *ngIf="Department.value?.length > 1" class="example-additional-selection">
+                   (+{{Department.value.length - 1}} {{Department.value?.length === 2 ? 'other' : 'others'}})
+                 </span>
+               </mat-select-trigger>
+               <mat-option *ngFor="let Department of DepartmentList" [value]="Department">{{Department}}</mat-option>
+             </mat-select>
+            </mat-form-field>
+           
+           
+         </div>
+         
+         <div class="app-input-group row">
+            <label>Expiry Date </label>
+            <div class="col">
+
+               <mat-form-field class="app-input-element" (click)="picker.open()">
+                  <input matInput value="4/14/2022" [matDatepicker]="picker">
+
+                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+               </mat-form-field>
+            </div>
+         </div>
+         <h3 class="header-two mt-2-5 mb-3">Custom Metadata 2</h3>
+
+         <div class="app-input-group">
+            <label>Format </label>
+            <mat-form-field class="app-input-element" appearance="fill" floatLabel="never">
+               <input matInput placeholder="Format">
+            </mat-form-field>
+         </div>
+         <div class="app-input-group">
+            <label> Location </label>
+            <mat-form-field class="app-input-element" appearance="fill" floatLabel="never">
+               <input matInput placeholder="Location ">
+            </mat-form-field>
+         </div>
+       
+         <div class="app-input-group">
+            <label>Correspondence</label>
+            <mat-form-field  class="app-input-element"  appearance="fill">
+            <mat-select [formControl]="Correspondence" placeholder="Select Correspondence"  multiple>
+               <mat-select-trigger>
+                 {{Correspondence.value ? Correspondence.value[0] : ''}}
+                 <span *ngIf="Correspondence.value?.length > 1" class="example-additional-selection">
+                   (+{{Correspondence.value.length - 1}} {{Correspondence.value?.length === 2 ? 'other' : 'others'}})
+                 </span>
+               </mat-select-trigger>
+               <mat-option *ngFor="let Correspondence of CorrespondenceList" [value]="Correspondence">{{Correspondence}}</mat-option>
+             </mat-select>
+            </mat-form-field>
+           
+           
+         </div>
+        
+         <div class="border-top mt-4">
+            <div class="py-3  gap-2 xs-btn-group-g-2  d-md-flex justify-content-md-end">
+               <button mat-button class="secondary-button  me-3 me-md-2"> Reset </button>
+               <button mat-button [routerLink]="['../search']" class="primary-button"> Search</button>
+            </div>
+         </div>
+
+
+      </div>
+      <div class="col-md-4  col-lg-6 mb-3 order-1 order-md-2 col-7 ">
+         <div class="d-flex mt-2">
+            <a [routerLink]="['../search']">Advanced Search</a>
+            <mat-icon>expand_less</mat-icon>
+         </div>
+      </div>
+   </div>
+
+</div>

@@ -9,8 +9,8 @@
      <div class="title ">
         Repository 1
         <span class="ps-2">
-           <mat-icon class="off" aria-hidden="false" matTooltip="Private" class="align-middle off">visibility_off</mat-icon>
-        </span>
+         <mat-icon class="off" aria-hidden="false" matTooltip="Private" class="align-middle off">visibility_off</mat-icon>
+      </span>
      </div>
      <div class="title-info">
       <div class="me-2 d-none d-sm-block">
@@ -35,6 +35,11 @@
   </div>
   <div class="title-nav-block">
      <ul class="nav justify-content-end">
+        <li class="nav-item ">
+           <button mat-button class="icon-button" [routerLink]="['./search']" matTooltip="Search">
+              <mat-icon aria-hidden="false">search</mat-icon>
+           </button>
+        </li>
         <li class="nav-item d-none d-sm-block">
            <button mat-button class="icon-button" [routerLink]="['./upload-file']" matTooltip="Upload">
               <mat-icon aria-hidden="false">upload_rounded</mat-icon>

@@ -170,7 +170,8 @@ export class NavigationComponent {
         },
         {
           label: 'Lookups',
-          faIcon: 'icon-lookups '
+          faIcon: 'icon-lookups',
+          link: '/tenant-repo-admin/lookups',
         },
         {
           label: 'Settings',

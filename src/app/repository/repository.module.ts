@@ -36,6 +36,12 @@ import { FolderEditPropertiesModalComponent } from './folder-edit-properties-mod
 import { FileEditPropertiesModalComponent } from './file-edit-properties-modal/file-edit-properties-modal.component';
 import { RelatedFilesModalComponent } from './file-details/details-tab/related-files/related-files-modal/related-files-modal.component';
 
+
+import { SearchComponent } from './search/search.component';
+import { SearchListViewComponent } from './search/search-list-view/search-list-view.component';
+import { SearchCardViewComponent } from './search/search-card-view/search-card-view.component';
+import { AdvancedSearchComponent } from './search/advanced-search/advanced-search.component';
+
 @NgModule({
   declarations: [
     RepositoryComponent,
@@ -71,7 +77,10 @@ import { RelatedFilesModalComponent } from './file-details/details-tab/related-f
     FolderEditPropertiesModalComponent,
     FileEditPropertiesModalComponent,
     RelatedFilesModalComponent,
- 
+    SearchComponent,
+    SearchListViewComponent,
+    SearchCardViewComponent,
+    AdvancedSearchComponent
 
   ],
   imports: [

@@ -11,6 +11,8 @@ import { FolderVewFileDetailsComponent } from './folder-view/folder-vew-file-det
 import { UploadFileComponent } from './upload-file/upload-file.component';
 import { UserAccessDetailsComponent } from 'src/app/tenant-admin/user-access-details/user-access-details.component';
 
+import { SearchComponent } from './search/search.component';
+import { AdvancedSearchComponent } from './search/advanced-search/advanced-search.component';
 export const routes: Routes = [
   {
     path: '',
@@ -52,7 +54,14 @@ export const routes: Routes = [
         path: 'user-access-details',
         component: UserAccessDetailsComponent
       },
-    
+      {
+        path: 'search',
+        component: SearchComponent
+      },
+      {
+        path: 'advanced-search',
+        component: AdvancedSearchComponent
+      },
       {
         path: '',
         redirectTo: '/repository',

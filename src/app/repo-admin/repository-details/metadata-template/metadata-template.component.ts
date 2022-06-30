@@ -14,7 +14,7 @@ export class MetadataTemplateComponent implements OnInit {
   defaultCheck = false;
   panelOpenState = false;
 
-  @ViewChild('panel1') firstPanel: MatExpansionPanel;
+  @ViewChild('panel3') firstPanel: MatExpansionPanel;
 
   public forcedState = false;
 

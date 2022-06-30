@@ -42,7 +42,6 @@ export class RolesPrivilegesListViewComponent implements OnInit {
   @ViewChild(MatMenuTrigger, { static: true }) contextMenu!: MatMenuTrigger;
   selectedPosition: number = 0;
   onContextMenu(event: MouseEvent, row: any) {
-    console.log('demo');
     this.selectedPosition=row.position;
     event.preventDefault();
     this.contextMenuPosition.x = event.clientX + 'px';

@@ -12,25 +12,7 @@
        <span class="spacer"></span>
        <div class="header-tools">
          <!-- mobile-search -->
-         <div class="mobile-serach-wrapper d-md-block" [ngClass]="!showSearchFilter ? 'd-none' : 'show-search-res'">
-        <div class="app-input-group search-input mobile-search">
-          <mat-form-field class="app-input-element" appearance="fill">
-            <input matInput placeholder="Search folders, files, users">
-            <button mat-button class="icon-button search-icon">
-               <mat-icon matTooltip="Search" [routerLink]="['../search']">search</mat-icon>
-            </button>
-            <button mat-button class="icon-button back-icon" (click)="showSearch()">
-              <mat-icon class="d-block d-md-none mobile-arrow-back" matTooltip="Back">arrow_back</mat-icon>
-           </button>
-          </mat-form-field>
-        </div>
-        <div class="search-results d-none"></div>
-      </div>
-        <span class="header-icon d-block d-md-none p-0">
-          <button mat-button class="icon-button" matTooltip="Search" (click)="showSearch()">
-              <mat-icon>search</mat-icon>
-          </button>
-       </span>
+     
           <span class="header-icon d-none d-lg-block">
              <button mat-button class="icon-button" matTooltip="Help">
              <mat-icon>help</mat-icon>

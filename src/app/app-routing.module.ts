@@ -25,10 +25,7 @@ const routes: Routes = [
     path: 'repository',
     loadChildren: () => import('./repository/repository.module').then(m => m.RepositoryModule),
   },
-  {
-    path: 'search',
-    loadChildren: () => import('./search/search.module').then(m => m.SearchModule),
-  },
+ 
   {
     path: 'components',
     loadChildren: () => import('./components/components.module').then(m => m.ComponentsModule),

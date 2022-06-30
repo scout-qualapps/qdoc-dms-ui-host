@@ -19,6 +19,8 @@ import { AddUserComponent } from './users/add-user/add-user.component';
 import { UserActivityComponent } from './users/user-activity/user-activity.component';
 import { UserDetailsComponent } from './users/user-details/user-details.component';
 import { RolesPrivilegesDetailsComponent } from './roles-privileges/roles-privileges-details/roles-privileges-details.component';
+import { LookupsComponent } from './lookups/lookups.component';
+import { LookupOptionsComponent } from './lookups/lookup-options/lookup-options.component';
 
 
 export const routes: Routes = [
@@ -94,6 +96,14 @@ export const routes: Routes = [
       {
         path: 'user-details',
         component: UserDetailsComponent
+      },
+      {
+        path: 'lookups',
+        component: LookupsComponent
+      },
+      {
+        path: 'lookup-options',
+        component: LookupOptionsComponent
       },
       {
         path: '',
