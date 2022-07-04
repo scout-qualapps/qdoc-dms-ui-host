@@ -4,11 +4,14 @@ interface value {
   value: string;
   viewValue: string;
 }
+
 @Component({
   selector: 'app-advanced-search',
   templateUrl: './advanced-search.component.html',
   styleUrls: ['./advanced-search.component.scss']
 })
+
+
 export class AdvancedSearchComponent implements OnInit {
   PDF = false;
   DOCX = false;

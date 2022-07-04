@@ -45,6 +45,7 @@ import { RepositoriesOrderModalComponent } from './repositories-order-modal/repo
 import { UserAccessModalComponent } from './user-access-modal/user-access-modal.component';
 import { ReleaseNotesComponent } from './release-notes/release-notes.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
 @NgModule({
   declarations: [
     FooterComponent,
@@ -130,7 +131,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     Ng2SearchPipeModule
   ],
   providers: [
-   MultilevelMenuService
+   MultilevelMenuService, 
   ]
+  
 })
 export class SharedModule { }

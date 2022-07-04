@@ -19,23 +19,14 @@
 
 <div class="content-wrapper">
   <div class="row">
-    <div class="col-12 col-md-8 col-lg-6">
-      <div class="table-responsive tab-first-column-space row-select-cursor">
-        <table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)"
-          class="mat-table ellipsis remove-hover mat-table-bg-header">
-          <ng-container matColumnDef="name">
-            <th mat-header-cell style="width: 94%;" mat-sort-header sortActionDescription="Sort by name"
-              *matHeaderCellDef>
-              Name </th>
-            <td mat-cell *matCellDef="let element"><a href="#"
-                [routerLink]="['./../lookup-options']">{{element.name}}</a></td>
-          </ng-container>
-    
-          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-        </table>
-      </div>
-     
+    <div class="col-12">
+      <ul class="lookup-lists">
+        <li><a href="#" [routerLink]="['./../lookup-options']">Department</a></li>
+        <li><a href="#" [routerLink]="['./../lookup-options']">Source</a></li>
+        <li><a href="#" [routerLink]="['./../lookup-options']">Correspondence</a></li>
+        <li><a href="#" [routerLink]="['./../lookup-options']">Data Type</a></li>
+        <li><a href="#" [routerLink]="['./../lookup-options']">Configure Columns Type</a></li>
+      </ul>
     </div>
   </div>
 </div>

@@ -4,8 +4,6 @@ import { MoveCopyModalComponent } from 'src/app/shared/move-copy-modal/move-copy
 import { ShareModalComponent } from 'src/app/shared/share-modal/share-modal.component';
 import { ConfigureColumnsModalComponent } from 'src/app/shared/configure-columns-modal/configure-columns-modal.component';
 
-import { RepositoriesOrderModalComponent } from 'src/app/shared/repositories-order-modal/repositories-order-modal.component';
-
 interface value {
   value: string;
   viewValue: string;
@@ -44,11 +42,7 @@ export class RepositoryComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
     });
   }
-  openRepositoriesOrderDialog() {
-    const dialogRef = this.dialog.open(RepositoriesOrderModalComponent, {panelClass: 'drag-list-dialog'});
-    dialogRef.afterClosed().subscribe(result => {
-    });
-  }
+
   openMoveCopyDialog() {
     const dialogRef = this.dialog.open(MoveCopyModalComponent, {panelClass: 'custon-width-md'});
     dialogRef.afterClosed().subscribe(result => {    

@@ -2833,7 +2833,14 @@ ul.password-instruction {
 .ngx-toastr {
   position: relative;
 }
-
+.lookup-lists {
+  margin: 0 0 0 20px;
+  padding: 0;
+  li {
+    // list-style-type: none;
+    margin-bottom: 13px;
+  }
+}
 .mat-form-field-flex {
   background: #fff;
   z-index: 999;
@@ -3278,6 +3285,10 @@ ul.password-instruction {
   .contact-address-card{
     height: auto;
   }
+  .border-top .gap-2{
+    grid-gap: 0.5rem !important;
+    gap: 0rem !important;
+  }
 }
 
 .show-search-res .search-results {
@@ -3290,6 +3301,7 @@ ul.password-instruction {
       margin-right: inherit ;
     }
   }
+
 }
 @media (max-width: 599px) {
  
@@ -3373,6 +3385,7 @@ ul.password-instruction {
       max-width: 300px;
     }
   }
+  
 
 }
 @media (max-width: 599px) {

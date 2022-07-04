@@ -9,7 +9,7 @@ import { PropertiesComponent } from './repository-details/properties/properties.
 import { MetadataTemplateComponent } from './repository-details/metadata-template/metadata-template.component';
 import { TagsComponent } from './repository-details/tags/tags.component';
 import { CommentsComponent } from './repository-details/comments/comments.component';
-import { UserAccessComponent } from './repository-details/user-access/user-access.component';
+
 import { AddMetadataTemplateComponent } from './add-metadata-template/add-metadata-template.component';
 import { MetadataTemplateDetailsComponent } from './metadata-template-details/metadata-template-details.component';
 import { FieldsComponent } from './metadata-template-details/fields/fields.component';
@@ -59,7 +59,6 @@ import { AddNewValueComponent } from './lookups/add-new-value/add-new-value.comp
     MetadataTemplateComponent,
     TagsComponent,
     CommentsComponent,
-    UserAccessComponent,
     AddMetadataTemplateComponent,
     MetadataTemplateDetailsComponent,
     FieldsComponent,
